@@ -7,6 +7,9 @@ export default {
         main: ['"Poppins"', "sans-serif"],
         secondary: ['"Montserrat"', "sans-serif"],
       },
+      backgroundImage: {
+        "info-image": "",
+      },
     },
   },
   plugins: [],

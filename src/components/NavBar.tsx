@@ -6,18 +6,18 @@ import cartIcon from "../assets/ant-design_shopping-cart-outlined.svg"
 
 const NavBar = () => {
   return (
-    <nav className='px-[5%] py-8 flex justify-between items-center    '>
-      <div className='flex items-center'>
+    <nav className='px-[5%] py-[1%] flex justify-between items-center  flex-wrap'>
+      <div className='flex items-center justify-center'>
         <img src={logo} alt='logo' />
         <h1 className='text-4xl font-bold font-secondary'>Furniro</h1>
       </div>
-      <div className=' flex gap-[25%]'>
+      <div className='flex gap-[10%]'>
         <p>Home</p>
         <p>Shop</p>
         <p>About</p>
         <p>Contact</p>
       </div>
-      <div className=' flex gap-[15%] '>
+      <div className=' flex gap-[10%] '>
         <img src={profileUndefined} alt='profile is not defined' />
         <img src={searchIcon} alt='search' />
         <img src={favoriteItems} alt='favorite items' />
