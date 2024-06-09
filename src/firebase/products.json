@@ -1,0 +1,1502 @@
+[
+    {
+        "category": "Sofas",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "IKEA Modern Leather Sofa",
+        "price": 1200,
+        "productID": "sofa-123",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Leather Sofas",
+        "id": "id-0001"
+    },
+    {
+        "category": "Chairs",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Ashley Furniture Classic Wooden Chair",
+        "price": 150,
+        "productID": "chair-234",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Wooden Chairs",
+        "id": "id-0002"
+    },
+    {
+        "category": "Tables",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "La-Z-Boy Glass Coffee Table",
+        "price": 250,
+        "productID": "table-345",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Coffee Tables",
+        "id": "id-0003"
+    },
+    {
+        "category": "Beds",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "West Elm King Size Bed",
+        "price": 800,
+        "productID": "bed-456",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "King Size Beds",
+        "id": "id-0004"
+    },
+    {
+        "category": "Cabinets",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Crate & Barrel Steel Filing Cabinet",
+        "price": 300,
+        "productID": "cabinet-567",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Filing Cabinets",
+        "id": "id-0005"
+    },
+    {
+        "category": "Sofas",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Pottery Barn Luxury Recliner",
+        "price": 900,
+        "productID": "sofa-678",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Recliners",
+        "id": "id-0006"
+    },
+    {
+        "category": "Chairs",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Wayfair Ergonomic Office Chair",
+        "price": 200,
+        "productID": "chair-789",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Office Chairs",
+        "id": "id-0007"
+    },
+    {
+        "category": "Tables",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "CB2 Dining Table Set",
+        "price": 400,
+        "productID": "table-890",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Dining Tables",
+        "id": "id-0008"
+    },
+    {
+        "category": "Beds",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Anthropologie Queen Bed Frame",
+        "price": 750,
+        "productID": "bed-901",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Queen Beds",
+        "id": "id-0009"
+    },
+    {
+        "category": "Cabinets",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Herman Miller Wooden Bookshelf",
+        "price": 350,
+        "productID": "cabinet-012",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Bookshelves",
+        "id": "id-0010"
+    },
+    {
+        "category": "Sofas",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "IKEA Fabric Sofa",
+        "price": 600,
+        "productID": "sofa-013",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Fabric Sofas",
+        "id": "id-0011"
+    },
+    {
+        "category": "Chairs",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Ashley Furniture Rocking Chair",
+        "price": 180,
+        "productID": "chair-014",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Rocking Chairs",
+        "id": "id-0012"
+    },
+    {
+        "category": "Tables",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "La-Z-Boy Round Dining Table",
+        "price": 220,
+        "productID": "table-015",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Dining Tables",
+        "id": "id-0013"
+    },
+    {
+        "category": "Beds",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "West Elm Twin Bed",
+        "price": 700,
+        "productID": "bed-016",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Twin Beds",
+        "id": "id-0014"
+    },
+    {
+        "category": "Cabinets",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Crate & Barrel Metal Locker",
+        "price": 280,
+        "productID": "cabinet-017",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Lockers",
+        "id": "id-0015"
+    },
+    {
+        "category": "Sofas",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Pottery Barn Sectional Sofa",
+        "price": 1300,
+        "productID": "sofa-018",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Sectional Sofas",
+        "id": "id-0016"
+    },
+    {
+        "category": "Chairs",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Wayfair Plastic Chair",
+        "price": 100,
+        "productID": "chair-019",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Plastic Chairs",
+        "id": "id-0017"
+    },
+    {
+        "category": "Tables",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "CB2 Marble Top Table",
+        "price": 500,
+        "productID": "table-020",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Marble Tables",
+        "id": "id-0018"
+    },
+    {
+        "category": "Beds",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Anthropologie Bunk Bed",
+        "price": 850,
+        "productID": "bed-021",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Bunk Beds",
+        "id": "id-0019"
+    },
+    {
+        "category": "Cabinets",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Herman Miller Glass Door Cabinet",
+        "price": 320,
+        "productID": "cabinet-022",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Glass Cabinets",
+        "id": "id-0020"
+    },
+    {
+        "category": "Sofas",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "IKEA Convertible Sofa",
+        "price": 1400,
+        "productID": "sofa-023",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Convertible Sofas",
+        "id": "id-0021"
+    },
+    {
+        "category": "Chairs",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Ashley Furniture Folding Chair",
+        "price": 80,
+        "productID": "chair-024",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Folding Chairs",
+        "id": "id-0022"
+    },
+    {
+        "category": "Tables",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "La-Z-Boy Console Table",
+        "price": 350,
+        "productID": "table-025",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Console Tables",
+        "id": "id-0023"
+    },
+    {
+        "category": "Beds",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "West Elm Daybed",
+        "price": 600,
+        "productID": "bed-026",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Daybeds",
+        "id": "id-0024"
+    },
+    {
+        "category": "Cabinets",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Crate & Barrel Antique Cabinet",
+        "price": 450,
+        "productID": "cabinet-027",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Antique Cabinets",
+        "id": "id-0025"
+    },
+    {
+        "category": "Sofas",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Pottery Barn Sleeper Sofa",
+        "price": 1250,
+        "productID": "sofa-028",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Sleeper Sofas",
+        "id": "id-0026"
+    },
+    {
+        "category": "Chairs",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Wayfair Lounge Chair",
+        "price": 230,
+        "productID": "chair-029",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Lounge Chairs",
+        "id": "id-0027"
+    },
+    {
+        "category": "Tables",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "CB2 Study Table",
+        "price": 380,
+        "productID": "table-030",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Study Tables",
+        "id": "id-0028"
+    },
+    {
+        "category": "Beds",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Anthropologie Platform Bed",
+        "price": 720,
+        "productID": "bed-031",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Platform Beds",
+        "id": "id-0029"
+    },
+    {
+        "category": "Cabinets",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Herman Miller Wall Mounted Cabinet",
+        "price": 360,
+        "productID": "cabinet-032",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Wall Cabinets",
+        "id": "id-0030"
+    },
+    {
+        "category": "Sofas",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "IKEA Loveseat Sofa",
+        "price": 1100,
+        "productID": "sofa-033",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Loveseats",
+        "id": "id-0031"
+    },
+    {
+        "category": "Chairs",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Ashley Furniture Bean Bag Chair",
+        "price": 60,
+        "productID": "chair-034",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Bean Bag Chairs",
+        "id": "id-0032"
+    },
+    {
+        "category": "Tables",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "La-Z-Boy Side Table",
+        "price": 270,
+        "productID": "table-035",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Side Tables",
+        "id": "id-0033"
+    },
+    {
+        "category": "Beds",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "West Elm Canopy Bed",
+        "price": 800,
+        "productID": "bed-036",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Canopy Beds",
+        "id": "id-0034"
+    },
+    {
+        "category": "Cabinets",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Crate & Barrel TV Cabinet",
+        "price": 410,
+        "productID": "cabinet-037",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "TV Cabinets",
+        "id": "id-0035"
+    },
+    {
+        "category": "Sofas",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Pottery Barn Chesterfield Sofa",
+        "price": 2000,
+        "productID": "sofa-038",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Chesterfield Sofas",
+        "id": "id-0036"
+    },
+    {
+        "category": "Chairs",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Wayfair Bar Stool",
+        "price": 140,
+        "productID": "chair-039",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Bar Stools",
+        "id": "id-0037"
+    },
+    {
+        "category": "Tables",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "CB2 Writing Desk",
+        "price": 440,
+        "productID": "table-040",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Writing Desks",
+        "id": "id-0038"
+    },
+    {
+        "category": "Beds",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Anthropologie Murphy Bed",
+        "price": 950,
+        "productID": "bed-041",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Murphy Beds",
+        "id": "id-0039"
+    },
+    {
+        "category": "Cabinets",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Herman Miller Corner Cabinet",
+        "price": 370,
+        "productID": "cabinet-042",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Corner Cabinets",
+        "id": "id-0040"
+    },
+    {
+        "category": "Sofas",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "IKEA Reclining Sofa",
+        "price": 1700,
+        "productID": "sofa-043",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Reclining Sofas",
+        "id": "id-0041"
+    },
+    {
+        "category": "Chairs",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Ashley Furniture Gaming Chair",
+        "price": 120,
+        "productID": "chair-044",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Gaming Chairs",
+        "id": "id-0042"
+    },
+    {
+        "category": "Tables",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "La-Z-Boy Coffee Table",
+        "price": 300,
+        "productID": "table-045",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Coffee Tables",
+        "id": "id-0043"
+    },
+    {
+        "category": "Beds",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "West Elm Trundle Bed",
+        "price": 870,
+        "productID": "bed-046",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Trundle Beds",
+        "id": "id-0044"
+    },
+    {
+        "category": "Cabinets",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Crate & Barrel Curio Cabinet",
+        "price": 390,
+        "productID": "cabinet-047",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Curio Cabinets",
+        "id": "id-0045"
+    },
+    {
+        "category": "Sofas",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Pottery Barn Pull Out Sofa",
+        "price": 1050,
+        "productID": "sofa-048",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Pull Out Sofas",
+        "id": "id-0046"
+    },
+    {
+        "category": "Chairs",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Wayfair Accent Chair",
+        "price": 130,
+        "productID": "chair-049",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Accent Chairs",
+        "id": "id-0047"
+    },
+    {
+        "category": "Tables",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "CB2 Work Desk",
+        "price": 330,
+        "productID": "table-050",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Work Desks",
+        "id": "id-0048"
+    },
+    {
+        "category": "Beds",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Anthropologie Sleigh Bed",
+        "price": 920,
+        "productID": "bed-051",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Sleigh Beds",
+        "id": "id-0049"
+    },
+    {
+        "category": "Cabinets",
+        "details": {
+            "dimensions": {
+                "depth": 60,
+                "height": 40,
+                "width": 80
+            },
+            "features": [
+                "Handcrafted",
+                "Eco-Friendly"
+            ],
+            "material": "Fabric",
+            "countryOfOrigin": "Italy"
+        },
+        "fullDescription": "This piece of furniture combines style and comfort, featuring high-quality materials and a design that fits perfectly into any modern home. It offers great functionality and durability, ensuring long-term satisfaction. Whether you're looking to relax or entertain guests, this item provides the perfect setting. With its sleek lines and elegant finish, it enhances the aesthetic appeal of your space. Additionally, it comes with advanced features that add convenience and versatility, making it a must-have for any household.",
+        "imageURL": "example.com",
+        "name": "Herman Miller Pantry Cabinet",
+        "price": 410,
+        "productID": "cabinet-052",
+        "ratings": {
+            "average": 4.5,
+            "count": 20
+        },
+        "reviews": [],
+        "smallDescription": "Stylish and comfy",
+        "stock": 15,
+        "subcategory": "Pantry Cabinets",
+        "id": "id-0050"
+    }
+]
