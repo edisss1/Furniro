@@ -6,7 +6,7 @@ import cartIcon from "../assets/ant-design_shopping-cart-outlined.svg"
 
 const NavBar = () => {
   return (
-    <nav className='px-[5%] py-[1%] flex justify-between items-center  flex-wrap'>
+    <nav className='px-[5%] py-[1%] flex justify-between items-center  flex-wrap sticky top-0 z-[10000] bg-white'>
       <div className='flex items-center justify-center'>
         <img src={logo} alt='logo' />
         <h1 className='text-4xl font-bold font-secondary'>Furniro</h1>

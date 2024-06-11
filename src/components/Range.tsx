@@ -11,15 +11,30 @@ const Range = () => {
       </div>
       <div className='capitalize grid grid-cols-3 gap-[1.25rem] mt-[2rem] font-medium'>
         <div className='gap-[1.75rem] grid'>
-          <img className='rounded-sm' src={diningRoom} alt='' />
+          <img
+            className='rounded-sm'
+            src={diningRoom}
+            alt='Link to dining room sets'
+            loading='lazy'
+          />
           <p>Dining</p>
         </div>
         <div className='gap-[1.75rem] grid'>
-          <img className='rounded-sm' src={livingRoom} alt='' />
+          <img
+            className='rounded-sm'
+            src={livingRoom}
+            alt='Link to living room sets'
+            loading='lazy'
+          />
           <p>Living</p>
         </div>
         <div className='gap-[1.75rem] grid'>
-          <img className='rounded-sm' src={bedroom} alt='' />
+          <img
+            className='rounded-sm'
+            src={bedroom}
+            alt='Link to bedroom sets'
+            loading='lazy'
+          />
           <p>Bedroom</p>
         </div>
       </div>

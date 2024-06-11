@@ -3,8 +3,8 @@ import infoImage from "../assets/infoImage.svg"
 const Info = () => {
   return (
     <div className={`info-image w-full relative `}>
-      <img src={infoImage} className='w-full h-full -z-10' />
-      <div className='rounded-sm max-w-[30%] gap-[1rem] p-10 bg-[#FFF3E3] flex flex-col justify-start items-start absolute bottom-[15%] right-[5%]'>
+      <img src={infoImage} className='w-full h-full -z-10' alt='Info image' />
+      <div className='rounded-sm max-w-[30%]  gap-[1rem] p-10 bg-[#FFF3E3] flex flex-col justify-start items-start absolute bottom-[15%] right-[5%]'>
         <p className='font-medium tracking-[3px] max-lg:text-sm'>
           New Arrival!
         </p>
