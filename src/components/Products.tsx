@@ -1,5 +1,5 @@
 import { collection, onSnapshot, query } from "firebase/firestore"
-import { useCallback, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { db } from "../firebase/firebaseConfig"
 import { Product } from "../types/ProductType"
 import ProductCard from "./ProductCard"
@@ -9,7 +9,7 @@ const Products = () => {
   const [products, setProducts] = useState<Product[]>([])
   const [visibleProducts, setVisibleProducts] = useState<Product[]>([])
   const [itemsToShow, setItemsToShow] = useState(8)
-  const { loading, setLoading } = useLoading()
+  const { setLoading } = useLoading()
 
   useEffect(() => {
     setLoading(true)
@@ -62,13 +62,14 @@ const Products = () => {
           <h1>Error!</h1>
         )}
       </div>
-      {visibleProducts.length < products.length && (
-        <button
-          onClick={loadMoreProducts}
-          className='mt-8 border-2 px-20 py-[0.75rem] text-[#B88E2F] border-[#B88E2F]'>
-          Show More
-        </button>
-      )}
+      {visibleProducts.length < products.length &&
+        visibleProducts.length < 48 && (
+          <button
+            onClick={loadMoreProducts}
+            className='mt-8 border-2 px-20 py-[0.75rem] text-[#B88E2F] border-[#B88E2F]'>
+            Show More
+          </button>
+        )}
     </div>
   )
 }
