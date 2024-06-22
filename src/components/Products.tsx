@@ -49,7 +49,7 @@ const Products = () => {
       <h1 className='font-bold text-3xl'>Our Products</h1>
       <div className='grid grid-cols-4 gap-4 mt-8 max-sm:grid-cols-2 max-lg:grid-cols-3'>
         {visibleProducts.length > 0 ? (
-          visibleProducts.map((product) => (
+          visibleProducts?.map((product) => (
             <ProductCard
               key={product.id}
               title={product.name}

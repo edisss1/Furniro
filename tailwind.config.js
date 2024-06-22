@@ -8,7 +8,8 @@ export default {
         secondary: ['"Montserrat"', "sans-serif"],
       },
       backgroundImage: {
-        "info-image": "",
+        infoImage:
+          "url('https://firebasestorage.googleapis.com/v0/b/furniro-69e84.appspot.com/o/infoImage.png?alt=media&token=4b831e57-103c-4cf9-8bb5-63f931d00583')",
       },
     },
   },

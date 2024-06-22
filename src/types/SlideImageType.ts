@@ -3,4 +3,5 @@ export type SliderImageType = {
   url: string
   imageSubHeader: string
   imageHeader: string
+  order: number
 }

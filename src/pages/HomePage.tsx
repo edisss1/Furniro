@@ -6,11 +6,13 @@ import NavBar from "../components/NavBar"
 const Products = lazy(() => import("../components/Products"))
 import Range from "../components/Range"
 import { useLoading } from "../context/LoadingContext"
+import Footer from "../components/Footer"
+import MobileNav from "../components/MobileNav"
 
 const HomePage = () => {
   const { loading } = useLoading()
   return (
-    <div>
+    <>
       {loading && (
         <div className='fixed inset-0 flex items-center justify-center bg-white bg-opacity-100  z-50'>
           <Loading />
@@ -18,12 +20,15 @@ const HomePage = () => {
       )}
       <>
         <NavBar />
+        <MobileNav />
         <Info />
         <Range />
         <Products />
         <MainPageSlider />
+
+        {/* <Footer /> */}
       </>
-    </div>
+    </>
   )
 }
 export default HomePage

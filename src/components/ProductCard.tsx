@@ -34,7 +34,7 @@ const ProductCard = ({
         <p className='text-sm text-[#898989] opa'>{smallDescription}</p>
         <p className='text-lg font-semibold'>USD {price}</p>
       </div>
-      <div className='absolute inset-0 hidden flex-col items-center justify-center opacity-0 group-hover:flex group-hover:opacity-100 transition ease-in duration-500'>
+      <div className='absolute inset-0  hidden flex-col items-center justify-center opacity-0 transition-all group-hover:flex group-hover:opacity-100 ease-in duration-500'>
         <div className='z-20 flex flex-col justify-center items-center  '>
           <button className='bg-white px-14 py-3 text-[#B88E2F] max-md:text-sm max-md:px-6 '>
             Add to cart
