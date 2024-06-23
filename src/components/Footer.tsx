@@ -1,35 +1,36 @@
 import { Link } from "react-router-dom"
+import { paths } from "../paths/paths"
 
 const Footer = () => {
   const date = new Date()
 
   return (
-    <footer className='ps-24 lg:ps-10 md:ps-6 sm:ps-2 flex flex-col grid-cols-6 grid-rows-2 mt-[5%] gap-10'>
-      <div className='flex gap-20 lg:gap-16 md:gap-8: sm:gap-4 '>
-        <div className='col-span-2'>
+    <footer className='ps-24 max-lg:ps-2 max-md:ps-1  flex flex-col mt-[5%] gap-10 max-lg:grid'>
+      <div className='flex gap-20 lg:gap-16 md:gap-8: sm:gap-4 max-lg:flex-col max-lg:items-center'>
+        <div className='col-span-2 flex flex-col gap-10 max-lg:col-span-3 max-lg:row-start-1'>
           <h3 className='font-bold text-2xl '>Furniro.</h3>
           <div className='flex flex-col'>
             <span>400 University Drive Suite 200 Coral </span>
-            <span>Gables,</span> <span>FL 33134 USA</span>
+            <span>Gables,</span>
+            <span>FL 33134 USA</span>
           </div>
         </div>
-        <div className='col-start-3 grid grid-cols-3 col-span-4 max-md:grid-flow-col'>
-          <div className='flex flex-col gap-10'>
+        <div className='col-start-3 grid grid-cols-4 col-span-4 max-lg:gap-6 '>
+          <div className='flex flex-col gap-10 max-lg:col-start-2 '>
             <p className='text-[#9F9F9F]'>Links</p>
-            <Link to='/'>Home</Link>
-            <Link to='/'>Shop</Link>
-            <Link to='/'>About</Link>
-            <Link to='/'>Contact</Link>
+            {paths?.map((path) => (
+              <Link to={path.path}>{path.text}</Link>
+            ))}
           </div>
-          <div className='flex flex-col gap-10'>
+          <div className='flex flex-col gap-10 max-lg:col-start-3 '>
             <p className='text-[#9F9F9F]'>Help</p>
             <Link to={"/"}>Payment Options</Link>
             <Link to={"/"}>Returns</Link>
             <Link to={"/"}>Privacy Policies</Link>
           </div>
-          <form className='flex flex-col gap-10 w-fit'>
+          <form className='flex flex-col  gap-10 w-fit max-lg:row-start-2  max-lg:col-start-2 '>
             <p className='text-[#9F9F9F]'>Newsletter</p>
-            <div className='flex gap-5'>
+            <div className='flex gap-5 flex-wrap'>
               <div className='relative group '>
                 <input
                   id='email'
@@ -38,7 +39,7 @@ const Footer = () => {
                 />
                 <label
                   htmlFor='email'
-                  className='w-fit absolute  top-0 left-0 group-focus-within:-top-4 group-focus-within:text-sm  transition-all duration-150 ease-linear'>
+                  className='w-fit absolute pointer-events-none  top-0 left-0 group-focus-within:-top-4 group-focus-within:text-sm  transition-all duration-150 ease-linear'>
                   Enter Your Email Address...
                 </label>
               </div>
@@ -51,7 +52,9 @@ const Footer = () => {
           </form>
         </div>
       </div>
-      <p>{date.getFullYear()} furniro. All rights reserved</p>
+      <p className='max-lg:mx-auto'>
+        {date.getFullYear()} furniro. All rights reserved
+      </p>
     </footer>
   )
 }

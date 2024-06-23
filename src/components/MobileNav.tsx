@@ -6,6 +6,7 @@ import profileUndefined from "../assets/Vector.svg"
 import favoriteItems from "../assets/akar-icons_heart.svg"
 import searchIcon from "../assets/akar-icons_search.svg"
 import cartIcon from "../assets/ant-design_shopping-cart-outlined.svg"
+import { paths, activeLinkStyles } from "../paths/paths"
 
 const MobileNav = () => {
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -14,28 +15,8 @@ const MobileNav = () => {
     setIsNavOpen(!isNavOpen)
   }
 
-  const activeLinkStyles = "text-[#B88E2F]"
-  const paths = [
-    {
-      path: "/",
-      text: "Home",
-    },
-    {
-      path: "/shop",
-      text: "Shop",
-    },
-    {
-      path: "/about",
-      text: "About",
-    },
-    {
-      path: "/contact",
-      text: "Contact",
-    },
-  ]
-
   return (
-    <nav className='md:hidden px-6 overflow-x-hidden'>
+    <nav className='md:hidden px-6 overflow-x-hidden '>
       <div className='flex justify-between'>
         <Link className='flex gap-1 justify-center items-center' to={"/"}>
           <img src={logo} alt='logo' />
@@ -58,7 +39,7 @@ const MobileNav = () => {
               <img src={HamMenu} alt='' />
             </button>
           </div>
-          <ul className='w-full mt-8 flex flex-col gap-12 justify-center items-center'>
+          <ul className='w-1/2 mt-8 flex flex-col gap-12 justify-center items-center'>
             {paths?.map((path) => (
               <li>
                 <NavLink

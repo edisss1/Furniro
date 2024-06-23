@@ -26,7 +26,7 @@ const HomePage = () => {
         <Products />
         <MainPageSlider />
 
-        {/* <Footer /> */}
+        <Footer />
       </>
     </>
   )
