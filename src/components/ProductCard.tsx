@@ -2,6 +2,7 @@ import { useLoading } from "../context/LoadingContext"
 import Share from "../assets/Share.svg"
 import Compare from "../assets/Compare.svg"
 import Like from "../assets/Like.svg"
+import { useDisplay } from "../context/ItemsDisplayContext"
 
 interface ProductCardProps {
   imgURL: string
@@ -17,10 +18,11 @@ const ProductCard = ({
   price,
 }: ProductCardProps) => {
   const { loading } = useLoading()
+  const display = useDisplay()
 
   return (
     <div
-      className={`w-fit max-w-[300px] max-h-[450px] bg-[#F4F5F7] ${
+      className={`  w-fit max-w-[300px] max-h-[450px] bg-[#F4F5F7] ${
         loading && "animate-pulse"
       } relative z-[10] after:content['*'] after:bg-[#3A3A3A] after:bg-opacity-0 after:absolute after:inset-0 after:z-[15] group hover:after:bg-opacity-55 transition-all `}>
       <img

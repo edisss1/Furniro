@@ -1,42 +1,18 @@
-import { collection, onSnapshot, query } from "firebase/firestore"
 import { useEffect, useState } from "react"
-import { db } from "../firebase/firebaseConfig"
+
 import { Product } from "../types/ProductType"
 import ProductCard from "./ProductCard"
-import { useLoading } from "../context/LoadingContext"
+
+import { useProducts } from "../hooks/useProducts"
 
 const Products = () => {
-  const [products, setProducts] = useState<Product[]>([])
+  const products = useProducts()
   const [visibleProducts, setVisibleProducts] = useState<Product[]>([])
   const [itemsToShow, setItemsToShow] = useState(8)
-  const { setLoading } = useLoading()
 
   useEffect(() => {
-    setLoading(true)
-    const fetchData = async () => {
-      const q = query(collection(db, "products"))
-      const unsubscribe = onSnapshot(
-        q,
-        (querySnapshot) => {
-          const productsArray: Product[] = []
-          querySnapshot.forEach((doc) => {
-            const productData = doc.data() as Product
-            productsArray.push({ ...productData, id: doc.id })
-          })
-          setProducts(productsArray)
-          setVisibleProducts(productsArray.slice(0, 8))
-          setLoading(false)
-        },
-        (error) => {
-          console.error("Error fetching products: ", error)
-          setLoading(false)
-        }
-      )
-      return () => unsubscribe()
-    }
-
-    fetchData()
-  }, [setLoading])
+    setVisibleProducts(products.slice(0, 8))
+  }, [products])
 
   const loadMoreProducts = () => {
     const newItemsToShow = itemsToShow + 8

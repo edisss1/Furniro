@@ -2,12 +2,13 @@ import { lazy } from "react"
 import Info from "../components/Info"
 import Loading from "../components/Loading"
 import MainPageSlider from "../components/MainPageSlider"
-import NavBar from "../components/NavBar"
+import NavBar from "../components/generalComponents/NavBar"
 const Products = lazy(() => import("../components/Products"))
 import Range from "../components/Range"
 import { useLoading } from "../context/LoadingContext"
-import Footer from "../components/Footer"
-import MobileNav from "../components/MobileNav"
+import Footer from "../components/generalComponents/Footer"
+import MobileNav from "../components/generalComponents/MobileNav"
+import FurniroFurniture from "../components/FurniroFurniture"
 
 const HomePage = () => {
   const { loading } = useLoading()
@@ -25,7 +26,7 @@ const HomePage = () => {
         <Range />
         <Products />
         <MainPageSlider />
-
+        <FurniroFurniture />
         <Footer />
       </>
     </>

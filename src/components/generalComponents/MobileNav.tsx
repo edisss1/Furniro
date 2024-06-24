@@ -1,12 +1,12 @@
-import logo from "../assets/Meubel House_Logos-05.svg"
-import HamMenu from "../assets/HamMenu.svg"
+import logo from "../../assets/Meubel House_Logos-05.svg"
+import HamMenu from "../../assets/HamMenu.svg"
 import { Link, NavLink } from "react-router-dom"
 import { useState } from "react"
-import profileUndefined from "../assets/Vector.svg"
-import favoriteItems from "../assets/akar-icons_heart.svg"
-import searchIcon from "../assets/akar-icons_search.svg"
-import cartIcon from "../assets/ant-design_shopping-cart-outlined.svg"
-import { paths, activeLinkStyles } from "../paths/paths"
+import profileUndefined from "../../assets/Vector.svg"
+import favoriteItems from "../../assets/akar-icons_heart.svg"
+import searchIcon from "../../assets/akar-icons_search.svg"
+import cartIcon from "../../assets/ant-design_shopping-cart-outlined.svg"
+import { paths, activeLinkStyles } from "../../imports/paths"
 
 const MobileNav = () => {
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -19,8 +19,8 @@ const MobileNav = () => {
     <nav className='md:hidden px-6 overflow-x-hidden '>
       <div className='flex justify-between'>
         <Link className='flex gap-1 justify-center items-center' to={"/"}>
-          <img src={logo} alt='logo' />
-          <h1 className='text-4xl font-bold font-secondary'>Furniro</h1>
+          <img className='w-8' src={logo} alt='logo' />
+          <h1 className='text-2xl font-bold font-secondary'>Furniro</h1>
         </Link>
 
         <button
@@ -41,7 +41,7 @@ const MobileNav = () => {
           </div>
           <ul className='w-1/2 mt-8 flex flex-col gap-12 justify-center items-center'>
             {paths?.map((path) => (
-              <li>
+              <li key={path.path}>
                 <NavLink
                   className={({ isActive }) =>
                     isActive ? activeLinkStyles : ""
