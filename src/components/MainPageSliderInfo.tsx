@@ -10,7 +10,7 @@ const MainPageSliderInfo = () => {
           inspire you
         </p>
       </div>
-      <button className='text-white max-w-[11rem] px-8 py-3 bg-[#B88E2F] font-bold'>
+      <button className='text-white  max-w-[11rem] bg px-8 py-3 bg-[#B88E2F] font-bold'>
         Explore More
       </button>
     </div>

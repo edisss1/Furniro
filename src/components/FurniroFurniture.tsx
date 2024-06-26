@@ -57,7 +57,7 @@ const FurniroFurniture = () => {
           alt=''
         />
         <img
-          className='col-start-12 row-start-7 col-end-13 row-end-9'
+          className='col-start-12 row-start-7  col-end-13 row-end-9'
           src={image9}
           alt=''
         />

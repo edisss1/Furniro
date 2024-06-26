@@ -49,3 +49,26 @@ export const itemsToShowValues = [
     title: 32,
   },
 ]
+
+export const options = [
+  {
+    sortBy: "default",
+    optionText: "Default",
+  },
+  {
+    sortBy: "cheap-first",
+    optionText: "Cheap First",
+  },
+  {
+    sortBy: "expensive-first",
+    optionText: "Expensive First",
+  },
+  {
+    sortBy: "aToZ",
+    optionText: "A-Z",
+  },
+  {
+    sortBy: "zToA",
+    optionText: "Z-A",
+  },
+]

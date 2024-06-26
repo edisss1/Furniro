@@ -1,11 +1,21 @@
-import { useState } from "react"
 import Filter from "../assets/ShopPageAssets/Filter.svg"
 import ShowGrid from "../assets/ShopPageAssets/ShowGrid.svg"
 import ShowList from "../assets/ShopPageAssets/ShowList.svg"
-import { itemsToShowValues } from "../imports/paths"
+import { itemsToShowValues, options } from "../imports/paths"
 import { useDisplay } from "../context/ItemsDisplayContext"
 
-const ShopHeader = () => {
+type ShopHeaderProps = {
+  itemsPerPage: number
+  setItemsPerPage: (value: number) => void
+  onSortChange: (sortOption: string) => void
+}
+
+const ShopHeader = ({
+  itemsPerPage,
+  setItemsPerPage,
+
+  onSortChange,
+}: ShopHeaderProps) => {
   const { setDisplay } = useDisplay()
 
   const handleDisplayChangeToGrid = () => {
@@ -15,10 +25,17 @@ const ShopHeader = () => {
   const handleDisplayChangeToFlex = () => {
     setDisplay("flex")
   }
+  const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    onSortChange(e.target.value)
+  }
+
+  const handleItemsPerPage = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setItemsPerPage(Number(e.target.value))
+  }
 
   return (
     <div className='flex flex-col'>
-      <div className='flex flex-col bg-shopHeaderImage justify-center items-center py-[5%]'>
+      <div className='flex flex-col bg-shopHeaderImage bg-center bg-cover bg-no-repeat justify-center items-center py-[5%]'>
         <h3 className='font-bold text-4xl'>Shop</h3>
         <p>
           Home <span className='font-bold'> {">"} </span> Shop
@@ -44,7 +61,10 @@ const ShopHeader = () => {
             <div className='flex gap-4 justify-center items-center'>
               <div className='flex gap-1 justify-center items-center'>
                 <p>Show</p>
-                <select className='flex justify-center items-center w-8 aspect-square bg-white p-1'>
+                <select
+                  value={itemsPerPage}
+                  onChange={handleItemsPerPage}
+                  className='flex justify-center items-center w-10 aspect-square bg-white p-1'>
                   {itemsToShowValues.map((value) => (
                     <option key={value.value} value={value.value}>
                       {value.title}
@@ -54,10 +74,12 @@ const ShopHeader = () => {
               </div>
               <div className='flex justify-center items-center gap-4  '>
                 <p>Sort by</p>
-                <select name='' id='' className='p-1 bg-white'>
-                  <option value='default'>Default</option>
-                  <option value='cheap-first'>Cheap first</option>
-                  <option value='expensive-first'>Expensive first</option>
+                <select onChange={handleSortChange} className='p-2 bg-white'>
+                  {options.map((option) => (
+                    <option key={option.sortBy} value={option.sortBy}>
+                      {option.optionText}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>

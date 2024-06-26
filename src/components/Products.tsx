@@ -21,7 +21,7 @@ const Products = () => {
   }
 
   return (
-    <div className='flex flex-col justify-center items-center m-8'>
+    <div className='flex flex-col  justify-center items-center m-8'>
       <h1 className='font-bold text-3xl'>Our Products</h1>
       <div className='grid grid-cols-4 gap-4 mt-8 max-sm:grid-cols-2 max-lg:grid-cols-3'>
         {visibleProducts.length > 0 ? (
