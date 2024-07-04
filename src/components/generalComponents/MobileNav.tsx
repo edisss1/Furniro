@@ -6,7 +6,7 @@ import profileUndefined from "../../assets/Vector.svg"
 import favoriteItems from "../../assets/akar-icons_heart.svg"
 import searchIcon from "../../assets/akar-icons_search.svg"
 import cartIcon from "../../assets/ant-design_shopping-cart-outlined.svg"
-import { paths, activeLinkStyles } from "../../imports/paths"
+import { paths, activeLinkStyles } from "../../imports/imports"
 
 const MobileNav = () => {
   const [isNavOpen, setIsNavOpen] = useState(false)

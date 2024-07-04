@@ -1,4 +1,4 @@
-import { lazy } from "react"
+import { lazy, useEffect } from "react"
 import Info from "../components/Info"
 import Loading from "../components/Loading"
 import MainPageSlider from "../components/MainPageSlider"
@@ -12,6 +12,10 @@ import FurniroFurniture from "../components/FurniroFurniture"
 
 const HomePage = () => {
   const { loading } = useLoading()
+
+  useEffect(() => {
+    document.title = "Furniro"
+  }, [])
   return (
     <>
       {loading && (

@@ -27,6 +27,7 @@ const Products = () => {
         {visibleProducts.length > 0 ? (
           visibleProducts?.map((product) => (
             <ProductCard
+              id={product.id}
               key={product.id}
               title={product.name}
               smallDescription={product.smallDescription}
