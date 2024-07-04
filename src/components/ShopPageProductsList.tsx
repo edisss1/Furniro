@@ -4,6 +4,7 @@ import { useProducts } from "../hooks/useProducts"
 import Pagination from "./Pagination"
 import ProductCard from "./ProductCard"
 import ShopHeader from "./ShopHeader"
+import { quickSort } from "../imports/imports"
 
 const ShopPageProductsList = () => {
   const [sortValue, setSortValue] = useState("default")
@@ -32,13 +33,13 @@ const ShopPageProductsList = () => {
   const sortedProducts = useMemo(() => {
     switch (sortValue) {
       case "cheap-first":
-        return [...currentProducts].sort((a, b) => a.price - b.price)
+        return quickSort(products, (a, b) => a.price - b.price)
       case "expensive-first":
-        return [...currentProducts].sort((a, b) => b.price - a.price)
+        return quickSort(products, (a, b) => b.price - a.price)
       case "aToZ":
-        return [...currentProducts].sort((a, b) => a.name.localeCompare(b.name))
+        return quickSort(products, (a, b) => a.name.localeCompare(b.name))
       case "zToA":
-        return [...currentProducts].sort((a, b) => b.name.localeCompare(a.name))
+        return quickSort(products, (a, b) => b.name.localeCompare(a.name))
       default:
         return currentProducts
     }
@@ -55,10 +56,11 @@ const ShopPageProductsList = () => {
         className={`px-4 ${
           display === "flex"
             ? `flex  flex-col`
-            : `grid grid-cols-4 [&>*]:justify-self-center gap-4 mt-10 max-sm:grid-cols-2`
+            : `flex flex-wrap max-w-[75%] justify-center mx-auto gap-4 [&>*]:justify-self-center mt-10 max-sm:grid-cols-2`
         }`}>
         {sortedProducts.map((product) => (
           <ProductCard
+            id={product.id}
             key={product.id}
             imgURL={product.imageURL}
             smallDescription={product.smallDescription}
