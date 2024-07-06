@@ -1,14 +1,31 @@
+import { lazyLoad } from "../functions/lazyLoad"
+const ProductDisplay = lazyLoad("../components/ProductDisplay")
+
 import Loading from "../components/Loading"
 import NavBar from "../components/generalComponents/NavBar"
 import ProductInformationPageNavBar from "../components/ProductInformationPageNavBar"
-import ProductDisplay from "../components/ProductDisplay"
 import MobileNav from "../components/generalComponents/MobileNav"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { SpecificProductContext } from "../context/SpecificProductContext"
+import ProductFullInformation from "../components/producRelatedComponents/ProductFullInformation"
+const RelatedProducts = lazyLoad("../components/RelatedProducts")
+import Footer from "../components/generalComponents/Footer"
+import { useDisplay } from "../context/ItemsDisplayContext"
+import { useLocation } from "react-router-dom"
 
 const ProductInformationPage = () => {
+  let location = useLocation()
   const context = useContext(SpecificProductContext)
   const { specificProduct, loading } = context
+  const { setDisplay } = useDisplay()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location])
+
+  useEffect(() => {
+    setDisplay("grid")
+  }, [])
 
   loading && <Loading />
   !specificProduct && <h1 className='absolute inset-0 '>Item not found</h1>
@@ -25,7 +42,11 @@ const ProductInformationPage = () => {
         name={specificProduct?.name}
         reviews={specificProduct?.reviews}
         category={specificProduct?.category}
+        id={specificProduct?.id}
       />
+      <ProductFullInformation />
+      <RelatedProducts currentProduct={specificProduct} />
+      <Footer />
     </>
   )
 }

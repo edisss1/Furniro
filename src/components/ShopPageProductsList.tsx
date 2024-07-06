@@ -11,7 +11,7 @@ const ShopPageProductsList = () => {
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [itemsPerPage, setItemsPerPage] = useState<number>(8)
   const { display } = useDisplay()
-  const products = useProducts()
+  const { products } = useProducts()
 
   const handlePagination = (pageNumber: number): void => {
     setCurrentPage(pageNumber)
@@ -43,7 +43,7 @@ const ShopPageProductsList = () => {
       default:
         return currentProducts
     }
-  }, [currentProducts, sortValue])
+  }, [products, sortValue])
 
   return (
     <div>
@@ -56,7 +56,7 @@ const ShopPageProductsList = () => {
         className={`px-4 ${
           display === "flex"
             ? `flex  flex-col`
-            : `flex flex-wrap max-w-[75%] justify-center mx-auto gap-4 [&>*]:justify-self-center mt-10 max-sm:grid-cols-2`
+            : `grid grid-cols-4 max-w-[75%] justify-center mx-auto gap-4 mt-10 max-lg:grid-cols-3 `
         }`}>
         {sortedProducts.map((product) => (
           <ProductCard

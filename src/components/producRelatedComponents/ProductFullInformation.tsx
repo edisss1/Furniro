@@ -3,25 +3,35 @@ import ProductDescription from "./ProductDescription"
 import ProductAdditionalInformation from "./ProductAdditionalInformation"
 import ProductsReviews from "./ProductsReviews"
 
-interface ProductFullInfoProps {
-  fullDescription: string | undefined
-}
-
-const ProductFullInformation = ({ fullDescription }: ProductFullInfoProps) => {
+const ProductFullInformation = () => {
   const [section, setSection] = useState<
     "description" | "additionalInfo" | "reviews"
   >("description")
 
+  const buttonClass = (currentSection: string) => {
+    return currentSection === section ? "text-black" : "text-[#9F9F9F]"
+  }
+
   return (
-    <div>
-      <div>
-        <button onClick={() => setSection("description")}>Description</button>
-        <button onClick={() => setSection("additionalInfo")}>
+    <div className='flex flex-col justify-center w-full mt-[5%]'>
+      <div className='flex justify-center gap-[5%] font-medium text-2xl '>
+        <button
+          className={buttonClass("description")}
+          onClick={() => setSection("description")}>
+          Description
+        </button>
+        <button
+          className={buttonClass("additionalInfo")}
+          onClick={() => setSection("additionalInfo")}>
           Additional Info
         </button>
-        <button onClick={() => setSection("reviews")}>Reviews</button>
+        <button
+          className={buttonClass("reviews")}
+          onClick={() => setSection("reviews")}>
+          Reviews
+        </button>
       </div>
-      <div>
+      <div className='mt-4 overflow-hidden'>
         {section === "description" && <ProductDescription />}
         {section === "additionalInfo" && <ProductAdditionalInformation />}
         {section === "reviews" && <ProductsReviews />}

@@ -16,7 +16,7 @@ const MobileNav = () => {
   }
 
   return (
-    <nav className='md:hidden px-6 overflow-x-hidden '>
+    <nav className='lg:hidden px-6 overflow-x-hidden '>
       <div className='flex justify-between'>
         <Link className='flex gap-1 justify-center items-center' to={"/"}>
           <img className='w-8' src={logo} alt='logo' />

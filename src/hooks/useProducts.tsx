@@ -2,16 +2,26 @@ import { useEffect, useState } from "react"
 import { Product } from "../types/ProductType"
 import { useLoading } from "../context/LoadingContext"
 import { db } from "../firebase/firebaseConfig"
-import { collection, onSnapshot, query } from "firebase/firestore"
+import { collection, onSnapshot, query, where } from "firebase/firestore"
 
-export function useProducts() {
+export function useProducts(category?: string): {
+  products: Product[]
+  loading: boolean
+} {
   const [products, setProducts] = useState<Product[]>([])
-  const { setLoading } = useLoading()
+  const [loading, setLoading] = useState(true)
+  const { setLoading: setGlobalLoading } = useLoading()
 
   useEffect(() => {
-    setLoading(true)
+    setGlobalLoading(true)
     const fetchData = async () => {
-      const q = query(collection(db, "products"))
+      let q
+      if (category) {
+        q = query(collection(db, "products"), where("category", "==", category))
+      } else {
+        q = query(collection(db, "products"))
+      }
+
       const unsubscribe = onSnapshot(
         q,
         (querySnapshot) => {
@@ -21,19 +31,21 @@ export function useProducts() {
             productsArray.push({ ...productData, id: doc.id })
           })
           setProducts(productsArray)
-
           setLoading(false)
+          setGlobalLoading(false)
         },
         (error) => {
           console.error("Error fetching products: ", error)
           setLoading(false)
+          setGlobalLoading(false)
         }
       )
+
       return () => unsubscribe()
     }
 
     fetchData()
-  }, [setLoading])
+  }, [category, setGlobalLoading])
 
-  return products
+  return { products, loading }
 }

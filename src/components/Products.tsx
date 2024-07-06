@@ -6,7 +6,7 @@ import ProductCard from "./ProductCard"
 import { useProducts } from "../hooks/useProducts"
 
 const Products = () => {
-  const products = useProducts()
+  const { products } = useProducts()
   const [visibleProducts, setVisibleProducts] = useState<Product[]>([])
   const [itemsToShow, setItemsToShow] = useState(8)
 
