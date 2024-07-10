@@ -1,4 +1,4 @@
-import Footer from "../components/generalComponents/Footer"
+import Footer from "../components/utilityComponents/generalComponents/Footer"
 const MobileNav = lazyLoad("../components/generalComponents/MobileNav")
 
 const NavBar = lazyLoad("../components/generalComponents/NavBar")

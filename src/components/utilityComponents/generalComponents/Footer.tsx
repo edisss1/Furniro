@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { paths } from "../../imports/imports"
+import { paths } from "../../../imports/imports"
 
 const Footer = () => {
   const date = new Date()

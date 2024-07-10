@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
-import { ModalHeader } from "../ModalHeader"
+import { ModalHeader } from "../singleuseComponents/ModalHeader"
 import RemoveFromCart from "../../assets/RemoveFromCart.svg"
 import { Link } from "react-router-dom"
 

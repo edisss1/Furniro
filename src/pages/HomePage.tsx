@@ -1,13 +1,13 @@
 import { useEffect } from "react"
 const Products = lazyLoad("../components/Products")
 import { lazyLoad } from "../functions/lazyLoad"
-import Info from "../components/Info"
-import Loading from "../components/Loading"
+import Info from "../components/singleuseComponents/Info"
+import Loading from "../components/utilityComponents/Loading"
 const MainPageSlider = lazyLoad("../components/MainPageSlider")
 const NavBar = lazyLoad("../components/generalComponents/NavBar")
-import Range from "../components/Range"
+import Range from "../components/singleuseComponents/Range"
 import { useLoading } from "../context/LoadingContext"
-import Footer from "../components/generalComponents/Footer"
+import Footer from "../components/utilityComponents/generalComponents/Footer"
 const MobileNav = lazyLoad("../components/generalComponents/MobileNav")
 const FurniroFurniture = lazyLoad("../components/FurniroFurniture")
 import { useDisplay } from "../context/ItemsDisplayContext"

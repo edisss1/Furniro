@@ -8,14 +8,14 @@ import ShopPage from "./pages/ShopPage.tsx"
 import AboutPage from "./pages/AboutPage.tsx"
 import ContactPage from "./pages/ContactPage.tsx"
 import { ItemsDisplayProvider } from "./context/ItemsDisplayContext.tsx"
-import Loading from "./components/Loading.tsx"
+import Loading from "./components/utilityComponents/Loading.tsx"
 
 import ProductInformationPage from "./pages/ProductInformationPage.tsx"
 import { SpecificProductProvider } from "./context/SpecificProductContext.tsx"
 import { CartProvider } from "./context/CartContext.tsx"
 import CartPage from "./pages/CartPage.tsx"
 import CheckoutPage from "./pages/CheckoutPage.tsx"
-import ErrorBoundary from "./components/ErrorBoundary.tsx"
+import ErrorBoundary from "./components/utilityComponents/ErrorBoundary.tsx"
 
 const router = createBrowserRouter([
   {

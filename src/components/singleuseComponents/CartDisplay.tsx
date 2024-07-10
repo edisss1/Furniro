@@ -22,7 +22,7 @@ const CartDisplay = () => {
         cartItems={cartItems}
         removeFromCart={removeFromCart}
       />
-      {/* <MobileCartTotals total={totalPrice} /> */}
+      <MobileCartTotals total={totalPrice} />
     </div>
   )
 }

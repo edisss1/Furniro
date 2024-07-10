@@ -8,10 +8,10 @@ import {
   activeLinkStyles,
   generalLinkStyles,
   paths,
-} from "../../imports/imports"
+} from "../../../imports/imports"
 import { useRef, useState } from "react"
 import Dialog from "../Dialog"
-import CartContent from "../modalContent/CartContent"
+import CartContent from "../../modalContent/CartContent"
 
 const NavBar = () => {
   const [dialogContent, setDialogContent] = useState<React.ReactNode>(null)
@@ -22,6 +22,14 @@ const NavBar = () => {
     cartModalRef.current.hasAttribute("open")
       ? cartModalRef.current.close()
       : cartModalRef.current.showModal()
+
+    if (cartModalRef.current.hasAttribute("open")) {
+      cartModalRef.current.classList.toggle("animate-vanish")
+      cartModalRef.current.classList.remove("animate-appear")
+    } else {
+      cartModalRef.current.classList.toggle("animate-appear")
+      cartModalRef.current.classList.remove("animate-vanish")
+    }
   }
 
   return (

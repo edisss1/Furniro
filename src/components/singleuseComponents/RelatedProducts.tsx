@@ -1,8 +1,8 @@
 import React, { useState, useEffect, lazy } from "react"
-import { Product } from "../types/ProductType"
-import { useProducts } from "../hooks/useProducts"
+import { Product } from "../../types/ProductType"
+import { useProducts } from "../../hooks/productHooks/useProducts"
 
-const ProductCard = lazy(() => import("./ProductCard"))
+const ProductCard = lazy(() => import("../producRelatedComponents/ProductCard"))
 
 interface RelatedProductsType {
   currentProduct: Product | null

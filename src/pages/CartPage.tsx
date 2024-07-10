@@ -1,8 +1,9 @@
 import { lazyLoad } from "../functions/lazyLoad"
-import CartHeader from "../components/CartHeader"
-import Guarantees from "../components/Guarantees"
-import Footer from "../components/generalComponents/Footer"
-import CartDisplay from "../components/CartDisplay"
+import CartHeader from "../components/singleuseComponents/CartHeader"
+
+import Footer from "../components/utilityComponents/generalComponents/Footer"
+import Guarantees from "../components/singleuseComponents/Guarantees"
+import CartDisplay from "../components/singleuseComponents/CartDisplay"
 const NavBar = lazyLoad("../components/generalComponents/NavBar")
 const MobileNav = lazyLoad("../components/generalComponents/MobileNav")
 

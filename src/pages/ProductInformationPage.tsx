@@ -1,15 +1,15 @@
 import { lazyLoad } from "../functions/lazyLoad"
 const ProductDisplay = lazyLoad("../components/ProductDisplay")
 
-import Loading from "../components/Loading"
-import NavBar from "../components/generalComponents/NavBar"
-import ProductInformationPageNavBar from "../components/ProductInformationPageNavBar"
-import MobileNav from "../components/generalComponents/MobileNav"
+import Loading from "../components/utilityComponents/Loading"
+import NavBar from "../components/utilityComponents/generalComponents/NavBar"
+import ProductInformationPageNavBar from "../components/producRelatedComponents/ProductInformationPageNavBar"
+import MobileNav from "../components/utilityComponents/generalComponents/MobileNav"
 import { useContext, useEffect } from "react"
 import { SpecificProductContext } from "../context/SpecificProductContext"
 import ProductFullInformation from "../components/producRelatedComponents/ProductFullInformation"
 const RelatedProducts = lazyLoad("../components/RelatedProducts")
-import Footer from "../components/generalComponents/Footer"
+import Footer from "../components/utilityComponents/generalComponents/Footer"
 import { useDisplay } from "../context/ItemsDisplayContext"
 import { useLocation } from "react-router-dom"
 

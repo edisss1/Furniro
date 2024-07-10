@@ -1,10 +1,13 @@
 import { useMemo, useState } from "react"
-import { useDisplay } from "../context/ItemsDisplayContext"
-import { useProducts } from "../hooks/useProducts"
-import Pagination from "./Pagination"
-import ProductCard from "./ProductCard"
+import { useDisplay } from "../../context/ItemsDisplayContext"
+
+import Pagination from "../utilityComponents/Pagination"
+
 import ShopHeader from "./ShopHeader"
-import { quickSort } from "../imports/imports"
+
+import ProductCard from "../producRelatedComponents/ProductCard"
+import { quickSort } from "../../functions/quickSort"
+import { useProducts } from "../../hooks/productHooks/useProducts"
 
 const ShopPageProductsList = () => {
   const [sortValue, setSortValue] = useState("default")

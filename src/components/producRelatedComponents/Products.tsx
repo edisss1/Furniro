@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
 
-import { Product } from "../types/ProductType"
+import { Product } from "../../types/ProductType"
 import ProductCard from "./ProductCard"
-
-import { useProducts } from "../hooks/useProducts"
+import { useProducts } from "../../hooks/productHooks/useProducts"
 
 const Products = () => {
   const { products } = useProducts()
