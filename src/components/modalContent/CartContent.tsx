@@ -41,18 +41,25 @@ const CartContent = ({ toggleDialog }: CartContentProps) => {
             </div>
           ))
         ) : (
-          <h1 className='self-center my-10'>There are no items!</h1>
+          <div className='self-center m-10 flex flex-col items-center gap-4'>
+            <h3>Your cart is empty</h3>
+            <Link
+              className='border-2 border-black p-2 rounded-full'
+              to={"/shop"}>
+              Go to shop
+            </Link>
+          </div>
         )}
       </div>
-      <div className='sticky bottom-0 left-0 bg-white'>
+      <div className='sticky top-[100%] mb-4  bg-white'>
         <div className='flex border-b-2  justify-between py-5 w-auto  '>
           <p>Subtotal</p>
           <span>${totalPrice}</span>
         </div>
         <div className='mt-4 '>
-          <ul className='flex justify-around gap-4   [&>*]:border-2 [&>*]:border-black [&>*]:rounded-full [&>*]:px-4  '>
+          <ul className='flex justify-around gap-4  [&>*]:border-2 [&>*]:border-black [&>*]:rounded-full [&>*]:px-4  '>
             <li>
-              <Link to={"/"}>Cart</Link>
+              <Link to={"/cart"}>Cart</Link>
             </li>
             <li>
               <Link to={"/"}>Checkout</Link>

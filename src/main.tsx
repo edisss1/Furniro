@@ -1,11 +1,7 @@
 import React, { Suspense } from "react"
 import ReactDOM from "react-dom/client"
 import "./index.css"
-import {
-  createBrowserRouter,
-  RouterProvider,
-  useParams,
-} from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import HomePage from "./pages/HomePage.tsx"
 import { LoadingProvider } from "./context/LoadingContext.tsx"
 import ShopPage from "./pages/ShopPage.tsx"
@@ -17,6 +13,9 @@ import Loading from "./components/Loading.tsx"
 import ProductInformationPage from "./pages/ProductInformationPage.tsx"
 import { SpecificProductProvider } from "./context/SpecificProductContext.tsx"
 import { CartProvider } from "./context/CartContext.tsx"
+import CartPage from "./pages/CartPage.tsx"
+import CheckoutPage from "./pages/CheckoutPage.tsx"
+import ErrorBoundary from "./components/ErrorBoundary.tsx"
 
 const router = createBrowserRouter([
   {
@@ -43,18 +42,28 @@ const router = createBrowserRouter([
       </SpecificProductProvider>
     ),
   },
+  {
+    path: "/cart",
+    element: <CartPage />,
+  },
+  {
+    path: "/checkout",
+    element: <CheckoutPage />,
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Suspense fallback={<Loading />}>
-      <CartProvider>
-        <ItemsDisplayProvider>
-          <LoadingProvider>
-            <RouterProvider router={router} />
-          </LoadingProvider>
-        </ItemsDisplayProvider>
-      </CartProvider>
-    </Suspense>
+    <ErrorBoundary>
+      <Suspense fallback={<Loading />}>
+        <CartProvider>
+          <ItemsDisplayProvider>
+            <LoadingProvider>
+              <RouterProvider router={router} />
+            </LoadingProvider>
+          </ItemsDisplayProvider>
+        </CartProvider>
+      </Suspense>
+    </ErrorBoundary>
   </React.StrictMode>
 )

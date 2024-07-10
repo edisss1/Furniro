@@ -1,18 +1,11 @@
 import { createContext, useEffect, useState } from "react"
+import { CartItem } from "../types/CartItem"
 
 interface CartContextType {
   cartItems: CartItem[]
   addToCart: (item: CartItem, quantity: number) => void
   removeFromCart: (id: string | undefined) => void
   getCartTotalPrice: () => number
-}
-
-interface CartItem {
-  id: string
-  name: string | undefined
-  price: number | undefined
-  img: string | undefined
-  quantity: number | undefined
 }
 
 export const CartContext = createContext<CartContextType | null>(null)

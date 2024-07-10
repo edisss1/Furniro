@@ -1,10 +1,15 @@
 import Footer from "../components/generalComponents/Footer"
-import NavBar from "../components/generalComponents/NavBar"
+const MobileNav = lazyLoad("../components/generalComponents/MobileNav")
+
+const NavBar = lazyLoad("../components/generalComponents/NavBar")
+
+import { lazyLoad } from "../functions/lazyLoad"
 
 const ContactPage = () => {
   return (
     <>
       <NavBar />
+      <MobileNav />
       <Footer />
     </>
   )

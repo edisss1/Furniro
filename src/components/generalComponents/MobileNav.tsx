@@ -62,9 +62,9 @@ const MobileNav = () => {
             <button>
               <img src={favoriteItems} alt='favorite items' />
             </button>
-            <button>
+            <Link to={"/cart"}>
               <img src={cartIcon} alt='shopping cart' />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
