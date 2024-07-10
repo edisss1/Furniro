@@ -1,4 +1,4 @@
-import logo from "../assets/Meubel House_Logos-05.svg"
+import logo from "../../../assets/Meubel House_Logos-05.svg"
 
 const CartHeader = () => {
   return (

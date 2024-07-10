@@ -1,4 +1,4 @@
-import { CartTotalsProps } from "../singleuseComponents/CartTotals"
+import { CartTotalsProps } from "../singleuseComponents/cart/CartTotals"
 
 const MobileCartTotals = ({ total }: CartTotalsProps) => {
   return (

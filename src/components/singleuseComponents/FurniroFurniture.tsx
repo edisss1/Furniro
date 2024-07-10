@@ -1,12 +1,12 @@
-import image1 from "../assets/FurniroFurnitureComponentImages/image1.png"
-import image2 from "../assets/FurniroFurnitureComponentImages/image2.png"
-import image3 from "../assets/FurniroFurnitureComponentImages/image3.png"
-import image4 from "../assets/FurniroFurnitureComponentImages/image4.png"
-import image5 from "../assets/FurniroFurnitureComponentImages/image5.png"
-import image6 from "../assets/FurniroFurnitureComponentImages/image6.png"
-import image7 from "../assets/FurniroFurnitureComponentImages/image7.png"
-import image8 from "../assets/FurniroFurnitureComponentImages/image8.png"
-import image9 from "../assets/FurniroFurnitureComponentImages/image9.png"
+import image1 from "../../assets/FurniroFurnitureComponentImages/image1.png"
+import image2 from "../../assets/FurniroFurnitureComponentImages/image2.png"
+import image3 from "../../assets/FurniroFurnitureComponentImages/image3.png"
+import image4 from "../../assets/FurniroFurnitureComponentImages/image4.png"
+import image5 from "../../assets/FurniroFurnitureComponentImages/image5.png"
+import image6 from "../../assets/FurniroFurnitureComponentImages/image6.png"
+import image7 from "../../assets/FurniroFurnitureComponentImages/image7.png"
+import image8 from "../../assets/FurniroFurnitureComponentImages/image8.png"
+import image9 from "../../assets/FurniroFurnitureComponentImages/image9.png"
 
 const FurniroFurniture = () => {
   return (

@@ -1,4 +1,4 @@
-import { guaranteesContent } from "../imports/imports"
+import { guaranteesContent } from "../../imports/imports"
 
 const Guarantees = () => {
   return (

@@ -1,5 +1,5 @@
 import Delete from "../../assets/Delete.svg"
-import { CartItemsListProps } from "../singleuseComponents/CartItemsList"
+import { CartItemsListProps } from "../singleuseComponents/cart/CartItemsList"
 
 const MobileCartItemsList = ({
   cartItems,

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import { Product } from "../types/ProductType"
-import { useLoading } from "../context/LoadingContext"
-import { db } from "../firebase/firebaseConfig"
 import { collection, onSnapshot, query, where } from "firebase/firestore"
+import { Product } from "../../types/ProductType"
+import { useLoading } from "../../context/LoadingContext"
+import { db } from "../../firebase/firebaseConfig"
 
 export function useProducts(category?: string): {
   products: Product[]

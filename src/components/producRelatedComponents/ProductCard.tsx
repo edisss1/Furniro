@@ -1,8 +1,9 @@
-import Share from "../assets/Share.svg"
-import Compare from "../assets/Compare.svg"
-import Like from "../assets/Like.svg"
-import { useDisplay } from "../context/ItemsDisplayContext"
+import Share from "../../assets/Share.svg"
+import Compare from "../../assets/Compare.svg"
+import Like from "../../assets/Like.svg"
+
 import { Link } from "react-router-dom"
+import { useDisplay } from "../../context/ItemsDisplayContext"
 
 interface ProductCardProps {
   imgURL: string | undefined

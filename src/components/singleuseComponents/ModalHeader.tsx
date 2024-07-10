@@ -1,4 +1,4 @@
-import CloseModal from "../assets/CloseModal.svg"
+import CloseModal from "../../assets/CloseModal.svg"
 
 interface ModalHeaderProps {
   modalTitle: string

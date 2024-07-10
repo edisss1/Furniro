@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
 import MainPageSliderInfo from "./MainPageSliderInfo"
 import { collection, onSnapshot, query } from "firebase/firestore"
-import { db } from "../firebase/firebaseConfig"
-import { SliderImageType } from "../types/SlideImageType"
-import SliderArrow from "../assets/SliderArrow.svg"
-import SliderLink from "../assets/SliderLink.svg"
+
+import SliderArrow from "../../assets/SliderArrow.svg"
+import SliderLink from "../../assets/SliderLink.svg"
 import { Link } from "react-router-dom"
+import { db } from "../../firebase/firebaseConfig"
+import { SliderImageType } from "../../types/SlideImageType"
 
 const MainPageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0)

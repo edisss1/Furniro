@@ -1,8 +1,8 @@
+import { useDisplay } from "../../context/ItemsDisplayContext"
+import { itemsToShowValues, options } from "../../imports/imports"
 import Filter from "../assets/ShopPageAssets/Filter.svg"
 import ShowGrid from "../assets/ShopPageAssets/ShowGrid.svg"
 import ShowList from "../assets/ShopPageAssets/ShowList.svg"
-import { itemsToShowValues, options } from "../imports/imports"
-import { useDisplay } from "../context/ItemsDisplayContext"
 
 type ShopHeaderProps = {
   itemsPerPage: number

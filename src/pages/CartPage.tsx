@@ -1,11 +1,15 @@
-import { lazyLoad } from "../functions/lazyLoad"
-import CartHeader from "../components/singleuseComponents/CartHeader"
+import CartHeader from "../components/singleuseComponents/cart/CartHeader"
 
 import Footer from "../components/utilityComponents/generalComponents/Footer"
-import Guarantees from "../components/singleuseComponents/Guarantees"
-import CartDisplay from "../components/singleuseComponents/CartDisplay"
-const NavBar = lazyLoad("../components/generalComponents/NavBar")
-const MobileNav = lazyLoad("../components/generalComponents/MobileNav")
+import Guarantees from "../components/utilityComponents/Guarantees"
+import CartDisplay from "../components/singleuseComponents/cart/CartDisplay"
+import { lazy } from "react"
+const NavBar = lazy(
+  () => import("../components/utilityComponents/generalComponents/NavBar")
+)
+const MobileNav = lazy(
+  () => import("../components/utilityComponents/generalComponents/MobileNav")
+)
 
 const CartPage = () => {
   return (

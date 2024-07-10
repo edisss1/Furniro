@@ -1,9 +1,12 @@
+import { lazy } from "react"
 import Footer from "../components/utilityComponents/generalComponents/Footer"
-const MobileNav = lazyLoad("../components/generalComponents/MobileNav")
+const MobileNav = lazy(
+  () => import("../components/utilityComponents/generalComponents/MobileNav")
+)
 
-const NavBar = lazyLoad("../components/generalComponents/NavBar")
-
-import { lazyLoad } from "../functions/lazyLoad"
+const NavBar = lazy(
+  () => import("../components/utilityComponents/generalComponents/NavBar")
+)
 
 const ContactPage = () => {
   return (

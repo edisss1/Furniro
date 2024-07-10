@@ -1,11 +1,11 @@
-import logo from "../../assets/Meubel House_Logos-05.svg"
-import HamMenu from "../../assets/HamMenu.svg"
+import logo from "../../../assets/Meubel House_Logos-05.svg"
+import HamMenu from "../../../assets/HamMenu.svg"
 import { Link, NavLink } from "react-router-dom"
 import { useState } from "react"
-import profileUndefined from "../../assets/Vector.svg"
-import favoriteItems from "../../assets/akar-icons_heart.svg"
-import searchIcon from "../../assets/akar-icons_search.svg"
-import cartIcon from "../../assets/ant-design_shopping-cart-outlined.svg"
+import profileUndefined from "../../../assets/Vector.svg"
+import favoriteItems from "../../../assets/akar-icons_heart.svg"
+import searchIcon from "../../../assets/akar-icons_search.svg"
+import cartIcon from "../../../assets/ant-design_shopping-cart-outlined.svg"
 import { paths, activeLinkStyles } from "../../../imports/imports"
 
 const MobileNav = () => {

@@ -1,9 +1,9 @@
 import { Link, NavLink } from "react-router-dom"
-import logo from "../../assets/Meubel House_Logos-05.svg"
-import profileUndefined from "../../assets/Vector.svg"
-import favoriteItems from "../../assets/akar-icons_heart.svg"
-import searchIcon from "../../assets/akar-icons_search.svg"
-import cartIcon from "../../assets/ant-design_shopping-cart-outlined.svg"
+import logo from "../../../assets/Meubel House_Logos-05.svg"
+import profileUndefined from "../../../assets/Vector.svg"
+import favoriteItems from "../../../assets/akar-icons_heart.svg"
+import searchIcon from "../../../assets/akar-icons_search.svg"
+import cartIcon from "../../../assets/ant-design_shopping-cart-outlined.svg"
 import {
   activeLinkStyles,
   generalLinkStyles,
@@ -23,13 +23,7 @@ const NavBar = () => {
       ? cartModalRef.current.close()
       : cartModalRef.current.showModal()
 
-    if (cartModalRef.current.hasAttribute("open")) {
-      cartModalRef.current.classList.toggle("animate-vanish")
-      cartModalRef.current.classList.remove("animate-appear")
-    } else {
-      cartModalRef.current.classList.toggle("animate-appear")
-      cartModalRef.current.classList.remove("animate-vanish")
-    }
+    cartModalRef.current.hasAttribute("open")
   }
 
   return (

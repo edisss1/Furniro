@@ -1,7 +1,8 @@
 import { createContext, ReactNode } from "react"
 import { Product } from "../types/ProductType"
-import { useSpecificProduct } from "../hooks/useSpecificProduct"
+
 import { useParams } from "react-router-dom"
+import { useSpecificProduct } from "../hooks/productHooks/useSpecificProduct"
 
 const specificProductContextDefaultState = {
   specificProduct: null,

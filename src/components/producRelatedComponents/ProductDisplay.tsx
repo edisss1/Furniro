@@ -1,10 +1,11 @@
 import { useContext, useEffect, useReducer } from "react"
-import { reducerStates } from "../hooks/reducerStates"
-import Loading from "./Loading"
-import { CartContext } from "../context/CartContext"
+
+import Loading from "../utilityComponents/Loading"
+import { CartContext } from "../../context/CartContext"
+import { reducerStates } from "../../hooks/reducerStates"
 
 interface ProductDisplayProps {
-  id: string
+  id: string | undefined
   img: string | undefined
   price: number | undefined
   name: string | undefined

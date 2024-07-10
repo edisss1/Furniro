@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
-import { Product } from "../types/ProductType"
+
 import { doc, getDoc } from "firebase/firestore"
-import { db } from "../firebase/firebaseConfig"
+import { Product } from "../../types/ProductType"
+import { db } from "../../firebase/firebaseConfig"
 
 export function useSpecificProduct(id: string) {
   const [specificProduct, setSpecificProduct] = useState<Product | null>(null)

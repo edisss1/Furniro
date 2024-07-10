@@ -1,6 +1,6 @@
-import diningRoom from "../assets/dining.png"
-import livingRoom from "../assets/Image-living room.png"
-import bedroom from "../assets/image 106.png"
+import diningRoom from "../../assets/dining.png"
+import livingRoom from "../../assets/Image-living room.png"
+import bedroom from "../../assets/image 106.png"
 
 const Range = () => {
   return (

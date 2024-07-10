@@ -1,11 +1,11 @@
 import { lazy, useContext } from "react"
-import { CartContext } from "../context/CartContext"
+import { CartContext } from "../../../context/CartContext"
 const CartItemsList = lazy(() => import("./CartItemsList"))
 const CartTotals = lazy(() => import("./CartTotals"))
 const MobileCartItemsList = lazy(
-  () => import("./cartMobile/MobileCartItemsList")
+  () => import("../../cartMobile/MobileCartItemsList")
 )
-const MobileCartTotals = lazy(() => import("./cartMobile/MobileCartTotals"))
+const MobileCartTotals = lazy(() => import("../../cartMobile/MobileCartTotals"))
 
 const CartDisplay = () => {
   const context = useContext(CartContext)
