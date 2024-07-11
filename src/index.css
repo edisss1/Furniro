@@ -12,3 +12,21 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.custom-radio-btn {
+  @apply w-4 h-4 border-2 border-black rounded-full flex justify-center items-center;
+}
+
+.custom-radio-btn .checkmark {
+  @apply inline-block bg-black rounded-full opacity-0 transition-opacity ease-linear duration-200;
+  width: 100%;
+  height: 100%;
+}
+
+.custom-radio-btn input {
+  @apply hidden;
+}
+
+.custom-radio-btn input:checked + .checkmark {
+  @apply opacity-100;
+}

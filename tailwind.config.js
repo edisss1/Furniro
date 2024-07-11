@@ -39,5 +39,10 @@ export default {
       },
     },
   },
+  variants: {
+    extend: {
+      opacity: ["group-checked"],
+    },
+  },
   plugins: [],
 }

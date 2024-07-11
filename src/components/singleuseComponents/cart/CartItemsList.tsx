@@ -1,5 +1,5 @@
-import { CartItem } from "../types/CartItem"
-import Delete from "../assets/Delete.svg"
+import { CartItem } from "../../../types/CartItem"
+import Delete from "../../../assets/Delete.svg"
 
 export interface CartItemsListProps {
   cartItems: CartItem[]

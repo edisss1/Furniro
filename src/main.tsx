@@ -16,6 +16,7 @@ import { CartProvider } from "./context/CartContext.tsx"
 import CartPage from "./pages/CartPage.tsx"
 import CheckoutPage from "./pages/CheckoutPage.tsx"
 import ErrorBoundary from "./components/utilityComponents/ErrorBoundary.tsx"
+import { BillingProvider } from "./context/BillingContext.tsx"
 
 const router = createBrowserRouter([
   {
@@ -48,7 +49,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/checkout",
-    element: <CheckoutPage />,
+    element: (
+      <BillingProvider>
+        <CheckoutPage />
+      </BillingProvider>
+    ),
   },
 ])
 

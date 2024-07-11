@@ -62,7 +62,7 @@ const CartContent = ({ toggleDialog }: CartContentProps) => {
               <Link to={"/cart"}>Cart</Link>
             </li>
             <li>
-              <Link to={"/"}>Checkout</Link>
+              <Link to={"/checkout"}>Checkout</Link>
             </li>
             <li>
               <Link to={"/"}>Comparison</Link>
