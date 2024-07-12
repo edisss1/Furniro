@@ -120,16 +120,17 @@ const BillingForm = () => {
               required={true}
             />
           </div>
-          <div className='flex flex-col max-w-full relative'>
-            <textarea
-              className='h-[75px] w-full border-2 border-[#9F9F9F] rounded-xl resize-none px-2 box-border'
+          <div className='flex flex-col max-w-full relative  '>
+            <input
+              className='h-[75px] w-full border-2 border-[#9F9F9F] rounded-xl resize-none px-2 box-border flex items-center text-justify whitespace-normal'
               id='additionalInfo'
               name='additionalInfo'
               onChange={handleChange}
+              placeholder='Additional Information'
             />
-            <p className='absolute top-[50%] transform translate-y-[-50%] left-[5%] text-[#9F9F9F]'>
+            {/* <p className='absolute top-[50%] transform translate-y-[-50%] left-[5%] text-[#9F9F9F] group-focus:opacity-0 pointer-events-none'>
               Additional Information
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

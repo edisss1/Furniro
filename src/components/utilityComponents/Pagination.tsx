@@ -13,6 +13,10 @@ const Pagination = ({
   currentPage,
   totalPages,
 }: PaginationProps) => {
+  console.log("Pagination component rendered with: ", {
+    currentPage,
+    totalPages,
+  })
   const paginationNumbers: (number | string)[] = []
 
   if (totalPages <= 5) {

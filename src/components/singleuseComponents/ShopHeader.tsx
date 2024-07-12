@@ -13,7 +13,6 @@ type ShopHeaderProps = {
 const ShopHeader = ({
   itemsPerPage,
   setItemsPerPage,
-
   onSortChange,
 }: ShopHeaderProps) => {
   const { setDisplay } = useDisplay()
@@ -24,13 +23,16 @@ const ShopHeader = ({
   }
   const handleDisplayChangeToFlex = () => {
     setDisplay("flex")
+    console.log("display changed")
   }
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     onSortChange(e.target.value)
   }
 
   const handleItemsPerPage = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setItemsPerPage(Number(e.target.value))
+    const newItemsPerPageValue = Number(e.target.value)
+    console.log("Items per page changed to: ", newItemsPerPageValue)
+    setItemsPerPage(newItemsPerPageValue)
   }
 
   return (

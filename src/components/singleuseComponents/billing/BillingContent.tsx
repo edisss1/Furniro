@@ -8,12 +8,12 @@ export const BillingContent = () => {
   if (!context) return
   const { billingDetails, placeOrder } = context
   return (
-    <div className=' max-w-[80%] mx-auto mt-16 justify-between gap-[5%]'>
+    <div className=' max-w-[80%] mx-auto mt-16 justify-between '>
       <form
         onSubmit={(e: React.ChangeEvent<HTMLFormElement>) =>
           placeOrder(billingDetails, e)
         }>
-        <fieldset className='flex justify-between mt-6 max-xl:flex-col max-xl:items-center'>
+        <fieldset className='flex justify-between mt-6 max-xl:flex-col max-xl:items-center gap-[5%]'>
           <BillingForm />
           <Order />
         </fieldset>

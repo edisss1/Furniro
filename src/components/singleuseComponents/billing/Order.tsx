@@ -18,7 +18,7 @@ const Order = () => {
         <h3>Product</h3>
         <h3>Subtotal</h3>
       </div>
-      <div>
+      <div className='flex flex-col'>
         {cartItems.map((item) => (
           <div key={item.id} className='flex justify-between w-full'>
             <div className='flex gap-1'>

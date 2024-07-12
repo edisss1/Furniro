@@ -18,22 +18,16 @@ const ShopPageProductsList = () => {
 
   const handlePagination = (pageNumber: number): void => {
     setCurrentPage(pageNumber)
+    console.log("Changed page")
   }
 
   const handleNextPage = (currentPage: number) => {
     setCurrentPage(currentPage + 1)
+    console.log("Changed")
   }
 
-  const totalPages = Math.ceil(products.length / itemsPerPage)
-
-  const indexOfLastProduct = currentPage * itemsPerPage
-  const indexOfFirstProduct = indexOfLastProduct - itemsPerPage
-  const currentProducts = products.slice(
-    indexOfFirstProduct,
-    indexOfLastProduct
-  )
-
   const sortedProducts = useMemo(() => {
+    console.log("sorting...")
     switch (sortValue) {
       case "cheap-first":
         return quickSort(products, (a, b) => a.price - b.price)
@@ -44,9 +38,18 @@ const ShopPageProductsList = () => {
       case "zToA":
         return quickSort(products, (a, b) => b.name.localeCompare(a.name))
       default:
-        return currentProducts
+        return products
     }
   }, [products, sortValue])
+
+  const totalPages = Math.ceil(sortedProducts.length / itemsPerPage)
+
+  const currentProducts = useMemo(() => {
+    const indexOfLastProduct = currentPage * itemsPerPage
+    const indexOfFirstProduct = indexOfLastProduct - itemsPerPage
+
+    return sortedProducts.slice(indexOfFirstProduct, indexOfLastProduct)
+  }, [sortedProducts, currentPage, itemsPerPage])
 
   return (
     <div>
@@ -61,7 +64,7 @@ const ShopPageProductsList = () => {
             ? `flex  flex-col`
             : `grid grid-cols-4 max-w-[75%] justify-center mx-auto gap-4 mt-10 max-lg:grid-cols-3 `
         }`}>
-        {sortedProducts.map((product) => (
+        {currentProducts.map((product) => (
           <ProductCard
             id={product.id}
             key={product.id}

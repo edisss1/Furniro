@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react"
 import { BillingDetailsProps } from "../types/BillingDetails"
-import { addDoc, collection, or } from "firebase/firestore"
+import { addDoc, collection } from "firebase/firestore"
 import { db } from "../firebase/firebaseConfig"
 import { CartItem } from "../types/CartItem"
 
