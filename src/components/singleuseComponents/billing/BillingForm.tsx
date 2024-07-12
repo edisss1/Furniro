@@ -11,7 +11,7 @@ const BillingForm = () => {
     <>
       <legend className='font-semibold text-3xl mb-4'>Billing details</legend>
       <div>
-        <div className=' flex flex-col justify-start gap-4 max-w-max '>
+        <div className=' flex flex-col justify-start gap-[calc(2rem-10%)] max-w-max '>
           <div className='flex gap-4'>
             <Input
               label='First Name'
@@ -120,16 +120,16 @@ const BillingForm = () => {
               required={true}
             />
           </div>
-          <div className='flex flex-col max-w-full'>
-            <Input
-              label='Additional Information'
+          <div className='flex flex-col max-w-full relative'>
+            <textarea
+              className='h-[75px] w-full border-2 border-[#9F9F9F] rounded-xl resize-none px-2 box-border'
               id='additionalInfo'
               name='additionalInfo'
-              type='text'
-              handleChange={handleChange}
-              value={billingDetails.additionalInfo}
-              required={true}
+              onChange={handleChange}
             />
+            <p className='absolute top-[50%] transform translate-y-[-50%] left-[5%] text-[#9F9F9F]'>
+              Additional Information
+            </p>
           </div>
         </div>
       </div>

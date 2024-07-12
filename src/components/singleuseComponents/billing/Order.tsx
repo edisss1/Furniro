@@ -13,7 +13,7 @@ const Order = () => {
   const totalPrice = getCartTotalPrice()
 
   return (
-    <div className='w-[50%] *:flex *:justify-between relative  mt-4'>
+    <div className='w-[50%] *:flex *:justify-between relative  mt-4 max-lg:w-full'>
       <div className=' font-medium text-xl  mb-4  '>
         <h3>Product</h3>
         <h3>Subtotal</h3>

@@ -1,6 +1,6 @@
-import { createContext, useState } from "react"
+import React, { createContext, useState } from "react"
 import { BillingDetailsProps } from "../types/BillingDetails"
-import { addDoc, collection } from "firebase/firestore"
+import { addDoc, collection, or } from "firebase/firestore"
 import { db } from "../firebase/firebaseConfig"
 import { CartItem } from "../types/CartItem"
 
@@ -10,7 +10,11 @@ interface BillingContextType {
     billingData: BillingDetailsProps,
     e: React.ChangeEvent<HTMLFormElement>
   ) => void
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  handleChange: (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => void
   handleOrderedProducts: (value: CartItem[]) => void
 }
 
@@ -37,8 +41,12 @@ export const BillingProvider = ({
     paymentMethod: "",
   })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = e.target
+  const handleChange = (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    const { name, value, type, checked } = e.target as HTMLInputElement
     console.log(e.target)
     const newValue = type === "checkbox" ? checked : value
     setBillingData({
@@ -48,11 +56,15 @@ export const BillingProvider = ({
   }
 
   const handleOrderedProducts = (value: CartItem[]) => {
-    const orderedProducts = value.map((item) => item.name)
+    const orderedProducts = value.map((item) => ({
+      name: item.name,
+      quantity: item.quantity,
+    }))
     setBillingData((prevData) => ({
       ...prevData,
-      orderedProducts: orderedProducts as string[],
+      orderedProducts: orderedProducts,
     }))
+    console.log(orderedProducts)
   }
 
   const placeOrder = async (

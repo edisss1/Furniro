@@ -10,6 +10,10 @@ export type BillingDetailsProps = {
   phone: string
   email: string
   additionalInfo: string
-  orderedProducts: string[]
+  orderedProducts: {
+    name: string | undefined
+    quantity: number | undefined
+  }[]
+
   paymentMethod: string
 }
