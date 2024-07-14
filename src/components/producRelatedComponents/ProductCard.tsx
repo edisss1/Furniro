@@ -28,9 +28,9 @@ const ProductCard = ({
 
   return (
     <div
-      className={`w-[100%] rounded-md ${
+      className={`rounded-md ${
         display === "grid"
-          ? ` flex flex-col  w-fit max-w-[300px] max-h-[500px] bg-[#eeeeee] hover:shadow-2xl  relative z-[10] after:rounded-md after:content['*'] after:bg-[#3A3A3A] after:bg-opacity-0 after:absolute after:inset-0 after:block after:z-[15] group hover:after:bg-opacity-80 after:transition-all after:ease-linear after:duration-200 `
+          ? ` flex flex-col  w-[calc(100%+2rem)]  bg-[#eeeeee] hover:shadow-2xl  relative z-[10] after:rounded-md after:content['*'] after:bg-[#3A3A3A] after:bg-opacity-0 after:absolute after:inset-0 after:block after:z-[15] group hover:after:bg-opacity-80 after:transition-all after:ease-linear after:duration-200 `
           : `flex justify-between items-center max-w-[70%] self-center bg-[#F9F1E7] mt-4 `
       }   `}>
       <img
@@ -43,10 +43,10 @@ const ProductCard = ({
         alt={title}
         loading='lazy'
       />
-      <div>
-        <div className='p-4'>
+      <div className='flex flex-col'>
+        <div className='p-4 max-md:p-2'>
           {display === "grid" ? (
-            <h4 className='text-base font-bold text-ellipsis w-[calc(100%)] '>
+            <h4 className='text-base font-bold w-[calc(100%)] overflow-hidden whitespace-nowrap inline-block text-ellipsis '>
               {title}
             </h4>
           ) : (
@@ -57,10 +57,12 @@ const ProductCard = ({
             </Link>
           )}
 
-          <p className='text-sm text-[#898989] opa'>{smallDescription}</p>
-          <p className='text-lg font-semibold'>USD {price}</p>
+          <p className='text-sm text-[#898989] inline-block text-ellipsis w-[calc(100%)] whitespace-nowrap overflow-hidden'>
+            {smallDescription}
+          </p>
+          <p className='text-lg font-semibold'>${price}</p>
         </div>
-        <div className='absolute inset-0 flex z-20  flex-col items-center pointer-events-none justify-center opacity-0 transition-all group-hover:pointer-events-auto  group-hover:opacity-100 ease-linear duration-200'>
+        <div className='max-md:hidden max-md:pointer-events-none  absolute inset-0 flex z-20  flex-col items-center pointer-events-none justify-center opacity-0 transition-all group-hover:pointer-events-auto  group-hover:opacity-100 ease-linear duration-200'>
           <div className='z-20 flex flex-col justify-center items-center gro '>
             <Link
               to={`/product/${id}`}
@@ -88,6 +90,9 @@ const ProductCard = ({
               </button>
             </div>
           </div>
+        </div>
+        <div className='md:hidden self-center z-50'>
+          <Link to={`/product/${id}`}>More</Link>
         </div>
       </div>
     </div>
