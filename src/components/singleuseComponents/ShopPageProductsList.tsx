@@ -52,17 +52,17 @@ const ShopPageProductsList = () => {
   }, [sortedProducts, currentPage, itemsPerPage])
 
   return (
-    <div>
+    <div className='flex flex-col items-center'>
       <ShopHeader
         onSortChange={setSortValue}
         itemsPerPage={itemsPerPage}
         setItemsPerPage={setItemsPerPage}
       />
       <div
-        className={`px-4 ${
+        className={`px-4 gap-6 ${
           display === "flex"
             ? `flex  flex-col`
-            : `grid grid-cols-4 max-w-[75%] justify-center mx-auto gap-4 mt-10 max-lg:grid-cols-3 `
+            : `grid grid-cols-4 max-w-[75%] justify-center  mt-10 max-lg:grid-cols-3 max-md:grid-cols-2 max-md:max-w-[85%]`
         }`}>
         {currentProducts.map((product) => (
           <ProductCard

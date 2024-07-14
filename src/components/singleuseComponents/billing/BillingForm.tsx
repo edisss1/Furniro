@@ -128,9 +128,6 @@ const BillingForm = () => {
               onChange={handleChange}
               placeholder='Additional Information'
             />
-            {/* <p className='absolute top-[50%] transform translate-y-[-50%] left-[5%] text-[#9F9F9F] group-focus:opacity-0 pointer-events-none'>
-              Additional Information
-            </p> */}
           </div>
         </div>
       </div>

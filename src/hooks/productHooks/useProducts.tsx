@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react"
-import { collection, onSnapshot, query, where } from "firebase/firestore"
-import { Product } from "../../types/ProductType"
-import { useLoading } from "../../context/LoadingContext"
-import { db } from "../../firebase/firebaseConfig"
+import { collection, query, where, onSnapshot } from "firebase/firestore"
+import { useFirebase } from "../../context/FirebaseContext"
+
+interface Product {
+  id: string
+  name: string
+  category: string
+}
 
 export function useProducts(category?: string): {
   products: Product[]
@@ -10,42 +14,41 @@ export function useProducts(category?: string): {
 } {
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
-  const { setLoading: setGlobalLoading } = useLoading()
+  const { db } = useFirebase() // получаем db из контекста
 
   useEffect(() => {
-    setGlobalLoading(true)
     const fetchData = async () => {
+      if (!db) {
+        console.error("Firestore db is not initialized")
+        setLoading(false)
+        return
+      }
+
+      setLoading(true)
       let q
+
+      console.log("Using db:", db) // добавлено логирование
+
       if (category) {
         q = query(collection(db, "products"), where("category", "==", category))
       } else {
         q = query(collection(db, "products"))
       }
 
-      const unsubscribe = onSnapshot(
-        q,
-        (querySnapshot) => {
-          const productsArray: Product[] = []
-          querySnapshot.forEach((doc) => {
-            const productData = doc.data() as Product
-            productsArray.push({ ...productData, id: doc.id })
-          })
-          setProducts(productsArray)
-          setLoading(false)
-          setGlobalLoading(false)
-        },
-        (error) => {
-          console.error("Error fetching products: ", error)
-          setLoading(false)
-          setGlobalLoading(false)
-        }
-      )
+      const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const productsData: Product[] = []
+        querySnapshot.forEach((doc) => {
+          productsData.push({ id: doc.id, ...doc.data() } as Product)
+        })
+        setProducts(productsData)
+        setLoading(false)
+      })
 
       return () => unsubscribe()
     }
 
     fetchData()
-  }, [category, setGlobalLoading])
+  }, [category, db])
 
   return { products, loading }
 }

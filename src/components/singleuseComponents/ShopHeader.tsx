@@ -36,16 +36,16 @@ const ShopHeader = ({
   }
 
   return (
-    <div className='flex flex-col'>
-      <div className='flex flex-col bg-shopHeaderImage bg-center bg-cover bg-no-repeat justify-center items-center py-[5%]'>
+    <div className='flex flex-col w-full'>
+      <div className='flex  flex-col bg-shopHeaderImage bg-center bg-cover bg-no-repeat justify-center items-center py-[5%]'>
         <h3 className='font-bold text-4xl'>Shop</h3>
         <p>
           Home <span className='font-bold'> {">"} </span> Shop
         </p>
       </div>
-      <div className='bg-[#F9F1E7] py-4 px-[5%]'>
-        <div className='flex justify-between'>
-          <div className='flex gap-6'>
+      <div className='bg-[#F9F1E7] py-4 px-[2%] '>
+        <div className='flex justify-between flex-wrap max-md:justify-center max-md:gap-4'>
+          <div className='flex gap-6 max-md:justify-between'>
             <button>
               <div className='flex gap-2'>
                 <img src={Filter} alt='' />
@@ -75,7 +75,9 @@ const ShopHeader = ({
                 </select>
               </div>
               <div className='flex justify-center items-center gap-4  '>
-                <p>Sort by</p>
+                <p className='inline-block whitespace-nowrap text-ellipsis overflow-hidden w-[calc(100%)]'>
+                  Sort by
+                </p>
                 <select onChange={handleSortChange} className='p-2 bg-white'>
                   {options.map((option) => (
                     <option key={option.sortBy} value={option.sortBy}>

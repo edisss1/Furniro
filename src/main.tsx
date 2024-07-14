@@ -5,7 +5,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import HomePage from "./pages/HomePage.tsx"
 import { LoadingProvider } from "./context/LoadingContext.tsx"
 import ShopPage from "./pages/ShopPage.tsx"
-import AboutPage from "./pages/AboutPage.tsx"
 import ContactPage from "./pages/ContactPage.tsx"
 import { ItemsDisplayProvider } from "./context/ItemsDisplayContext.tsx"
 import Loading from "./components/utilityComponents/Loading.tsx"
@@ -17,6 +16,8 @@ import CartPage from "./pages/CartPage.tsx"
 import CheckoutPage from "./pages/CheckoutPage.tsx"
 import ErrorBoundary from "./components/utilityComponents/ErrorBoundary.tsx"
 import { BillingProvider } from "./context/BillingContext.tsx"
+import ErrorPage from "./pages/ErrorPage.tsx"
+import { FirebaseProvider } from "./context/FirebaseContext.tsx"
 
 const router = createBrowserRouter([
   {
@@ -27,10 +28,7 @@ const router = createBrowserRouter([
     path: "/shop",
     element: <ShopPage />,
   },
-  {
-    path: "/about",
-    element: <AboutPage />,
-  },
+
   {
     path: "/contact",
     element: <ContactPage />,
@@ -55,20 +53,26 @@ const router = createBrowserRouter([
       </BillingProvider>
     ),
   },
+  {
+    path: "*",
+    element: <ErrorPage />,
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <ErrorBoundary>
-      <Suspense fallback={<Loading />}>
-        <CartProvider>
-          <ItemsDisplayProvider>
-            <LoadingProvider>
-              <RouterProvider router={router} />
-            </LoadingProvider>
-          </ItemsDisplayProvider>
-        </CartProvider>
-      </Suspense>
-    </ErrorBoundary>
-  </React.StrictMode>
+  <Suspense fallback={<Loading />}>
+    <React.StrictMode>
+      <FirebaseProvider>
+        <ErrorBoundary>
+          <CartProvider>
+            <ItemsDisplayProvider>
+              <LoadingProvider>
+                <RouterProvider router={router} />
+              </LoadingProvider>
+            </ItemsDisplayProvider>
+          </CartProvider>
+        </ErrorBoundary>
+      </FirebaseProvider>
+    </React.StrictMode>
+  </Suspense>
 )

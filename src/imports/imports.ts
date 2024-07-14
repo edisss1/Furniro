@@ -14,10 +14,7 @@ export const paths = [
     path: "/shop",
     text: "Shop",
   },
-  {
-    path: "/about",
-    text: "About",
-  },
+
   {
     path: "/contact",
     text: "Contact",
