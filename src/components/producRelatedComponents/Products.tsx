@@ -3,7 +3,7 @@ import { Product } from "../../types/ProductType"
 import ProductCard from "./ProductCard"
 import { useProducts } from "../../hooks/productHooks/useProducts"
 
-interface ProductWithId extends Product {
+export interface ProductWithId extends Product {
   docId: string
 }
 

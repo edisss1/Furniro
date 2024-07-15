@@ -66,7 +66,7 @@ const ShopPageProductsList = () => {
         }`}>
         {currentProducts.map((product) => (
           <ProductCard
-            id={product.id}
+            id={product.docId}
             key={product.id}
             imgURL={product.imageURL}
             smallDescription={product.smallDescription}

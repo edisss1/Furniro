@@ -1,22 +1,22 @@
-import React, { useState, useEffect, lazy } from "react"
-import { Product } from "../../types/ProductType"
+import { useEffect, useState } from "react"
 import { useProducts } from "../../hooks/productHooks/useProducts"
 
-const ProductCard = lazy(() => import("../producRelatedComponents/ProductCard"))
+import ProductCard from "../producRelatedComponents/ProductCard"
+import { ProductWithId } from "../producRelatedComponents/Products"
 
 interface RelatedProductsType {
-  currentProduct: Product | null
+  currentProduct: ProductWithId | null
 }
 
 const RelatedProducts = ({ currentProduct }: RelatedProductsType) => {
   const { products, loading } = useProducts(currentProduct?.category)
-  const [relatedProducts, setRelatedProducts] = useState<Product[]>([])
+  const [relatedProducts, setRelatedProducts] = useState<ProductWithId[]>([])
   const limit = 4
 
   useEffect(() => {
     if (!loading && products.length > 0 && currentProduct) {
       const shuffledProducts = products
-        .filter((product) => product.id !== currentProduct.id)
+        .filter((product) => product.docId !== currentProduct.docId)
         .sort(() => 0.5 - Math.random())
         .slice(0, limit)
       setRelatedProducts(shuffledProducts)
@@ -29,12 +29,12 @@ const RelatedProducts = ({ currentProduct }: RelatedProductsType) => {
       <div className='flex gap-8 w-full justify-center mt-6'>
         {relatedProducts.map((product) => (
           <ProductCard
-            key={product.id}
+            key={product.docId}
+            id={product.docId}
             title={product.name}
-            price={product.price}
-            id={product.id}
             smallDescription={product.smallDescription}
             imgURL={product.imageURL}
+            price={product.price}
           />
         ))}
       </div>
@@ -42,4 +42,4 @@ const RelatedProducts = ({ currentProduct }: RelatedProductsType) => {
   )
 }
 
-export default React.memo(RelatedProducts)
+export default RelatedProducts
