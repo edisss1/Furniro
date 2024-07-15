@@ -17,7 +17,6 @@ import CheckoutPage from "./pages/CheckoutPage.tsx"
 import ErrorBoundary from "./components/utilityComponents/ErrorBoundary.tsx"
 import { BillingProvider } from "./context/BillingContext.tsx"
 import ErrorPage from "./pages/ErrorPage.tsx"
-import { FirebaseProvider } from "./context/FirebaseContext.tsx"
 
 const router = createBrowserRouter([
   {
@@ -62,17 +61,15 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <Suspense fallback={<Loading />}>
     <React.StrictMode>
-      <FirebaseProvider>
-        <ErrorBoundary>
-          <CartProvider>
-            <ItemsDisplayProvider>
-              <LoadingProvider>
-                <RouterProvider router={router} />
-              </LoadingProvider>
-            </ItemsDisplayProvider>
-          </CartProvider>
-        </ErrorBoundary>
-      </FirebaseProvider>
+      <ErrorBoundary>
+        <CartProvider>
+          <ItemsDisplayProvider>
+            <LoadingProvider>
+              <RouterProvider router={router} />
+            </LoadingProvider>
+          </ItemsDisplayProvider>
+        </CartProvider>
+      </ErrorBoundary>
     </React.StrictMode>
   </Suspense>
 )

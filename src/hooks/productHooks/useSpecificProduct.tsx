@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
-
-import { doc, getDoc } from "firebase/firestore"
 import { Product } from "../../types/ProductType"
+import { doc, getDoc } from "firebase/firestore"
 import { db } from "../../firebase/firebaseConfig"
 
 export function useSpecificProduct(id: string) {
@@ -11,6 +10,7 @@ export function useSpecificProduct(id: string) {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
+        // doc(db, "products", id)
         const docRef = doc(db, "products", id)
         const docSnap = await getDoc(docRef)
 

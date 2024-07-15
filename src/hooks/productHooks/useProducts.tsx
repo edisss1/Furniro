@@ -1,54 +1,32 @@
+// useProducts.ts
 import { useEffect, useState } from "react"
-import { collection, query, where, onSnapshot } from "firebase/firestore"
-import { useFirebase } from "../../context/FirebaseContext"
+import { collection, getDocs } from "firebase/firestore"
+import { db } from "../../firebase/firebaseConfig"
+import { Product } from "../../types/ProductType"
 
-interface Product {
-  id: string
-  name: string
-  category: string
+interface ProductWithId extends Product {
+  docId: string
 }
 
-export function useProducts(category?: string): {
-  products: Product[]
-  loading: boolean
-} {
-  const [products, setProducts] = useState<Product[]>([])
-  const [loading, setLoading] = useState(true)
-  const { db } = useFirebase() // получаем db из контекста
+export function useProducts() {
+  const [products, setProducts] = useState<ProductWithId[]>([])
 
   useEffect(() => {
-    const fetchData = async () => {
-      if (!db) {
-        console.error("Firestore db is not initialized")
-        setLoading(false)
-        return
-      }
-
-      setLoading(true)
-      let q
-
-      console.log("Using db:", db) // добавлено логирование
-
-      if (category) {
-        q = query(collection(db, "products"), where("category", "==", category))
-      } else {
-        q = query(collection(db, "products"))
-      }
-
-      const unsubscribe = onSnapshot(q, (querySnapshot) => {
-        const productsData: Product[] = []
-        querySnapshot.forEach((doc) => {
-          productsData.push({ id: doc.id, ...doc.data() } as Product)
-        })
+    const fetchProducts = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "products"))
+        const productsData = querySnapshot.docs.map((doc) => ({
+          ...doc.data(),
+          docId: doc.id,
+        })) as ProductWithId[]
         setProducts(productsData)
-        setLoading(false)
-      })
-
-      return () => unsubscribe()
+      } catch (error) {
+        console.error("Error fetching products:", error)
+      }
     }
 
-    fetchData()
-  }, [category, db])
+    fetchProducts()
+  }, [])
 
-  return { products, loading }
+  return { products }
 }

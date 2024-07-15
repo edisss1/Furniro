@@ -28,9 +28,9 @@ const ProductCard = ({
 
   return (
     <div
-      className={`rounded-md ${
+      className={`rounded-md max-w-[300px] ${
         display === "grid"
-          ? ` flex flex-col  w-[calc(100%+2rem)]  bg-[#eeeeee] hover:shadow-2xl  relative z-[10] after:rounded-md after:content['*'] after:bg-[#3A3A3A] after:bg-opacity-0 after:absolute after:inset-0 after:block after:z-[15] group hover:after:bg-opacity-80 after:transition-all after:ease-linear after:duration-200 `
+          ? ` flex flex-col   bg-[#eeeeee] hover:shadow-2xl max-md:hover:shadow-none  relative z-[10] max-md:after:hidden after:rounded-md after:content['*'] after:bg-[#3A3A3A] after:bg-opacity-0 after:absolute after:inset-0 after:block after:z-[15] group hover:after:bg-opacity-80 after:transition-all after:ease-linear after:duration-200 `
           : `flex justify-between items-center max-w-[70%] self-center bg-[#F9F1E7] mt-4 `
       }   `}>
       <img
@@ -91,7 +91,7 @@ const ProductCard = ({
             </div>
           </div>
         </div>
-        <div className='md:hidden self-center z-50'>
+        <div className='md:hidden self-center border-2 border-black mb-4 px-4 rounded-lg z-50'>
           <Link to={`/product/${id}`}>More</Link>
         </div>
       </div>

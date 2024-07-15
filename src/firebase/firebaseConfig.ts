@@ -1,21 +1,15 @@
-import { initializeApp, FirebaseOptions, FirebaseApp } from "firebase/app"
-import { getAnalytics, Analytics } from "firebase/analytics"
-import { getFirestore, Firestore } from "firebase/firestore"
-import { getStorage, FirebaseStorage } from "firebase/storage"
+import { initializeApp, FirebaseOptions } from "firebase/app"
+
+import { getFirestore } from "firebase/firestore"
+import { getStorage } from "firebase/storage"
 import { fetchFirebaseConfig } from "./config"
 
-let app: FirebaseApp
-let analytics: Analytics
-let db: Firestore
-let storage: FirebaseStorage
+const firebaseOptions = (await fetchFirebaseConfig()) as FirebaseOptions
 
-export async function initFirebase() {
-  const firebaseConfig: FirebaseOptions = await fetchFirebaseConfig()
-  app = initializeApp(firebaseConfig)
-  analytics = getAnalytics(app)
-  db = getFirestore(app)
-  storage = getStorage(app)
-  console.log("Firebase initialized:", { app, analytics, db, storage })
+const firebaseConfig = {
+  ...firebaseOptions,
 }
 
-export { app, analytics, db, storage }
+const app = initializeApp(firebaseConfig)
+export const db = getFirestore(app)
+export const storage = getStorage()

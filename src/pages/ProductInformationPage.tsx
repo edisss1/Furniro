@@ -23,6 +23,13 @@ const ProductInformationPage = () => {
   const { setDisplay } = useDisplay()
 
   useEffect(() => {
+    console.log(
+      "ProductInformation page component mounted with:",
+      specificProduct?.id
+    )
+  }, [specificProduct?.id])
+
+  useEffect(() => {
     window.scrollTo(0, 0)
   }, [location])
 
@@ -30,8 +37,9 @@ const ProductInformationPage = () => {
     setDisplay("grid")
   }, [])
 
-  loading && <Loading />
-  !specificProduct && <h1 className='absolute inset-0 '>Item not found</h1>
+  if (loading) return <Loading />
+  if (!specificProduct)
+    return <h1 className='absolute inset-0'>Item not found</h1>
 
   return (
     <>
