@@ -1,8 +1,8 @@
 import { createContext, ReactNode } from "react"
-import { Product } from "../types/ProductType"
 
 import { useParams } from "react-router-dom"
 import { useSpecificProduct } from "../hooks/productHooks/useSpecificProduct"
+import { ProductWithId } from "../components/producRelatedComponents/Products"
 
 const specificProductContextDefaultState = {
   specificProduct: null,
@@ -10,7 +10,7 @@ const specificProductContextDefaultState = {
 }
 
 interface SpecificProductContextType {
-  specificProduct: Product | null
+  specificProduct: ProductWithId | null
   loading: boolean
 }
 

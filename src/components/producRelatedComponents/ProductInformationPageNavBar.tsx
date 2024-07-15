@@ -13,7 +13,9 @@ const ProductInformationPageNavBar = ({
         <p>Shop</p>
         <span> {">"} </span>
       </div>
-      <p className='text-black'>{currentProduct}</p>
+      <p className='text-black inline-block whitespace-nowrap text-ellipsis w-[calc(100%)] overflow-hidden'>
+        {currentProduct}
+      </p>
     </div>
   )
 }

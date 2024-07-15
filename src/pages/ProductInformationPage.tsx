@@ -23,13 +23,6 @@ const ProductInformationPage = () => {
   const { setDisplay } = useDisplay()
 
   useEffect(() => {
-    console.log(
-      "ProductInformation page component mounted with:",
-      specificProduct?.id
-    )
-  }, [specificProduct?.id])
-
-  useEffect(() => {
     window.scrollTo(0, 0)
   }, [location])
 

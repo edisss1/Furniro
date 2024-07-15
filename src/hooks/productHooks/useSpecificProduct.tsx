@@ -1,21 +1,25 @@
 import { useEffect, useState } from "react"
-import { Product } from "../../types/ProductType"
 import { doc, getDoc } from "firebase/firestore"
 import { db } from "../../firebase/firebaseConfig"
+import { ProductWithId } from "../../components/producRelatedComponents/Products"
 
 export function useSpecificProduct(id: string) {
-  const [specificProduct, setSpecificProduct] = useState<Product | null>(null)
+  const [specificProduct, setSpecificProduct] = useState<ProductWithId | null>(
+    null
+  )
   const [loading, setLoading] = useState<boolean>(true)
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        // doc(db, "products", id)
         const docRef = doc(db, "products", id)
         const docSnap = await getDoc(docRef)
 
         if (docSnap.exists()) {
-          setSpecificProduct({ ...docSnap.data(), id: docSnap.id } as Product)
+          setSpecificProduct({
+            ...docSnap.data(),
+            id: docSnap.id,
+          } as ProductWithId)
         }
       } catch (error) {
         console.error("Error fetching products: ", error)

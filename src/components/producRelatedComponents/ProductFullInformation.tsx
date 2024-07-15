@@ -14,7 +14,7 @@ const ProductFullInformation = () => {
 
   return (
     <div className='flex flex-col justify-center w-full mt-[5%]'>
-      <div className='flex justify-center gap-[5%] font-medium text-2xl '>
+      <div className='flex justify-center gap-[5%] font-medium text-2xl flex-wrap max-md:gap-6'>
         <button
           className={buttonClass("description")}
           onClick={() => setSection("description")}>
@@ -31,7 +31,7 @@ const ProductFullInformation = () => {
           Reviews
         </button>
       </div>
-      <div className='mt-4 overflow-hidden'>
+      <div className='mt-4 overflow-hidden mx-auto'>
         {section === "description" && <ProductDescription />}
         {section === "additionalInfo" && <ProductAdditionalInformation />}
         {section === "reviews" && <ProductsReviews />}

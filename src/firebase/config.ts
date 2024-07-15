@@ -57,8 +57,6 @@ export async function fetchFirebaseConfig(): Promise<FirebaseOptions> {
     decryptedConfig[key] = await decrypt(encryptedConfig[key])
   }
 
-  console.log(decryptedConfig)
-
   return {
     apiKey: decryptedConfig.VITE_FIRESTORE_API_KEY,
     authDomain: decryptedConfig.VITE_FIRESTORE_AUTH_DOMAIN,

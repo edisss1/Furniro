@@ -27,7 +27,6 @@ const ShopPageProductsList = () => {
   }
 
   const sortedProducts = useMemo(() => {
-    console.log("sorting...")
     switch (sortValue) {
       case "cheap-first":
         return quickSort(products, (a, b) => a.price - b.price)
@@ -62,7 +61,7 @@ const ShopPageProductsList = () => {
         className={`px-4 gap-6 ${
           display === "flex"
             ? `flex  flex-col`
-            : `grid grid-cols-4 max-w-[75%] justify-center  mt-10 max-lg:grid-cols-3 max-md:grid-cols-2 max-md:max-w-[85%]`
+            : `grid grid-cols-4 max-w-[75%] max-md:max-w-[90%] justify-center mt-10 max-lg:grid-cols-3 max-md:grid-cols-2 `
         }`}>
         {currentProducts.map((product) => (
           <ProductCard
