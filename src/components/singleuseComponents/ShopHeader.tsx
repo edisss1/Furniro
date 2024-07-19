@@ -3,6 +3,7 @@ import { itemsToShowValues, options } from "../../imports/imports"
 import Filter from "../../assets/ShopPageAssets/Filter.svg"
 import ShowGrid from "../../assets/ShopPageAssets/ShowGrid.svg"
 import ShowList from "../../assets/ShopPageAssets/ShowList.svg"
+import Header from "../utilityComponents/Header"
 
 type ShopHeaderProps = {
   itemsPerPage: number
@@ -37,14 +38,9 @@ const ShopHeader = ({
 
   return (
     <div className='flex flex-col w-full'>
-      <div className='flex  flex-col bg-shopHeaderImage bg-center bg-cover bg-no-repeat justify-center items-center py-[5%]'>
-        <h3 className='font-bold text-4xl'>Shop</h3>
-        <p>
-          Home <span className='font-bold'> {">"} </span> Shop
-        </p>
-      </div>
+      <Header pageTitle='Shop' />
       <div className='bg-[#F9F1E7] py-4 px-[2%] '>
-        <div className='flex justify-between flex-wrap max-md:justify-center max-md:gap-4'>
+        <div className='flex justify-between flex-wrap max-md:justify-center max-md:gap-3'>
           <div className='flex gap-6 max-md:justify-between'>
             <button>
               <div className='flex gap-2'>

@@ -5,8 +5,8 @@ import bedroom from "../../assets/image 106.png"
 const Range = () => {
   return (
     <main className='w-full  flex flex-col items-center justify-center mt-[4rem] text-center'>
-      <div>
-        <h3 className='font-bold text-2xl'>Browse The Range</h3>
+      <div className='w-full px-2 flex flex-col justify-center items-center'>
+        <h3 className='font-bold text-2xl text-pretty'>Browse The Range</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       </div>
       <div className='capitalize grid grid-cols-3 gap-[1.25rem] mt-[2rem] font-medium px-2'>

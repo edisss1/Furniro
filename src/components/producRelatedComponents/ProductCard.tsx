@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react"
 import share from "../../assets/Share.svg"
 import compare from "../../assets/Compare.svg"
 import like from "../../assets/Like.svg"
@@ -5,7 +6,6 @@ import like from "../../assets/Like.svg"
 import { Link } from "react-router-dom"
 import { useDisplay } from "../../context/ItemsDisplayContext"
 
-import { lazy } from "react"
 const ProductCardHover = lazy(() => import("../ui/ProductCardHover"))
 
 interface ProductCardProps {
@@ -27,10 +27,10 @@ const ProductCard = ({
 
   return (
     <div
-      className={`rounded-md max-w-[300px] ${
+      className={`rounded-md  ${
         display === "grid"
-          ? ` flex flex-col bg-[#eeeeee] hover:shadow-2xl max-md:hover:shadow-none  relative z-[10] max-md:after:hidden after:rounded-md after:content['*'] after:bg-[#3A3A3A] after:bg-opacity-0 after:absolute after:inset-0 after:block after:z-[15] group hover:after:bg-opacity-80 after:transition-all after:ease-linear after:duration-200 `
-          : `flex justify-between items-center max-w-[70%] self-center bg-[#F9F1E7] mt-4 `
+          ? ` flex flex-col w-[300px]  max-xl:w-[200px] max-md:w-[160px] bg-[#eeeeee] hover:shadow-2xl max-md:hover:shadow-none  relative z-[10] max-md:after:hidden after:rounded-md after:content['*'] after:bg-[#3A3A3A] after:bg-opacity-0 after:absolute after:inset-0 after:block after:z-[15] group hover:after:bg-opacity-80 after:transition-all after:ease-linear after:duration-200 `
+          : `flex justify-between items-center w-[80%] self-center bg-[#F9F1E7] mt-4 `
       }   `}>
       <img
         className={`rounded-md ${
@@ -42,7 +42,7 @@ const ProductCard = ({
         alt={title}
         loading='lazy'
       />
-      <div className='flex flex-col'>
+      <div className={`${display === "flex" ? "w-full" : ""} flex flex-col`}>
         <div className='p-4 max-md:p-2'>
           {display === "grid" ? (
             <h4 className='text-[clamp(14px,3vw,16px)] font-semibold w-[calc(100%)] overflow-hidden whitespace-nowrap inline-block text-ellipsis '>
@@ -50,7 +50,7 @@ const ProductCard = ({
             </h4>
           ) : (
             <Link
-              className='text-base font-bold break-words underline'
+              className='text-[clamp(14px,3vw,16px)] font-bold inline-block whitespace-nowrap text-ellipsis w-[calc(100%)] overflow-hidden underline'
               to={`/product/${id}`}>
               {title}
             </Link>
@@ -61,12 +61,21 @@ const ProductCard = ({
           </p>
           <p className='text-lg font-semibold'>${price}</p>
         </div>
-        <ProductCardHover id={id} share={share} compare={compare} like={like} />
-        <div className='md:hidden self-center border-2 border-black mb-4 px-4 rounded-lg z-50'>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ProductCardHover
+            id={id}
+            share={share}
+            compare={compare}
+            like={like}
+          />
+        </Suspense>
+        <div
+          className={`md:hidden ${display === "flex" ? "hidden" : ""}  self-center border-2 border-black mb-4 px-4 rounded-lg z-50'`}>
           <Link to={`/product/${id}`}>More</Link>
         </div>
       </div>
     </div>
   )
 }
+
 export default ProductCard

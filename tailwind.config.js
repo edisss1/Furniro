@@ -15,28 +15,6 @@ export default {
         shopHeaderImage:
           "url('https://firebasestorage.googleapis.com/v0/b/furniro-69e84.appspot.com/o/shopHeaderImage.png?alt=media&token=761cb37e-3786-44ba-b483-5802f2540912')",
       },
-      keyframes: {
-        appear: {
-          "0%": { display: "none", opacity: 0, transform: "translateX(100%)" },
-          "100%": {
-            display: "block",
-            opacity: 1,
-            transform: "translateX(0)",
-          },
-        },
-        vanish: {
-          "0%": { display: "block", opacity: 1, transform: "translateX(0)" },
-          "100%": {
-            display: "none",
-            opacity: 0,
-            transform: "translateX(100%)",
-          },
-        },
-      },
-      animation: {
-        appear: "appear 0.3s linear",
-        vanish: "vanish 0.3s linear",
-      },
     },
   },
   variants: {

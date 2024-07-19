@@ -17,15 +17,24 @@ import CheckoutPage from "./pages/CheckoutPage.tsx"
 import ErrorBoundary from "./components/utilityComponents/ErrorBoundary.tsx"
 import { BillingProvider } from "./context/BillingContext.tsx"
 import ErrorPage from "./pages/ErrorPage.tsx"
+import { ProductProvider } from "./context/ProductsContext.tsx"
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: (
+      <ProductProvider>
+        <HomePage />
+      </ProductProvider>
+    ),
   },
   {
     path: "/shop",
-    element: <ShopPage />,
+    element: (
+      <ProductProvider>
+        <ShopPage />
+      </ProductProvider>
+    ),
   },
 
   {

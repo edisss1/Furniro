@@ -5,7 +5,7 @@ const Footer = () => {
   const date = new Date()
 
   return (
-    <footer className='ps-24 max-lg:ps-2 max-sm:ps-0  flex flex-col mt-[5%] gap-10 max-lg:grid'>
+    <footer className='ps-24 max-lg:ps-2 max-sm:ps-0  flex flex-col mt-[5%] gap-10 max-lg:grid pb-[10%]'>
       <div className='flex gap-20 lg:gap-16 md:gap-8: sm:gap-4 max-lg:flex-col max-lg:items-center'>
         <div className='col-span-2 flex flex-col gap-10 max-lg:col-span-3 max-lg:row-start-1'>
           <h3 className='font-bold text-2xl max-sm:text-center '>Furniro.</h3>
@@ -15,7 +15,7 @@ const Footer = () => {
             <span>FL 33134 USA</span>
           </div>
         </div>
-        <div className='col-start-3 grid grid-cols-3 col-span-4 max-lg:gap-6 max-sm:px-1 max-sm:justify-center'>
+        <div className='col-start-3 grid grid-cols-3 col-span-4 max-lg:gap-6 max-sm:px-4 max-sm:justify-center  '>
           <div className='flex flex-col gap-10 max-lg:col-start-2 max-sm:col-start-1 '>
             <p className='text-[#9F9F9F]'>Links</p>
             {paths?.map((path) => (

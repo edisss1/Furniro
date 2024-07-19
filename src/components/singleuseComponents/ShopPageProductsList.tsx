@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useMemo, useState, useEffect } from "react"
 import { useDisplay } from "../../context/ItemsDisplayContext"
 
 import Pagination from "../utilityComponents/Pagination"
@@ -6,25 +6,46 @@ import Pagination from "../utilityComponents/Pagination"
 import ShopHeader from "./ShopHeader"
 
 import ProductCard from "../producRelatedComponents/ProductCard"
+import ProductCardSkeleton from "../producRelatedComponents/ProductCardSkeleton"
 import { quickSort } from "../../functions/quickSort"
 import { useProducts } from "../../hooks/productHooks/useProducts"
+import { useLoading } from "../../context/LoadingContext" // Импортируем хук
+import { ProductWithId } from "../producRelatedComponents/Products"
 
-const ShopPageProductsList = () => {
+interface ShopPageProductsListProps {
+  products: ProductWithId[]
+}
+
+const ShopPageProductsList = ({ products }: ShopPageProductsListProps) => {
   const [sortValue, setSortValue] = useState("default")
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [itemsPerPage, setItemsPerPage] = useState<number>(8)
   const { display } = useDisplay()
-  const { products } = useProducts()
+
+  const { loading, setLoading } = useLoading()
+
+  useEffect(() => {
+    setLoading(true)
+    if (products.length > 0) {
+      setLoading(false)
+    }
+  }, [products, setLoading])
 
   const handlePagination = (pageNumber: number): void => {
     setCurrentPage(pageNumber)
-    console.log("Changed page")
   }
 
   const handleNextPage = (currentPage: number) => {
     setCurrentPage(currentPage + 1)
-    console.log("Changed")
   }
+
+  useEffect(() => {
+    setLoading(true)
+    const timeoutId = setTimeout(() => {
+      setLoading(false)
+    }, 500)
+    return () => clearTimeout(timeoutId)
+  }, [sortValue, setLoading])
 
   const sortedProducts = useMemo(() => {
     switch (sortValue) {
@@ -51,7 +72,7 @@ const ShopPageProductsList = () => {
   }, [sortedProducts, currentPage, itemsPerPage])
 
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-col items-center w-full'>
       <ShopHeader
         onSortChange={setSortValue}
         itemsPerPage={itemsPerPage}
@@ -60,19 +81,23 @@ const ShopPageProductsList = () => {
       <div
         className={`px-4 gap-6 ${
           display === "flex"
-            ? `flex  flex-col`
+            ? `flex  flex-col w-full `
             : `grid grid-cols-4 max-w-[75%] max-md:max-w-[90%] justify-center mt-10 max-lg:grid-cols-3 max-md:grid-cols-2 `
         }`}>
-        {currentProducts.map((product) => (
-          <ProductCard
-            id={product.docId}
-            key={product.id}
-            imgURL={product.imageURL}
-            smallDescription={product.smallDescription}
-            price={product.price}
-            title={product.name}
-          />
-        ))}
+        {loading
+          ? Array.from({ length: itemsPerPage }).map((_, index) => (
+              <ProductCardSkeleton key={index} />
+            ))
+          : currentProducts.map((product) => (
+              <ProductCard
+                id={product.docId}
+                key={product.id}
+                imgURL={product.imageURL}
+                smallDescription={product.smallDescription}
+                price={product.price}
+                title={product.name}
+              />
+            ))}
       </div>
       <div>
         <Pagination
@@ -87,4 +112,5 @@ const ShopPageProductsList = () => {
     </div>
   )
 }
+
 export default ShopPageProductsList

@@ -1,9 +1,8 @@
-import CartHeader from "../components/singleuseComponents/cart/CartHeader"
-
 import Footer from "../components/utilityComponents/generalComponents/Footer"
 import Guarantees from "../components/utilityComponents/Guarantees"
 import CartDisplay from "../components/singleuseComponents/cart/CartDisplay"
 import { lazy } from "react"
+import Header from "../components/utilityComponents/Header"
 const NavBar = lazy(
   () => import("../components/utilityComponents/generalComponents/NavBar")
 )
@@ -16,7 +15,7 @@ const CartPage = () => {
     <>
       <NavBar />
       <MobileNav />
-      <CartHeader />
+      <Header pageTitle='Cart' logoTurned={true} />
       <CartDisplay />
       <Guarantees />
       <Footer />

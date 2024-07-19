@@ -2,20 +2,29 @@ import { useEffect, useState } from "react"
 import { Product } from "../../types/ProductType"
 import ProductCard from "./ProductCard"
 import { useProducts } from "../../hooks/productHooks/useProducts"
+import ProductCardSkeleton from "./ProductCardSkeleton"
+import { useLoading } from "../../context/LoadingContext" // Импортируем хук
 
 export interface ProductWithId extends Product {
   docId: string
 }
 
-const Products = () => {
-  const { products } = useProducts()
+interface ProductsProps {
+  products: ProductWithId[]
+}
+
+const Products = ({ products }: ProductsProps) => {
   const [visibleProducts, setVisibleProducts] = useState<ProductWithId[]>([])
   const [itemsToShow, setItemsToShow] = useState(8)
+  const { loading, setLoading } = useLoading()
 
   useEffect(() => {
-    const visibleProducts = products.slice(0, 8)
-    setVisibleProducts(visibleProducts)
-  }, [products])
+    setLoading(true)
+    if (products.length > 0) {
+      setVisibleProducts(products.slice(0, itemsToShow))
+      setLoading(false)
+    }
+  }, [products, itemsToShow, setLoading])
 
   const loadMoreProducts = () => {
     const newItemsToShow = itemsToShow + 8
@@ -27,20 +36,20 @@ const Products = () => {
     <div className='flex flex-col justify-center items-center m-8'>
       <h1 className='font-semibold text-3xl'>Our Products</h1>
       <div className='grid grid-cols-4 gap-4 mt-8 max-sm:grid-cols-2 max-lg:grid-cols-3'>
-        {visibleProducts.length > 0 ? (
-          visibleProducts.map((product) => (
-            <ProductCard
-              id={product.docId}
-              key={product.docId}
-              title={product.name}
-              smallDescription={product.smallDescription}
-              imgURL={product.imageURL}
-              price={product.price}
-            />
-          ))
-        ) : (
-          <h1>Error!</h1>
-        )}
+        {loading
+          ? Array.from({ length: itemsToShow }).map((_, index) => (
+              <ProductCardSkeleton key={index} />
+            ))
+          : visibleProducts.map((product) => (
+              <ProductCard
+                id={product.docId}
+                key={product.docId}
+                title={product.name}
+                smallDescription={product.smallDescription}
+                imgURL={product.imageURL}
+                price={product.price}
+              />
+            ))}
       </div>
       {visibleProducts.length < products.length &&
         visibleProducts.length < 48 && (
