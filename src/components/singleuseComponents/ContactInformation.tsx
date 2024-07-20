@@ -1,8 +1,18 @@
 import Map from "../../assets/Map.svg"
 import Clock from "../../assets/Clock.svg"
 import Phone from "../../assets/Phone.svg"
+import { useContext } from "react"
+import { FeedbackContext } from "../../context/FeedbackContext"
+import FeedbackSent from "./FeedbackSent"
 
 const ContactInformation = () => {
+  const context = useContext(FeedbackContext)
+  if (!context) {
+    return null
+  }
+
+  const { sent, sendFeedback, handleChange, feedback } = context
+
   const inputStyles = "border-2 h-[75px] w-[calc(115%-20px)] rounded-md ps-4"
   return (
     <div className='mt-[10%] flex max-md:flex-col max-md:items-center justify-evenly items-start '>
@@ -41,23 +51,35 @@ const ContactInformation = () => {
           </div>
         </div>
       </div>
-      <form className='flex flex-col gap-6 '>
+      <form
+        onSubmit={(e: React.ChangeEvent<HTMLFormElement>) =>
+          sendFeedback(feedback, e)
+        }
+        className='flex flex-col gap-6 '>
         <div className='flex flex-col'>
           <label htmlFor='name'>Your name</label>
           <input
+            required
             className={inputStyles}
             id='name'
+            name='name'
             type='text'
             placeholder='Abc'
+            onChange={handleChange}
+            value={feedback.name}
           />
         </div>
         <div className='flex flex-col'>
           <label htmlFor='email'>Email address</label>
           <input
+            required
             className={inputStyles}
             id='email'
+            name='email'
             type='email'
             placeholder='Abc@def.com'
+            value={feedback.email}
+            onChange={handleChange}
           />
         </div>
         <div className='flex flex-col'>
@@ -65,17 +87,23 @@ const ContactInformation = () => {
           <input
             className={inputStyles}
             id='subject'
+            name='subject'
             type='text'
             placeholder='This is optional'
+            value={feedback.subject}
+            onChange={handleChange}
           />
         </div>
         <div className='flex flex-col w-[calc(120%-20px)]  '>
           <label htmlFor='message'>Message</label>
           <textarea
             className='h-[calc(30vh-100px)] border-2 w-[calc(100%-20px)]  rounded-md resize-none p-4'
-            name=''
+            name='message'
             id='message'
             placeholder="Hi! I'd like to ask about"
+            value={feedback.message}
+            onChange={handleChange}
+            required
           />
         </div>
         <div className='flex w-[calc(100%-20px)]'>
@@ -83,6 +111,7 @@ const ContactInformation = () => {
             Submit
           </button>
         </div>
+        {sent ? <FeedbackSent /> : null}
       </form>
     </div>
   )

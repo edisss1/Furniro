@@ -23,10 +23,12 @@ const RelatedProducts = ({ currentProduct }: RelatedProductsType) => {
     }
   }, [products, currentProduct, loading])
 
+  // flex gap-8 w-full flex-wrap justify-center mt-6
+
   return (
     <div className='flex flex-col items-center mt-[10%]'>
       <h1 className='font-medium text-2xl'>Related Products</h1>
-      <div className='flex gap-8 w-full flex-wrap justify-center mt-6'>
+      <div className='grid grid-cols-4 gap-8 max-lg:grid-cols-2 mt-6'>
         {relatedProducts.map((product) => (
           <ProductCard
             key={product.docId}

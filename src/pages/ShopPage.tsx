@@ -1,4 +1,4 @@
-import { lazy, useContext } from "react"
+import { lazy, useContext, useEffect } from "react"
 const ShopPageProductsList = lazy(
   () => import("../components/singleuseComponents/ShopPageProductsList")
 )
@@ -14,6 +14,9 @@ import Loading from "../components/utilityComponents/Loading"
 import { ProductContext } from "../context/ProductsContext"
 
 const ShopPage = () => {
+  useEffect(() => {
+    document.title = "Shop"
+  }, [])
   const context = useContext(ProductContext)
   if (!context) return <Loading />
   const { products } = context

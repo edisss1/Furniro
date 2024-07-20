@@ -47,7 +47,6 @@ export const BillingProvider = ({
       | React.ChangeEvent<HTMLTextAreaElement>
   ) => {
     const { name, value, type, checked } = e.target as HTMLInputElement
-    console.log(e.target)
     const newValue = type === "checkbox" ? checked : value
     setBillingData({
       ...billingData,

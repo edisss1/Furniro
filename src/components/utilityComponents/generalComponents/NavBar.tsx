@@ -50,12 +50,12 @@ const NavBar = () => {
           <button className='w-8'>
             <img src={profileUndefined} alt='profile is not defined' />
           </button>
-          <button className='w-8'>
+          <Link to={"/search"} className='w-8'>
             <img src={searchIcon} alt='search' />
-          </button>
-          <button className='w-8'>
+          </Link>
+          <Link to={"/wishlist"} className='w-8'>
             <img src={favoriteItems} alt='favorite items' />
-          </button>
+          </Link>
           <button
             onClick={() => {
               setDialogContent(<CartContent toggleDialog={toggleDialog} />)

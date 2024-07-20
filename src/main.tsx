@@ -8,7 +8,6 @@ import ShopPage from "./pages/ShopPage.tsx"
 import ContactPage from "./pages/ContactPage.tsx"
 import { ItemsDisplayProvider } from "./context/ItemsDisplayContext.tsx"
 import Loading from "./components/utilityComponents/Loading.tsx"
-
 import ProductInformationPage from "./pages/ProductInformationPage.tsx"
 import { SpecificProductProvider } from "./context/SpecificProductContext.tsx"
 import { CartProvider } from "./context/CartContext.tsx"
@@ -18,6 +17,9 @@ import ErrorBoundary from "./components/utilityComponents/ErrorBoundary.tsx"
 import { BillingProvider } from "./context/BillingContext.tsx"
 import ErrorPage from "./pages/ErrorPage.tsx"
 import { ProductProvider } from "./context/ProductsContext.tsx"
+import { FeedbackProvider } from "./context/FeedbackContext.tsx"
+import Wishlist from "./pages/Wishlist.tsx"
+import Search from "./pages/Search.tsx"
 
 const router = createBrowserRouter([
   {
@@ -39,7 +41,11 @@ const router = createBrowserRouter([
 
   {
     path: "/contact",
-    element: <ContactPage />,
+    element: (
+      <FeedbackProvider>
+        <ContactPage />
+      </FeedbackProvider>
+    ),
   },
   {
     path: "/product/:productId",
@@ -60,6 +66,15 @@ const router = createBrowserRouter([
         <CheckoutPage />
       </BillingProvider>
     ),
+  },
+  {
+    path: "/wishlist",
+    element: <Wishlist />,
+  },
+
+  {
+    path: "/search",
+    element: <Search />,
   },
   {
     path: "*",

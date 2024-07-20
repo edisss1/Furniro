@@ -1,7 +1,7 @@
 import Footer from "../components/utilityComponents/generalComponents/Footer"
 import Guarantees from "../components/utilityComponents/Guarantees"
 import CartDisplay from "../components/singleuseComponents/cart/CartDisplay"
-import { lazy } from "react"
+import { lazy, useEffect } from "react"
 import Header from "../components/utilityComponents/Header"
 const NavBar = lazy(
   () => import("../components/utilityComponents/generalComponents/NavBar")
@@ -11,6 +11,9 @@ const MobileNav = lazy(
 )
 
 const CartPage = () => {
+  useEffect(() => {
+    document.title = "Cart"
+  }, [])
   return (
     <>
       <NavBar />

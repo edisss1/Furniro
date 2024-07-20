@@ -48,8 +48,8 @@ const ProductDisplay = ({
   if (loading) return <Loading />
 
   return (
-    <div className='flex mt-8 mx-auto  gap-[5%] flex-wrap max-md:items-center max-md:px-2 '>
-      <div className='w-[40%] max-md:w-full'>
+    <div className='flex mt-8 mx-[10%]  gap-[5%] flex-wrap  justify-start max-md:px-2 '>
+      <div className='w-[30%] max-md:w-full'>
         <img className='w-full rounded-md' src={img} alt={name} />
       </div>
       <div className='flex flex-col gap-4'>
@@ -65,7 +65,7 @@ const ProductDisplay = ({
         </div>
         <div>
           <div className='flex gap-4 justify-between w-full text-[clamp(12px,4vw,20px)]'>
-            <div className='border-2 flex items-center  justify-between rounded-md select-none'>
+            <div className='border-2  flex items-center w-[50%]  py-3 justify-around rounded-md select-none'>
               <button
                 onClick={() => dispatch({ type: "DECREASE", payload: 1 })}>
                 -
@@ -82,13 +82,8 @@ const ProductDisplay = ({
                   addToCart(product, state.count)
                 }
               }}
-              className=' border-2 text-[clamp(12px,4vw,20px)] border-black px-2  rounded-md hover:text-white hover:bg-black hover:border-white transition-colors duration-[200]'>
+              className=' border-2 w-max whitespace-nowrap text-[clamp(12px,4vw,20px)] border-black px-2  rounded-md hover:text-white hover:bg-black hover:border-white transition-colors duration-[200]'>
               Add to Cart
-            </button>
-
-            <button className='flex gap-2 items-center text-[clamp(12px,4vw,20px)] border-2 px-3 py-2 border-black rounded-md hover:text-white hover:bg-black hover:border-white transition-colors'>
-              <span>&#43;</span>
-              <p>Compare</p>
             </button>
           </div>
           <div className="mt-28 max-lg:mt-8 relative before:content['*'] before:w-full before:h-[2px] before:bg-[#D9D9D9] before:block before:absolute before:-top-[20%] ">
