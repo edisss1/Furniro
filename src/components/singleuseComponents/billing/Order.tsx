@@ -22,7 +22,7 @@ const Order = () => {
         {cartItems.map((item) => (
           <div key={item.id} className='flex justify-between w-full'>
             <div className='flex gap-1'>
-              <span className='text-[#9F9F9F]'>{item.name}</span>
+              <span className='text-product'>{item.name}</span>
               <span>X</span>
               <span>{item.quantity}</span>
             </div>
@@ -37,7 +37,7 @@ const Order = () => {
         </div>
         <div className='flex justify-between'>
           <p>Total</p>
-          <p className='text-xl text-[#B88E2F]'>${totalPrice}</p>
+          <p className='text-xl text-primary'>${totalPrice}</p>
         </div>
       </div>
       <div>
@@ -61,7 +61,7 @@ const Order = () => {
             </div>
 
             <p
-              className={`${billingDetails.paymentMethod === "directTransfer" ? "opacity-100 pointer-events-auto static" : "opacity-0 pointer-events-none absolute"} transition-all duration-100 ease-in text-[#9F9F9F]`}>
+              className={`${billingDetails.paymentMethod === "directTransfer" ? "opacity-100 pointer-events-auto static" : "opacity-0 pointer-events-none absolute"} transition-all duration-100 ease-in text-product`}>
               Make your payment directly into our bank account. Please use your
               Order ID as the payment reference. Your order will not be shipped
               until the funds have cleared in our account.
@@ -85,7 +85,7 @@ const Order = () => {
               <label htmlFor='cashOnDelivery'>Cash On Delivery</label>
             </div>
             <p
-              className={`${billingDetails.paymentMethod === "cashOnDelivery" ? "opacity-100 pointer-events-auto static" : "opacity-0 pointer-events-none absolute"} transition-all duration-100 ease-in text-[#9F9F9F]`}>
+              className={`${billingDetails.paymentMethod === "cashOnDelivery" ? "opacity-100 pointer-events-auto static" : "opacity-0 pointer-events-none absolute"} transition-all duration-100 ease-in text-product`}>
               Cash on delivery
             </p>
           </div>

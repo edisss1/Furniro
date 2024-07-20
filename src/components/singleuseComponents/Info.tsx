@@ -7,14 +7,14 @@ const Info = () => {
           <p className='font-medium tracking-[3px] max-lg:text-sm'>
             New Arrival!
           </p>
-          <h2 className='text-3xl font-bold text-[#B88E2F]  max-lg:text-base'>
+          <h2 className='text-3xl font-bold text-primary  max-lg:text-base'>
             Discover Our <br /> New Collection
           </h2>
           <p className='max-sm:text-sm'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             tellus, luctus nec ullamcorper mattis.
           </p>
-          <button className='uppercase py-[5%] px-[15%] bg-[#B88E2F] max-lg:py-[.5rem] max-lg:px-4rem text-white font-bold'>
+          <button className='uppercase py-[5%] px-[15%] bg-primary max-lg:py-[.5rem] max-lg:px-4rem text-white font-bold'>
             Buy Now
           </button>
         </div>

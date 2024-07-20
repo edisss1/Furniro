@@ -79,7 +79,7 @@ const ContactInformation = () => {
           />
         </div>
         <div className='flex w-[calc(100%-20px)]'>
-          <button className='self-start bg-[#B88E2F] text-white px-20 py-3 rounded-md'>
+          <button className='self-start bg-primary text-white px-20 py-3 rounded-md'>
             Submit
           </button>
         </div>

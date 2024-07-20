@@ -55,7 +55,7 @@ const Products = ({ products }: ProductsProps) => {
         visibleProducts.length < 48 && (
           <button
             onClick={loadMoreProducts}
-            className='mt-8 border-2 px-20 py-[0.75rem] text-[#B88E2F] border-[#B88E2F]'>
+            className='mt-8 border-2 px-20 py-[0.75rem] text-primary border-primary'>
             Show More
           </button>
         )}

@@ -15,6 +15,14 @@ export default {
         shopHeaderImage:
           "url('https://firebasestorage.googleapis.com/v0/b/furniro-69e84.appspot.com/o/shopHeaderImage.png?alt=media&token=761cb37e-3786-44ba-b483-5802f2540912')",
       },
+      colors: {
+        primary: "#B88E2F",
+        secondary: "#F9F1E7",
+        card: "#F4F5F7",
+        faint: "#898989",
+        product: "#9F9F9F",
+        skeleton: "#eeeeee",
+      },
     },
   },
   variants: {

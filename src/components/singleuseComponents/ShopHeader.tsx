@@ -39,7 +39,7 @@ const ShopHeader = ({
   return (
     <div className='flex flex-col w-full'>
       <Header pageTitle='Shop' />
-      <div className='bg-[#F9F1E7] py-4 px-[2%] '>
+      <div className='bg-secondary py-4 px-[2%] '>
         <div className='flex justify-between flex-wrap max-md:justify-center max-md:gap-3'>
           <div className='flex gap-6 max-md:justify-between'>
             <button>
@@ -71,9 +71,7 @@ const ShopHeader = ({
                 </select>
               </div>
               <div className='flex justify-center items-center gap-4  '>
-                <p className='inline-block whitespace-nowrap text-ellipsis overflow-hidden w-[calc(100%)]'>
-                  Sort by
-                </p>
+                <p className='text-overflow-ellipsis w-[calc(100%)]'>Sort by</p>
                 <select onChange={handleSortChange} className='p-2 bg-white'>
                   {options.map((option) => (
                     <option key={option.sortBy} value={option.sortBy}>

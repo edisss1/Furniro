@@ -9,7 +9,7 @@ export interface CartItemsListProps {
 const CartItemsList = ({ cartItems, removeFromCart }: CartItemsListProps) => {
   return (
     <div className='max-lg:hidden w-[820px] max-w-[50%] self-start mx-auto '>
-      <div className='w-full  grid grid-cols-6 bg-[#F9F1E7] place-items-center py-4'>
+      <div className='w-full  grid grid-cols-6 bg-secondary place-items-center py-4'>
         <p className='col-span-2'>Product</p>
         <p>Price</p>
         <p>Quantity</p>

@@ -17,7 +17,7 @@ const Footer = () => {
         </div>
         <div className='col-start-3 grid grid-cols-3 col-span-4 max-lg:gap-6 max-sm:px-4 max-sm:justify-center  '>
           <div className='flex flex-col gap-10 max-lg:col-start-2 max-sm:col-start-1 '>
-            <p className='text-[#9F9F9F]'>Links</p>
+            <p className='text-product'>Links</p>
             {paths?.map((path) => (
               <Link key={path.path} to={path.path}>
                 {path.text}
@@ -25,13 +25,13 @@ const Footer = () => {
             ))}
           </div>
           <div className='flex flex-col gap-10 max-lg:col-start-3 max-sm:col-start-3 '>
-            <p className='text-[#9F9F9F]'>Help</p>
+            <p className='text-product'>Help</p>
             <Link to={"/"}>Payment Options</Link>
             <Link to={"/"}>Returns</Link>
             <Link to={"/"}>Privacy Policies</Link>
           </div>
           <form className='flex flex-col  gap-10 w-fit max-lg:row-start-2  max-lg:col-start-2 max-sm:col-start-1'>
-            <p className='text-[#9F9F9F]'>Newsletter</p>
+            <p className='text-product'>Newsletter</p>
             <div className='flex gap-5 flex-wrap'>
               <div className='relative group '>
                 <input

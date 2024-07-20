@@ -30,3 +30,7 @@ img {
 .custom-radio-btn input:checked + .checkmark {
   @apply opacity-100;
 }
+
+.text-overflow-ellipsis {
+  @apply overflow-hidden whitespace-nowrap  text-ellipsis inline-block;
+}

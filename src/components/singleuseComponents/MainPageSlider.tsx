@@ -47,7 +47,7 @@ const MainPageSlider = () => {
   }
 
   return (
-    <div className='ps-[10%] max-md:hidden max-lg:flex-col max-lg:gap-5 max-lg:justify-center max-lg:items-center  bg-[#FCF8F3] flex justify-center items-center relative overflow-hidden py-8 '>
+    <div className='ps-[10%] max-md:hidden max-lg:flex-col max-lg:gap-5 max-lg:justify-center max-lg:items-center  bg-secondary flex justify-center items-center relative overflow-hidden py-8 '>
       <MainPageSliderInfo />
       <div className='flex gap-6 overflow-hidden '>
         {getVisibleImages().map((image, index) => (
@@ -76,7 +76,7 @@ const MainPageSlider = () => {
                 </h3>
               </div>
               <div
-                className={`aspect-square w-[3rem] bg-[#B88E2F] flex justify-center items-center ${
+                className={`aspect-square w-[3rem] bg-primary flex justify-center items-center ${
                   index !== 0
                     ? "hidden opacity-0"
                     : "block opacity-100 transition-opacity duration-500"
@@ -100,7 +100,7 @@ const MainPageSlider = () => {
             key={index}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentIndex
-                ? "bg-[#B88E2F] outline outline-offset-4 outline-[#B88E2F] outline-1 "
+                ? "bg-primary outline outline-offset-4 outline-primary outline-1 "
                 : "bg-gray-300 "
             }`}
           />

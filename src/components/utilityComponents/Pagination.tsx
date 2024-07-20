@@ -45,7 +45,7 @@ const Pagination = ({
       {paginationNumbers.map((pageNumber, index) => (
         <button
           className={`w-12 aspect-square rounded flex justify-center items-center ${
-            pageNumber === currentPage ? "bg-[#B88E2F]" : "bg-[#F9F1E7]"
+            pageNumber === currentPage ? "bg-primary" : "bg-secondary"
           }`}
           onClick={() =>
             typeof pageNumber === "number" && handlePagination(pageNumber)
@@ -56,7 +56,7 @@ const Pagination = ({
       ))}
       {currentPage < totalPages && (
         <button
-          className='bg-[#F9F1E7] px-4 rounded-sm'
+          className='bg-secondary px-4 rounded-sm'
           onClick={() => handleNextPage(currentPage + 1)}>
           Next
         </button>

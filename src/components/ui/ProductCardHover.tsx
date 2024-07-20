@@ -9,11 +9,11 @@ interface ProductHoverProps {
 
 const ProductCardHover = ({ id, share, compare, like }: ProductHoverProps) => {
   return (
-    <div className='max-md:hidden max-md:pointer-events-none  absolute inset-0 flex z-20  flex-col items-center pointer-events-auto justify-center opacity-0 transition-all group-hover:pointer-events-auto  group-hover:opacity-100 ease-linear duration-200'>
+    <div className='max-md:hidden md:pointer-events-none   absolute inset-0 flex z-20  flex-col items-center pointer-events-auto justify-center opacity-0 transition-all group-hover:pointer-events-auto  group-hover:opacity-100 ease-linear duration-200'>
       <div className='z-20 flex flex-col justify-center items-center gro '>
         <Link
           to={`/product/${id}`}
-          className='bg-white px-14 py-3 text-[#B88E2F] max-md:text-sm max-md:px-6 '>
+          className='bg-white px-14 py-3 text-primary max-md:text-sm max-md:px-6 '>
           More
         </Link>
         <div className='text-white text-sm flex gap-4 mt-6 max-sm:flex-col flex-wrap justify-center '>

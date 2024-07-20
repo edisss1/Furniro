@@ -31,7 +31,7 @@ const CartContent = ({ toggleDialog }: CartContentProps) => {
                   <p>{cartItem.name}</p>
                   <p className='flex justify-around w-[50%]'>
                     <span>{cartItem.quantity}</span> <span>X</span>
-                    <span className='text-[#B88E2F]'>${cartItem.price}</span>
+                    <span className='text-primary'>${cartItem.price}</span>
                   </p>
                 </div>
                 <button onClick={() => removeFromCart(cartItem.id)}>

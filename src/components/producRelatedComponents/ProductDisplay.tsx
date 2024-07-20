@@ -57,7 +57,7 @@ const ProductDisplay = ({
           <h3 className='text-[clamp(1rem,5vw,2.25rem)] font-semibold'>
             {name}
           </h3>
-          <p className='text-[#9F9F9F]'>${price}</p>
+          <p className='text-product'>${price}</p>
         </div>
         <div className='flex'>
           <div></div>

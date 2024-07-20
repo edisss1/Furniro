@@ -9,7 +9,7 @@ const ProductFullInformation = () => {
   >("description")
 
   const buttonClass = (currentSection: string) => {
-    return currentSection === section ? "text-black" : "text-[#9F9F9F]"
+    return currentSection === section ? "text-black" : "text-product"
   }
 
   return (

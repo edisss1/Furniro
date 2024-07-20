@@ -3,7 +3,7 @@ import Warranty from "../assets/GuaranteesAssets/Warranty.svg"
 import Shipping from "../assets/GuaranteesAssets/Shipping.svg"
 import Support from "../assets/GuaranteesAssets/Support.svg"
 
-export const activeLinkStyles = "text-[#B88E2F]"
+export const activeLinkStyles = "text-primary"
 export const generalLinkStyles = " hover:text-[#DEB862] transition-all"
 export const paths = [
   {

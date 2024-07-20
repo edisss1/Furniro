@@ -7,8 +7,8 @@ const SkeletonProductCard = () => {
     <div
       className={`rounded-md  ${
         display === "grid"
-          ? ` flex flex-col bg-[#eeeeee] w-[300px]  max-xl:w-[200px] max-md:w-[160px]  hover:shadow-2xl max-md:hover:shadow-none  relative z-[10] max-md:after:hidden after:rounded-md after:content['*'] after:bg-[#3A3A3A] after:bg-opacity-0 after:absolute after:inset-0 after:block after:z-[15] group hover:after:bg-opacity-80 after:transition-all after:ease-linear after:duration-200 `
-          : `flex justify-between items-center w-[80%] self-center bg-[#F9F1E7] mt-4 `
+          ? ` flex flex-col bg-skeleton w-[300px]  max-xl:w-[200px] max-md:w-[160px]  hover:shadow-2xl max-md:hover:shadow-none  relative z-[10] max-md:after:hidden after:rounded-md after:content['*'] after:bg-[#3A3A3A] after:bg-opacity-0 after:absolute after:inset-0 after:block after:z-[15] group hover:after:bg-opacity-80 after:transition-all after:ease-linear after:duration-200 `
+          : `flex justify-between items-center w-[80%] self-center bg-secondary mt-4 `
       }   `}>
       <div
         className={`rounded-md bg-gray-300 ${
