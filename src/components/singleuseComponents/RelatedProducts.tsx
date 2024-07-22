@@ -9,21 +9,19 @@ interface RelatedProductsType {
 }
 
 const RelatedProducts = ({ currentProduct }: RelatedProductsType) => {
-  const { products, loading } = useProducts(currentProduct?.category)
+  const { data: products, isLoading } = useProducts(currentProduct?.category)
   const [relatedProducts, setRelatedProducts] = useState<ProductWithId[]>([])
   const limit = 4
 
   useEffect(() => {
-    if (!loading && products.length > 0 && currentProduct) {
+    if (!isLoading && products && products.length > 0 && currentProduct) {
       const shuffledProducts = products
         .filter((product) => product.docId !== currentProduct.docId)
         .sort(() => 0.5 - Math.random())
         .slice(0, limit)
       setRelatedProducts(shuffledProducts)
     }
-  }, [products, currentProduct, loading])
-
-  // flex gap-8 w-full flex-wrap justify-center mt-6
+  }, [products, currentProduct, isLoading])
 
   return (
     <div className='flex flex-col items-center mt-[10%]'>

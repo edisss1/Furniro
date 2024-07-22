@@ -5,13 +5,13 @@ import { useSpecificProduct } from "../hooks/productHooks/useSpecificProduct"
 import { ProductWithId } from "../components/producRelatedComponents/Products"
 
 const specificProductContextDefaultState = {
-  specificProduct: null,
-  loading: false,
+  specificProduct: undefined,
+  isLoading: false,
 }
 
 interface SpecificProductContextType {
-  specificProduct: ProductWithId | null
-  loading: boolean
+  specificProduct: ProductWithId | undefined
+  isLoading: boolean
 }
 
 export const SpecificProductContext = createContext<SpecificProductContextType>(
@@ -24,10 +24,10 @@ export const SpecificProductProvider = ({
   children: ReactNode
 }) => {
   const { productId } = useParams<{ productId: string }>()
-  const { specificProduct, loading } = useSpecificProduct(productId!)
+  const { data: specificProduct, isLoading } = useSpecificProduct(productId!)
 
   return (
-    <SpecificProductContext.Provider value={{ specificProduct, loading }}>
+    <SpecificProductContext.Provider value={{ specificProduct, isLoading }}>
       {children}
     </SpecificProductContext.Provider>
   )

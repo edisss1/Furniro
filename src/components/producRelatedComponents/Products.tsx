@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { Product } from "../../types/ProductType"
 import ProductCard from "./ProductCard"
-import { useProducts } from "../../hooks/productHooks/useProducts"
 import ProductCardSkeleton from "./ProductCardSkeleton"
 import { useLoading } from "../../context/LoadingContext" // Импортируем хук
 
@@ -10,17 +9,19 @@ export interface ProductWithId extends Product {
 }
 
 interface ProductsProps {
-  products: ProductWithId[]
+  products: ProductWithId[] | undefined
 }
 
 const Products = ({ products }: ProductsProps) => {
-  const [visibleProducts, setVisibleProducts] = useState<ProductWithId[]>([])
+  const [visibleProducts, setVisibleProducts] = useState<
+    ProductWithId[] | undefined
+  >([])
   const [itemsToShow, setItemsToShow] = useState(8)
   const { loading, setLoading } = useLoading()
 
   useEffect(() => {
     setLoading(true)
-    if (products.length > 0) {
+    if (products && products.length > 0) {
       setVisibleProducts(products.slice(0, itemsToShow))
       setLoading(false)
     }
@@ -29,7 +30,7 @@ const Products = ({ products }: ProductsProps) => {
   const loadMoreProducts = () => {
     const newItemsToShow = itemsToShow + 8
     setItemsToShow(newItemsToShow)
-    setVisibleProducts(products.slice(0, newItemsToShow))
+    setVisibleProducts(products?.slice(0, newItemsToShow))
   }
 
   return (
@@ -40,19 +41,21 @@ const Products = ({ products }: ProductsProps) => {
           ? Array.from({ length: itemsToShow }).map((_, index) => (
               <ProductCardSkeleton key={index} />
             ))
-          : visibleProducts.map((product) => (
+          : visibleProducts?.map((product) => (
               <ProductCard
-                id={product.docId}
-                key={product.docId}
-                title={product.name}
-                smallDescription={product.smallDescription}
-                imgURL={product.imageURL}
-                price={product.price}
+                id={product?.docId}
+                key={product?.docId}
+                title={product?.name}
+                smallDescription={product?.smallDescription}
+                imgURL={product?.imageURL}
+                price={product?.price}
               />
             ))}
       </div>
-      {visibleProducts.length < products.length &&
-        visibleProducts.length < 48 && (
+      {visibleProducts &&
+        products &&
+        visibleProducts?.length < products?.length &&
+        visibleProducts?.length < 48 && (
           <button
             onClick={loadMoreProducts}
             className='mt-8 border-2 px-20 py-[0.75rem] text-primary border-primary'>

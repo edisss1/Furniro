@@ -1,7 +1,7 @@
 import {
   createUserWithEmailAndPassword,
-  EmailAuthProvider,
-  linkWithCredential,
+  GoogleAuthProvider,
+  linkWithPopup,
   signInWithEmailAndPassword,
   signInWithPopup,
   User,
@@ -63,19 +63,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           const errorMessage = err.message
           console.error(errorCode, errorMessage)
         })
-
-      if (
-        user?.providerData.some(
-          (provider) => provider.providerId === "password"
-        )
-      ) {
-        return
-      }
-
-      if (email && password && user) {
-        const credential = EmailAuthProvider.credential(email, password)
-        await linkWithCredential(user, credential)
-      }
     } catch (err) {
       console.error((err as any).message)
     }

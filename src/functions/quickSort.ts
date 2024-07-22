@@ -1,6 +1,8 @@
 // Products sorting func
 
-export const quickSort = <T extends { name: string; price: number }>(
+export const quickSort = <
+  T extends { name: string | undefined; price: number | undefined },
+>(
   array: T[],
   compareFn: (a: T, b: T) => number
 ): T[] => {

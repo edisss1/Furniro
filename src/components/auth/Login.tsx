@@ -37,7 +37,9 @@ const Login = ({ isLogin, setIsLogin }: AuthProps) => {
           Sign In
         </button>
         {error ? (
-          <p className='text-center text-red-600'>Account doesn't exist</p>
+          <p className='text-center text-red-600'>
+            Account doesn't exist, try logging with Google
+          </p>
         ) : null}
       </fieldset>
       <div className='flex flex-col justify-center items-center mt-4'>

@@ -3,21 +3,24 @@ import { ProductWithId } from "../components/producRelatedComponents/Products"
 import { useProducts } from "../hooks/productHooks/useProducts"
 
 interface ProductContextProps {
-  products: ProductWithId[]
-  loading: boolean
+  products: ProductWithId[] | undefined
+  isLoading: boolean
 }
 
 export const ProductContext = createContext<ProductContextProps | null>(null)
 
 interface ProductProviderProps {
   children: React.ReactNode
+  category?: string
 }
-
-export const ProductProvider = ({ children }: ProductProviderProps) => {
-  const { products, loading } = useProducts()
+export const ProductProvider = ({
+  children,
+  category,
+}: ProductProviderProps) => {
+  const { data: products, isLoading } = useProducts(category)
 
   return (
-    <ProductContext.Provider value={{ products, loading }}>
+    <ProductContext.Provider value={{ products, isLoading }}>
       {children}
     </ProductContext.Provider>
   )

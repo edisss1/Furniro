@@ -20,7 +20,9 @@ interface FirebaseOptions {
 }
 
 async function getKey() {
-  const rawKey = new TextEncoder().encode("a very very very very secret key")
+  const rawKey = new TextEncoder().encode(
+    import.meta.env.VITE_FIREBASE_KEY_PHRASE
+  )
   return await window.crypto.subtle.importKey(
     "raw",
     rawKey,

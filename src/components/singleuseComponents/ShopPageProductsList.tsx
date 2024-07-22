@@ -8,7 +8,6 @@ import ShopHeader from "./ShopHeader"
 import ProductCard from "../producRelatedComponents/ProductCard"
 import ProductCardSkeleton from "../producRelatedComponents/ProductCardSkeleton"
 import { quickSort } from "../../functions/quickSort"
-import { useProducts } from "../../hooks/productHooks/useProducts"
 import { useLoading } from "../../context/LoadingContext" // Импортируем хук
 import { ProductWithId } from "../producRelatedComponents/Products"
 
@@ -26,7 +25,7 @@ const ShopPageProductsList = ({ products }: ShopPageProductsListProps) => {
 
   useEffect(() => {
     setLoading(true)
-    if (products.length > 0) {
+    if (products && products.length > 0) {
       setLoading(false)
     }
   }, [products, setLoading])
@@ -50,7 +49,7 @@ const ShopPageProductsList = ({ products }: ShopPageProductsListProps) => {
   const sortedProducts = useMemo(() => {
     switch (sortValue) {
       case "cheap-first":
-        return quickSort(products, (a, b) => a.price - b.price)
+        return quickSort(products, (a, b) => a?.price - b?.price)
       case "expensive-first":
         return quickSort(products, (a, b) => b.price - a.price)
       case "aToZ":
