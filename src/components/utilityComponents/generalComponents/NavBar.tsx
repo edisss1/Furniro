@@ -13,6 +13,8 @@ import { useRef, useState } from "react"
 import Dialog from "../Dialog"
 import CartContent from "../../modalContent/CartContent"
 import AuthContent from "../../modalContent/AuthContent"
+import { useAuth } from "../../../context/AuthContext"
+import profileIdentified from "../../../assets/profileIdentified.svg"
 
 const NavBar = () => {
   const [dialogContent, setDialogContent] = useState<React.ReactNode>(null)
@@ -26,6 +28,8 @@ const NavBar = () => {
 
     cartModalRef.current.hasAttribute("open")
   }
+
+  const { user } = useAuth()
 
   return (
     <>
@@ -54,7 +58,13 @@ const NavBar = () => {
               toggleDialog()
             }}
             className='w-8'>
-            <img src={profileUndefined} alt='profile is not defined' />
+            {user && user.photoURL ? (
+              <img className='rounded-full' src={user.photoURL} alt='/' />
+            ) : user && !user.photoURL ? (
+              <img src={profileIdentified} alt='/' />
+            ) : (
+              <img src={profileUndefined} alt='/' />
+            )}
           </button>
           <Link to={"/search"} className='w-8'>
             <img src={searchIcon} alt='search' />

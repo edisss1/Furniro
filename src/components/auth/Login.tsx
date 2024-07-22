@@ -4,7 +4,9 @@ import { AuthProps } from "../../types/AuthProps"
 import { useAuth } from "../../context/AuthContext"
 
 const Login = ({ isLogin, setIsLogin }: AuthProps) => {
-  const { onLogin, handleEmail, handlePassword } = useAuth()
+  const { error, onLogin, handleEmail, handlePassword, signInWithGoogle } =
+    useAuth()
+
   return (
     <form
       onSubmit={onLogin}
@@ -34,6 +36,9 @@ const Login = ({ isLogin, setIsLogin }: AuthProps) => {
           className='border-2  w-fit self-center px-6 py-2 rounded-full'>
           Sign In
         </button>
+        {error ? (
+          <p className='text-center text-red-600'>Account doesn't exist</p>
+        ) : null}
       </fieldset>
       <div className='flex flex-col justify-center items-center mt-4'>
         <div className='flex flex-col items-center gap-4'>
@@ -44,7 +49,10 @@ const Login = ({ isLogin, setIsLogin }: AuthProps) => {
             </span>
           </p>
           <div className='w-full border-2  rounded-full'>
-            <button className='flex gap-2 items-center px-4 py-2'>
+            <button
+              type='button'
+              onClick={signInWithGoogle}
+              className='flex gap-2 items-center px-4 py-2'>
               <img src={google} alt='/' />
               <p>Sign In with Google</p>
             </button>
