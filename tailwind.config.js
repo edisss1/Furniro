@@ -23,6 +23,15 @@ export default {
         product: "#9F9F9F",
         skeleton: "#eeeeee",
       },
+      keyframes: {
+        appear: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 100 },
+        },
+      },
+    },
+    animation: {
+      "sign-up-appear": "appear 0.5s linear",
     },
   },
   variants: {

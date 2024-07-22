@@ -12,6 +12,7 @@ import {
 import { useRef, useState } from "react"
 import Dialog from "../Dialog"
 import CartContent from "../../modalContent/CartContent"
+import AuthContent from "../../modalContent/AuthContent"
 
 const NavBar = () => {
   const [dialogContent, setDialogContent] = useState<React.ReactNode>(null)
@@ -47,7 +48,12 @@ const NavBar = () => {
           ))}
         </div>
         <div className=' flex gap-[10%] '>
-          <button className='w-8'>
+          <button
+            onClick={() => {
+              setDialogContent(<AuthContent toggleDialog={toggleDialog} />)
+              toggleDialog()
+            }}
+            className='w-8'>
             <img src={profileUndefined} alt='profile is not defined' />
           </button>
           <Link to={"/search"} className='w-8'>

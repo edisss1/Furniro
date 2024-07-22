@@ -20,6 +20,7 @@ import { ProductProvider } from "./context/ProductsContext.tsx"
 import { FeedbackProvider } from "./context/FeedbackContext.tsx"
 import Wishlist from "./pages/Wishlist.tsx"
 import Search from "./pages/Search.tsx"
+import { AuthProvider } from "./context/AuthContext.tsx"
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
         <HomePage />
       </ProductProvider>
     ),
+    errorElement: <ErrorPage />,
   },
   {
     path: "/shop",
@@ -76,6 +78,7 @@ const router = createBrowserRouter([
     path: "/search",
     element: <Search />,
   },
+
   {
     path: "*",
     element: <ErrorPage />,
@@ -86,13 +89,15 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <Suspense fallback={<Loading />}>
     <React.StrictMode>
       <ErrorBoundary>
-        <CartProvider>
-          <ItemsDisplayProvider>
-            <LoadingProvider>
-              <RouterProvider router={router} />
-            </LoadingProvider>
-          </ItemsDisplayProvider>
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <ItemsDisplayProvider>
+              <LoadingProvider>
+                <RouterProvider router={router} />
+              </LoadingProvider>
+            </ItemsDisplayProvider>
+          </CartProvider>
+        </AuthProvider>
       </ErrorBoundary>
     </React.StrictMode>
   </Suspense>

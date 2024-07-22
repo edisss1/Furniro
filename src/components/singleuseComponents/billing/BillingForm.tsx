@@ -21,6 +21,7 @@ const BillingForm = () => {
               handleChange={handleChange}
               value={billingDetails.firstName}
               required={true}
+              styles='h-[75px] w-full border-2 border-[#9F9F9F] rounded-xl max-xl:h-[4rem] max-md:h-[3rem] px-2'
             />
             <Input
               label='Last Name'
@@ -30,6 +31,7 @@ const BillingForm = () => {
               handleChange={handleChange}
               value={billingDetails.lastName}
               required={true}
+              styles='h-[75px] w-full border-2 border-[#9F9F9F] rounded-xl max-xl:h-[4rem] max-md:h-[3rem] px-2'
             />
           </div>
           <div className='flex flex-col max-w-full'>
@@ -41,6 +43,7 @@ const BillingForm = () => {
               handleChange={handleChange}
               value={billingDetails.companyName}
               required={false}
+              styles='h-[75px] w-full border-2 border-[#9F9F9F] rounded-xl max-xl:h-[4rem] max-md:h-[3rem] px-2'
             />
           </div>
           <div className='flex flex-col max-w-full'>
@@ -52,6 +55,7 @@ const BillingForm = () => {
               handleChange={handleChange}
               value={billingDetails.country}
               required={true}
+              styles='h-[75px] w-full border-2 border-[#9F9F9F] rounded-xl max-xl:h-[4rem] max-md:h-[3rem] px-2'
             />
           </div>
           <div className='flex flex-col max-w-full'>
@@ -63,6 +67,7 @@ const BillingForm = () => {
               handleChange={handleChange}
               value={billingDetails.streetAddress}
               required={true}
+              styles='h-[75px] w-full border-2 border-[#9F9F9F] rounded-xl max-xl:h-[4rem] max-md:h-[3rem] px-2'
             />
           </div>
           <div className='flex flex-col max-w-full'>
@@ -74,6 +79,7 @@ const BillingForm = () => {
               handleChange={handleChange}
               value={billingDetails.city}
               required={true}
+              styles='h-[75px] w-full border-2 border-[#9F9F9F] rounded-xl max-xl:h-[4rem] max-md:h-[3rem] px-2'
             />
           </div>
           <div className='flex flex-col max-w-full'>
@@ -85,6 +91,7 @@ const BillingForm = () => {
               handleChange={handleChange}
               value={billingDetails.province}
               required={true}
+              styles='h-[75px] w-full border-2 border-[#9F9F9F] rounded-xl max-xl:h-[4rem] max-md:h-[3rem] px-2'
             />
           </div>
           <div className='flex flex-col max-w-full'>
@@ -96,6 +103,7 @@ const BillingForm = () => {
               handleChange={handleChange}
               value={billingDetails.zipCode}
               required={true}
+              styles='h-[75px] w-full border-2 border-[#9F9F9F] rounded-xl max-xl:h-[4rem] max-md:h-[3rem] px-2'
             />
           </div>
           <div className='flex flex-col max-w-full'>
@@ -107,6 +115,7 @@ const BillingForm = () => {
               handleChange={handleChange}
               value={billingDetails.phone}
               required={true}
+              styles='h-[75px] w-full border-2 border-[#9F9F9F] rounded-xl max-xl:h-[4rem] max-md:h-[3rem] px-2'
             />
           </div>
           <div className='flex flex-col max-w-full'>
@@ -118,6 +127,7 @@ const BillingForm = () => {
               handleChange={handleChange}
               value={billingDetails.email}
               required={true}
+              styles='h-[75px] w-full border-2 border-[#9F9F9F] rounded-xl max-xl:h-[4rem] max-md:h-[3rem] px-2'
             />
           </div>
           <div className='flex flex-col max-w-full relative  '>

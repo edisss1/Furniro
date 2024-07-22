@@ -40,7 +40,7 @@ const ShopHeader = ({
     <div className='flex flex-col w-full'>
       <Header pageTitle='Shop' />
       <div className='bg-secondary py-4 px-[2%] '>
-        <div className='flex justify-between flex-wrap max-md:justify-center max-md:gap-3'>
+        <div className='flex justify-between items-center flex-wrap max-md:justify-center max-md:gap-3'>
           <div className='flex gap-6 max-md:justify-between'>
             <button>
               <div className='flex gap-2'>
@@ -55,6 +55,7 @@ const ShopHeader = ({
               <img src={ShowList} alt='' />
             </button>
           </div>
+
           <div>
             <div className='flex gap-4 justify-center items-center'>
               <div className='flex gap-1 justify-center items-center'>

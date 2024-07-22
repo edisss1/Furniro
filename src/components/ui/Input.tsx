@@ -8,6 +8,7 @@ interface InputProps {
   value?: string
   checked?: boolean
   required: boolean
+  styles: string
 }
 
 const Input = ({
@@ -19,6 +20,7 @@ const Input = ({
   value,
   checked,
   required,
+  styles,
 }: InputProps) => {
   return (
     <div className='flex flex-col'>
@@ -30,7 +32,7 @@ const Input = ({
         onChange={handleChange}
         value={value}
         checked={checked}
-        className='h-[75px] w-full border-2 border-[#9F9F9F] rounded-xl max-xl:h-[4rem] max-md:h-[3rem] px-2'
+        className={styles}
         id={id}
         type={type}
         required={required}
