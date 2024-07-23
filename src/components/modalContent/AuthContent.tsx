@@ -19,7 +19,7 @@ const AuthContent = ({ toggleDialog }: AuthContentProps) => {
         modalTitle={isLogin ? "Login" : "Sign Up"}
         toggleDialog={toggleDialog}
       />
-      {user ? (
+      {user && !user.isAnonymous ? (
         <UserLoggedIn />
       ) : isLogin ? (
         <Login isLogin={isLogin} setIsLogin={setIsLogin} />

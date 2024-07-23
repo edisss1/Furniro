@@ -2,17 +2,26 @@ import Input from "../ui/Input"
 import google from "../../assets/google.svg"
 import { AuthProps } from "../../types/AuthProps"
 import { useAuth } from "../../context/AuthContext"
+import Error from "./Error"
 
 const Login = ({ isLogin, setIsLogin }: AuthProps) => {
-  const { error, onLogin, handleEmail, handlePassword, signInWithGoogle } =
-    useAuth()
+  const {
+    error,
+    onLogin,
+    handleEmail,
+    handlePassword,
+    signInWithGoogle,
+    setError,
+  } = useAuth()
 
   return (
     <form
-      onSubmit={onLogin}
+      onSubmit={(e: React.ChangeEvent<HTMLFormElement>) => {
+        onLogin(e)
+      }}
       action=''
       className='animate-sign-up-appear mx-auto p-4 transition-all'>
-      <fieldset className='flex flex-col gap-6'>
+      <fieldset className='flex flex-col gap-6 items-center'>
         <Input
           label='Email'
           id='email'
@@ -36,11 +45,7 @@ const Login = ({ isLogin, setIsLogin }: AuthProps) => {
           className='border-2  w-fit self-center px-6 py-2 rounded-full'>
           Sign In
         </button>
-        {error ? (
-          <p className='text-center text-red-600'>
-            Account doesn't exist, try logging with Google
-          </p>
-        ) : null}
+        {error ? <Error /> : null}
       </fieldset>
       <div className='flex flex-col justify-center items-center mt-4'>
         <div className='flex flex-col items-center gap-4'>
@@ -53,7 +58,11 @@ const Login = ({ isLogin, setIsLogin }: AuthProps) => {
           <div className='w-full border-2  rounded-full'>
             <button
               type='button'
-              onClick={signInWithGoogle}
+              onClick={() => {
+                signInWithGoogle()
+
+                setError(null)
+              }}
               className='flex gap-2 items-center px-4 py-2'>
               <img src={google} alt='/' />
               <p>Sign In with Google</p>

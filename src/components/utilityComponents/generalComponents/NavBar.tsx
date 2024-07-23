@@ -60,7 +60,7 @@ const NavBar = () => {
             className='w-8'>
             {user && user.photoURL ? (
               <img className='rounded-full' src={user.photoURL} alt='/' />
-            ) : user && !user.photoURL ? (
+            ) : user && !user.photoURL && !user.isAnonymous ? (
               <img src={profileIdentified} alt='/' />
             ) : (
               <img src={profileUndefined} alt='/' />

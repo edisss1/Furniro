@@ -1,5 +1,8 @@
 import { createContext, useEffect, useState } from "react"
 import { CartItem } from "../types/CartItem"
+import { useAuth } from "./AuthContext"
+import { collection, doc, onSnapshot, setDoc } from "firebase/firestore"
+import { db } from "../firebase/firebaseConfig"
 
 interface CartContextType {
   cartItems: CartItem[]
@@ -11,30 +14,50 @@ interface CartContextType {
 export const CartContext = createContext<CartContextType | null>(null)
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
-  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
-    const storedCartItems = localStorage.getItem("cartItems")
-    if (storedCartItems) {
-      try {
-        return JSON.parse(storedCartItems)
-      } catch (error) {
-        console.error("Error parsing stored cart items:", error)
-        localStorage.removeItem("cartItems")
-        return []
-      }
-    }
-    return []
-  })
+  const [cartItems, setCartItems] = useState<CartItem[]>([])
+
+  const { user } = useAuth()
 
   useEffect(() => {
-    try {
-      localStorage.setItem("cartItems", JSON.stringify(cartItems))
-    } catch (error) {
-      console.error("Error saving cart items to localStorage:", error)
+    if (user) {
+      const cartRef = collection(db, "cart")
+      const userCartRef = doc(cartRef, user.uid)
+
+      const unsubscribe = onSnapshot(userCartRef, (doc) => {
+        if (doc.exists()) {
+          setCartItems(doc.data().items || [])
+        } else {
+          setCartItems([])
+        }
+      })
+      return () => unsubscribe()
+    } else {
+      const storedCartItems = localStorage.getItem("cartItems")
+      if (storedCartItems) {
+        try {
+          setCartItems(JSON.parse(storedCartItems))
+        } catch (err) {
+          console.error(err)
+          localStorage.removeItem("cartItems")
+        }
+      }
     }
-  }, [cartItems])
+  }, [user])
+
+  useEffect(() => {
+    if (user) {
+      const userCartRef = doc(collection(db, "cart"), user.uid)
+      setDoc(userCartRef, { items: cartItems })
+    } else {
+      try {
+        localStorage.setItem("cartItems", JSON.stringify(cartItems))
+      } catch (error) {
+        console.error("Error saving cart items to localStorage:", error)
+      }
+    }
+  }, [cartItems, user])
 
   const addToCart = (item: CartItem, quantity: number) => {
-    console.log("Adding to cart:", item, "Quantity:", quantity)
     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id)
 
     if (isItemInCart) {

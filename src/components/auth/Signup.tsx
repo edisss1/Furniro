@@ -4,7 +4,7 @@ import { AuthProps } from "../../types/AuthProps"
 import { useAuth } from "../../context/AuthContext"
 
 const Signup = ({ isLogin, setIsLogin }: AuthProps) => {
-  const { onSignUp, handleEmail, handlePassword } = useAuth()
+  const { onSignUp, handleEmail, handlePassword, signInWithGoogle } = useAuth()
   return (
     <form
       onSubmit={onSignUp}
@@ -43,7 +43,9 @@ const Signup = ({ isLogin, setIsLogin }: AuthProps) => {
             </span>
           </p>
           <div className='w-full border-2  rounded-full'>
-            <button className='flex gap-2 items-center px-4 py-2'>
+            <button
+              onClick={signInWithGoogle}
+              className='flex gap-2 items-center px-4 py-2'>
               <img src={google} alt='/' />
               <p>Sign Up with Google</p>
             </button>
