@@ -3,6 +3,7 @@ import { CartItem } from "../types/CartItem"
 import { useAuth } from "./AuthContext"
 import { collection, doc, onSnapshot, setDoc } from "firebase/firestore"
 import { db } from "../firebase/firebaseConfig"
+import { ProviderProps } from "../types/ProviderProps"
 
 interface CartContextType {
   cartItems: CartItem[]
@@ -13,7 +14,7 @@ interface CartContextType {
 
 export const CartContext = createContext<CartContextType | null>(null)
 
-export const CartProvider = ({ children }: { children: React.ReactNode }) => {
+export const CartProvider = ({ children }: ProviderProps) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
 
   const { user } = useAuth()

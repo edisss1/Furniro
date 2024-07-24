@@ -19,7 +19,7 @@ export const ProductProvider = ({
 }: ProductProviderProps) => {
   const { data: products, isLoading } = useProducts(category)
 
-  if (!products) return null
+  if (!products) return
 
   return (
     <ProductContext.Provider value={{ products, isLoading }}>

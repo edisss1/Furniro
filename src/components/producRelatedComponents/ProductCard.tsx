@@ -9,11 +9,11 @@ import { useDisplay } from "../../context/ItemsDisplayContext"
 const ProductCardHover = lazy(() => import("../ui/ProductCardHover"))
 
 interface ProductCardProps {
-  imgURL: string | undefined
-  title: string | undefined
-  smallDescription: string | undefined
-  price: number | undefined
-  id: string | undefined
+  imgURL: string
+  title: string
+  smallDescription: string
+  price: number
+  id: string
 }
 
 const ProductCard = ({
@@ -68,6 +68,9 @@ const ProductCard = ({
         <Suspense fallback={<div>Loading...</div>}>
           <ProductCardHover
             id={id}
+            name={title}
+            price={price}
+            imgURL={imgURL}
             share={share}
             compare={compare}
             like={like}

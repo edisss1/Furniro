@@ -19,7 +19,7 @@ import { useLocation } from "react-router-dom"
 const ProductInformationPage = () => {
   let location = useLocation()
   const context = useContext(SpecificProductContext)
-  const { specificProduct, loading } = context
+  const { specificProduct, isLoading } = context
   const { setDisplay } = useDisplay()
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const ProductInformationPage = () => {
     setDisplay("grid")
   }, [])
 
-  if (loading) return <Loading />
+  if (isLoading) return <Loading />
   if (!specificProduct)
     return <h1 className='absolute inset-0'>Item not found</h1>
 
@@ -40,7 +40,7 @@ const ProductInformationPage = () => {
       <MobileNav />
       <ProductInformationPageNavBar currentProduct={specificProduct?.name} />
       <ProductDisplay
-        loading={loading}
+        loading={isLoading}
         img={specificProduct?.imageURL}
         price={specificProduct?.price}
         name={specificProduct?.name}
