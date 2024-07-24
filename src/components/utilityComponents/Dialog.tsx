@@ -1,4 +1,5 @@
 import { forwardRef } from "react"
+import { useAuth } from "../../context/AuthContext"
 
 interface CartModalProps {
   toggleDialog: () => void
@@ -7,12 +8,14 @@ interface CartModalProps {
 
 const Dialog = forwardRef<HTMLDialogElement, CartModalProps>(
   ({ toggleDialog, children }, ref) => {
+    const { setError } = useAuth()
     return (
       <>
         <dialog
           onClick={(e) => {
             if (e.currentTarget === e.target) {
               toggleDialog()
+              setError(null)
             }
           }}
           ref={ref}

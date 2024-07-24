@@ -3,7 +3,7 @@ import { ProductWithId } from "../components/producRelatedComponents/Products"
 import { useProducts } from "../hooks/productHooks/useProducts"
 
 interface ProductContextProps {
-  products: ProductWithId[] | undefined
+  products: ProductWithId[]
   isLoading: boolean
 }
 
@@ -18,6 +18,8 @@ export const ProductProvider = ({
   category,
 }: ProductProviderProps) => {
   const { data: products, isLoading } = useProducts(category)
+
+  if (!products) return null
 
   return (
     <ProductContext.Provider value={{ products, isLoading }}>

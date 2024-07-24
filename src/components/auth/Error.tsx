@@ -20,9 +20,9 @@ const Error = () => {
   }
 
   return (
-    <div className=''>
-      <span>:(</span>
-      <p>{error?.message}</p>
+    <div className='flex text-center'>
+      <span>Error: </span>
+      <p className='text-center'>{error?.message}</p>
     </div>
   )
 }

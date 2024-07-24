@@ -2,9 +2,11 @@ import Input from "../ui/Input"
 import google from "../../assets/google.svg"
 import { AuthProps } from "../../types/AuthProps"
 import { useAuth } from "../../context/AuthContext"
+import Error from "./Error"
 
 const Signup = ({ isLogin, setIsLogin }: AuthProps) => {
-  const { onSignUp, handleEmail, handlePassword, signInWithGoogle } = useAuth()
+  const { error, onSignUp, handleEmail, handlePassword, signInWithGoogle } =
+    useAuth()
   return (
     <form
       onSubmit={onSignUp}
@@ -33,6 +35,7 @@ const Signup = ({ isLogin, setIsLogin }: AuthProps) => {
           className='border-2  w-fit self-center px-6 py-2 rounded-full'>
           Sign Up
         </button>
+        {error ? <Error /> : null}
       </fieldset>
       <div className='flex flex-col justify-center items-center mt-4'>
         <div className='flex flex-col items-center gap-4'>

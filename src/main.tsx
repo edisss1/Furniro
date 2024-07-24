@@ -23,6 +23,7 @@ import Search from "./pages/Search.tsx"
 import { AuthProvider } from "./context/AuthContext.tsx"
 import { QueryClientProvider } from "@tanstack/react-query"
 import client from "./react-query-client/client.ts"
+import Protected from "./pages/Protected.tsx"
 
 const router = createBrowserRouter([
   {
@@ -73,7 +74,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/wishlist",
-    element: <Wishlist />,
+    element: (
+      <Protected title='Wishlist'>
+        <Wishlist />
+      </Protected>
+    ),
   },
 
   {

@@ -144,9 +144,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       .then((userCredential) => {
         setUser(userCredential.user)
         setError(null)
+        console.log(userCredential.user)
       })
       .catch((error) => {
         setError(error as FirebaseError)
+        console.log(error)
       })
   }
 

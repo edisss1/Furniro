@@ -67,7 +67,7 @@ const ShopPageProductsList = ({ products }: ShopPageProductsListProps) => {
     const indexOfLastProduct = currentPage * itemsPerPage
     const indexOfFirstProduct = indexOfLastProduct - itemsPerPage
 
-    return sortedProducts.slice(indexOfFirstProduct, indexOfLastProduct)
+    return sortedProducts?.slice(indexOfFirstProduct, indexOfLastProduct)
   }, [sortedProducts, currentPage, itemsPerPage])
 
   return (
