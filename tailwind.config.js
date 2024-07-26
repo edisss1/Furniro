@@ -13,7 +13,7 @@ export default {
         infoImage:
           "url('https://firebasestorage.googleapis.com/v0/b/furniro-69e84.appspot.com/o/infoImage.webp?alt=media&token=270f4a63-ef70-4899-92ad-77bd4dabc99f')",
         shopHeaderImage:
-          "url('https://firebasestorage.googleapis.com/v0/b/furniro-69e84.appspot.com/o/shopHeaderImage.png?alt=media&token=761cb37e-3786-44ba-b483-5802f2540912')",
+          "url('https://firebasestorage.googleapis.com/v0/b/furniro-69e84.appspot.com/o/shopHeaderImage.webp?alt=media&token=3cce3bd5-6b61-4bda-9607-b709f45afb3a')",
       },
       colors: {
         primary: "#B88E2F",
@@ -29,9 +29,9 @@ export default {
           "100%": { opacity: 100 },
         },
       },
-    },
-    animation: {
-      "sign-up-appear": "appear 0.5s linear",
+      animation: {
+        "sign-up-appear": "appear 0.5s linear",
+      },
     },
   },
   variants: {

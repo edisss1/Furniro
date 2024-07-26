@@ -1,29 +1,31 @@
-import { Suspense } from "react"
+import { lazy, Suspense } from "react"
+const HomePage = lazy(() => import("./pages/HomePage.tsx"))
+const ShopPage = lazy(() => import("./pages/ShopPage.tsx"))
+const ContactPage = lazy(() => import("./pages/ContactPage.tsx"))
+const ProductInformationPage = lazy(
+  () => import("./pages/ProductInformationPage.tsx")
+)
+const CheckoutPage = lazy(() => import("./pages/CheckoutPage.tsx"))
+const CartPage = lazy(() => import("./pages/CartPage.tsx"))
+const ErrorPage = lazy(() => import("./pages/ErrorPage.tsx"))
+const Wishlist = lazy(() => import("./pages/Wishlist.tsx"))
+const Search = lazy(() => import("./pages/Search.tsx"))
+const Protected = lazy(() => import("./pages/Protected.tsx"))
 import ReactDOM from "react-dom/client"
 import "./index.css"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import HomePage from "./pages/HomePage.tsx"
 import { LoadingProvider } from "./context/LoadingContext.tsx"
-import ShopPage from "./pages/ShopPage.tsx"
-import ContactPage from "./pages/ContactPage.tsx"
 import { ItemsDisplayProvider } from "./context/ItemsDisplayContext.tsx"
 import Loading from "./components/utilityComponents/Loading.tsx"
-import ProductInformationPage from "./pages/ProductInformationPage.tsx"
 import { SpecificProductProvider } from "./context/SpecificProductContext.tsx"
 import { CartProvider } from "./context/CartContext.tsx"
-import CartPage from "./pages/CartPage.tsx"
-import CheckoutPage from "./pages/CheckoutPage.tsx"
 import ErrorBoundary from "./components/utilityComponents/ErrorBoundary.tsx"
 import { BillingProvider } from "./context/BillingContext.tsx"
-import ErrorPage from "./pages/ErrorPage.tsx"
 import { ProductProvider } from "./context/ProductsContext.tsx"
 import { FeedbackProvider } from "./context/FeedbackContext.tsx"
-import Wishlist from "./pages/Wishlist.tsx"
-import Search from "./pages/Search.tsx"
 import { AuthProvider } from "./context/AuthContext.tsx"
 import { QueryClientProvider } from "@tanstack/react-query"
 import client from "./react-query-client/client.ts"
-import Protected from "./pages/Protected.tsx"
 import { WishlistProvider } from "./context/WishlistContext.tsx"
 
 const router = createBrowserRouter([

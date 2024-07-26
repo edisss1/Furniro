@@ -13,6 +13,7 @@ const AuthContent = ({ toggleDialog }: AuthContentProps) => {
   const [isLogin, setIsLogin] = useState(true)
 
   const { user } = useAuth()
+
   return (
     <div className='flex flex-col gap-4'>
       <ModalHeader
