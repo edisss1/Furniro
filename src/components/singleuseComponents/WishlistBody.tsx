@@ -1,11 +1,14 @@
-import { useWishlist } from "../../context/WishlistContext"
+import { WishlistItem } from "../../context/WishlistContext"
 
-const WishlistBody = () => {
-  const { wishlistItems } = useWishlist()
+interface WishlistBodyProps {
+  sortedProducts: WishlistItem[]
+}
+
+const WishlistBody = ({ sortedProducts }: WishlistBodyProps) => {
   return (
     <div>
-      {wishlistItems.map((item) => (
-        <p>{item.name}</p>
+      {sortedProducts.map((item) => (
+        <div>{item.name}</div>
       ))}
     </div>
   )

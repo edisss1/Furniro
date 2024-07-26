@@ -1,8 +1,20 @@
-const SubheaderWishlist = () => {
+import Clear from "./Clear"
+import SortBy from "./SortBy"
+
+interface SortByProps {
+  handleSortChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
+  options: {
+    sortBy: string
+    optionText: string
+  }[]
+}
+
+const SubheaderWishlist = ({ handleSortChange, options }: SortByProps) => {
   return (
-    <div>
-      <div></div>
-    </div>
+    <>
+      <Clear />
+      <SortBy handleSortChange={handleSortChange} options={options} />
+    </>
   )
 }
 export default SubheaderWishlist

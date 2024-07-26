@@ -5,7 +5,7 @@ import { db } from "../firebase/firebaseConfig"
 import { ProviderProps } from "../types/ProviderProps"
 
 export interface WishlistItem {
-  id: string // Идентификатор товара
+  id: string
   name: string
   price: number
   img: string

@@ -30,6 +30,7 @@ const NavBar = () => {
   }
 
   const { user } = useAuth()
+  console.log(user?.photoURL)
 
   return (
     <>
@@ -59,7 +60,7 @@ const NavBar = () => {
             }}
             className='w-8'>
             {user && user.photoURL ? (
-              <img className='rounded-full' src={user.photoURL} alt='/' />
+              <img className='rounded-full' src={user.photoURL} alt='' />
             ) : user && !user.photoURL && !user.isAnonymous ? (
               <img src={profileIdentified} alt='/' />
             ) : (
