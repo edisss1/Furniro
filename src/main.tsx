@@ -9,7 +9,6 @@ const CheckoutPage = lazy(() => import("./pages/CheckoutPage.tsx"))
 const CartPage = lazy(() => import("./pages/CartPage.tsx"))
 const ErrorPage = lazy(() => import("./pages/ErrorPage.tsx"))
 const Wishlist = lazy(() => import("./pages/Wishlist.tsx"))
-const Search = lazy(() => import("./pages/Search.tsx"))
 const Protected = lazy(() => import("./pages/Protected.tsx"))
 import ReactDOM from "react-dom/client"
 import "./index.css"
@@ -82,11 +81,6 @@ const router = createBrowserRouter([
         <Wishlist />
       </Protected>
     ),
-  },
-
-  {
-    path: "/search",
-    element: <Search />,
   },
 
   {

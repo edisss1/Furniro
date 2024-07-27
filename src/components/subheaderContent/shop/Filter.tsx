@@ -14,7 +14,7 @@ const Filter = ({
   handleDisplayChangeToGrid,
 }: FilterProps) => {
   return (
-    <div className='flex gap-6 max-md:justify-between'>
+    <div className='flex gap-6 max-md:justify-between '>
       <button>
         <div className='flex gap-2'>
           <img src={filter} alt='' />

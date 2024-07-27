@@ -11,12 +11,14 @@ type ShopHeaderProps = {
   itemsPerPage: number
   setItemsPerPage: (value: number) => void
   onSortChange: (sortOption: string) => void
+  setSearch: React.Dispatch<React.SetStateAction<string>>
 }
 
 const ShopHeader = ({
   itemsPerPage,
   setItemsPerPage,
   onSortChange,
+  setSearch,
 }: ShopHeaderProps) => {
   const { setDisplay } = useDisplay()
 
@@ -40,6 +42,7 @@ const ShopHeader = ({
       <Header pageTitle='Shop' />
       <Subheader>
         <SubheaderShop
+          setSearch={setSearch}
           filter={filter}
           showGrid={showGrid}
           showList={showList}

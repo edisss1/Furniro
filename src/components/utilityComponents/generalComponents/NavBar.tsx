@@ -2,7 +2,6 @@ import { Link, NavLink } from "react-router-dom"
 import logo from "../../../assets/Meubel House_Logos-05.svg"
 import profileUndefined from "../../../assets/Vector.svg"
 import favoriteItems from "../../../assets/akar-icons_heart.svg"
-import searchIcon from "../../../assets/akar-icons_search.svg"
 import cartIcon from "../../../assets/ant-design_shopping-cart-outlined.svg"
 import {
   activeLinkStyles,
@@ -67,9 +66,7 @@ const NavBar = () => {
               <img src={profileUndefined} alt='/' />
             )}
           </button>
-          <Link to={"/search"} className='w-8'>
-            <img src={searchIcon} alt='search' />
-          </Link>
+
           <Link to={"/wishlist"} className='w-8'>
             <img src={favoriteItems} alt='favorite items' />
           </Link>

@@ -19,6 +19,7 @@ const ShopPageProductsList = ({ products }: ShopPageProductsListProps) => {
   const [sortValue, setSortValue] = useState("default")
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [itemsPerPage, setItemsPerPage] = useState<number>(8)
+  const [search, setSearch] = useState("")
   const { display } = useDisplay()
 
   const { loading, setLoading } = useLoading()
@@ -46,20 +47,38 @@ const ShopPageProductsList = ({ products }: ShopPageProductsListProps) => {
     return () => clearTimeout(timeoutId)
   }, [sortValue, setLoading])
 
+  useEffect(() => {
+    setLoading(true)
+    const timeoutId = setTimeout(() => {
+      setLoading(false)
+    }, 500)
+    return () => clearTimeout(timeoutId)
+  }, [sortValue, setLoading])
+
+  const filteredProducts = useMemo(() => {
+    return products.filter((product) =>
+      product.name.toLowerCase().includes(search.toLowerCase())
+    )
+  }, [products, search])
+
   const sortedProducts = useMemo(() => {
     switch (sortValue) {
       case "cheap-first":
-        return quickSort(products, (a, b) => a?.price - b?.price)
+        return quickSort(filteredProducts, (a, b) => a?.price - b?.price)
       case "expensive-first":
-        return quickSort(products, (a, b) => b.price - a.price)
+        return quickSort(filteredProducts, (a, b) => b.price - a.price)
       case "aToZ":
-        return quickSort(products, (a, b) => a.name.localeCompare(b.name))
+        return quickSort(filteredProducts, (a, b) =>
+          a.name.localeCompare(b.name)
+        )
       case "zToA":
-        return quickSort(products, (a, b) => b.name.localeCompare(a.name))
+        return quickSort(filteredProducts, (a, b) =>
+          b.name.localeCompare(a.name)
+        )
       default:
-        return products
+        return filteredProducts
     }
-  }, [products, sortValue])
+  }, [filteredProducts, sortValue])
 
   const totalPages = Math.ceil(sortedProducts.length / itemsPerPage)
 
@@ -73,6 +92,7 @@ const ShopPageProductsList = ({ products }: ShopPageProductsListProps) => {
   return (
     <div className='flex flex-col items-center w-full'>
       <ShopHeader
+        setSearch={setSearch}
         onSortChange={setSortValue}
         itemsPerPage={itemsPerPage}
         setItemsPerPage={setItemsPerPage}

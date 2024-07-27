@@ -1,5 +1,6 @@
 import Filter from "./Filter"
 import Options from "./Options"
+import Search from "./Search"
 
 interface SubheaderShopProps {
   filter: string
@@ -18,6 +19,7 @@ interface SubheaderShopProps {
     sortBy: string
     optionText: string
   }[]
+  setSearch: React.Dispatch<React.SetStateAction<string>>
 }
 
 const SubheaderShop = ({
@@ -31,6 +33,7 @@ const SubheaderShop = ({
   itemsPerPage,
   itemsToShowValues,
   options,
+  setSearch,
 }: SubheaderShopProps) => {
   return (
     <>
@@ -41,6 +44,7 @@ const SubheaderShop = ({
         handleDisplayChangeToFlex={handleDisplayChangeToFlex}
         handleDisplayChangeToGrid={handleDisplayChangeToGrid}
       />
+      <Search setSearch={setSearch} />
       <Options
         handleItemsPerPage={handleItemsPerPage}
         handleSortChange={handleSortChange}
