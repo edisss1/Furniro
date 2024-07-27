@@ -3,6 +3,7 @@ import { useContext, useEffect, useReducer } from "react"
 import Loading from "../utilityComponents/Loading"
 import { CartContext } from "../../context/CartContext"
 import { reducerStates } from "../../hooks/reducerStates"
+import Copy from "../../svgs/Copy"
 
 interface ProductDisplayProps {
   id: string | undefined
@@ -86,10 +87,14 @@ const ProductDisplay = ({
               Add to Cart
             </button>
           </div>
-          <div className="mt-28 max-lg:mt-8 relative before:content['*'] before:w-full before:h-[2px] before:bg-[#D9D9D9] before:block before:absolute before:-top-[20%] ">
+          <div className="mt-28 flex flex-col justify-center gap-4 max-lg:mt-8 relative before:content['*'] before:w-full before:h-[2px] before:bg-[#D9D9D9] before:block before:absolute before:-top-[20%] ">
             <p>Category: {category}</p>
-            <p>Tags: </p>
-            <p>Share: </p>
+            <div className='flex items-center gap-4 '>
+              <p>Share:</p>
+              <button>
+                <Copy />
+              </button>
+            </div>
           </div>
         </div>
       </div>

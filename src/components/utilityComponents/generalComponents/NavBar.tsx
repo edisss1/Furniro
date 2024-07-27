@@ -34,7 +34,7 @@ const NavBar = () => {
   return (
     <>
       <nav
-        className={`  max-lg:hidden px-[5%] py-[1%] flex justify-between items-center  flex-wrap sticky top-0 z-[1000] bg-white/55 backdrop-blur-md`}>
+        className={` max-lg:hidden px-[5%] py-[1%] flex justify-between items-center  flex-wrap sticky top-0 z-[1000] bg-white/55 backdrop-blur-md`}>
         <Link to={"/"} className='flex items-center justify-center'>
           <img src={logo} alt='logo' />
           <h1 className='text-4xl font-bold font-secondary'>Furniro</h1>
@@ -51,7 +51,7 @@ const NavBar = () => {
             </NavLink>
           ))}
         </div>
-        <div className=' flex gap-[10%] '>
+        <div className=' flex gap-8 items-center'>
           <button
             onClick={() => {
               setDialogContent(<AuthContent toggleDialog={toggleDialog} />)
@@ -66,7 +66,6 @@ const NavBar = () => {
               <img src={profileUndefined} alt='/' />
             )}
           </button>
-
           <Link to={"/wishlist"} className='w-8'>
             <img src={favoriteItems} alt='favorite items' />
           </Link>

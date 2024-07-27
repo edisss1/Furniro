@@ -26,7 +26,7 @@ const Options = ({
         <select
           value={itemsPerPage}
           onChange={handleItemsPerPage}
-          className='flex justify-center items-center w-10 aspect-square bg-white p-1'>
+          className='flex justify-center rounded-md items-center w-10 aspect-square bg-white p-2'>
           {itemsToShowValues.map((value) => (
             <option key={value.value} value={value.value}>
               {value.title}
@@ -36,7 +36,7 @@ const Options = ({
       </div>
       <div className='flex justify-center items-center gap-4  '>
         <p className='text-overflow-ellipsis w-[calc(100%)]'>Sort by</p>
-        <select onChange={handleSortChange} className='p-2 bg-white'>
+        <select onChange={handleSortChange} className='p-3 rounded-md bg-white'>
           {options.map((option) => (
             <option key={option.sortBy} value={option.sortBy}>
               {option.optionText}

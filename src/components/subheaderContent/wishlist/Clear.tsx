@@ -6,7 +6,7 @@ const Clear = () => {
 
   console.log("Component Clear mounted")
   return (
-    <div className='flex gap-2 items-center justify-center'>
+    <div className='flex gap-2 items-center justify-center max-md:order-2'>
       <img src={trashcan} alt='' />
       <button onClick={clearWishlist}>Clear wishlist</button>
     </div>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Info = () => {
   return (
     <div
@@ -11,12 +13,16 @@ const Info = () => {
             Discover Our <br /> New Collection
           </h2>
           <p className='max-sm:text-sm'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper mattis.
+            Explore our latest arrivals, featuring fresh designs and
+            high-quality materials. Our new collection showcases innovative
+            styles and trends that are sure to elevate your wardrobe. Don’t miss
+            out on these exclusive pieces!
           </p>
-          <button className='uppercase py-[5%] px-[15%] bg-primary max-lg:py-[.5rem] max-lg:px-4rem text-white font-bold'>
+          <Link
+            to={"/shop"}
+            className='uppercase py-[5%] px-[15%] bg-primary max-lg:py-[.5rem] max-lg:px-4rem text-white font-bold'>
             Buy Now
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -56,9 +56,9 @@ const MobileNav = () => {
               <img src={profileUndefined} alt='profile is not defined' />
             </button>
 
-            <button>
+            <Link to={"/wishlist"}>
               <img src={favoriteItems} alt='favorite items' />
-            </button>
+            </Link>
             <Link to={"/cart"}>
               <img src={cartIcon} alt='shopping cart' />
             </Link>

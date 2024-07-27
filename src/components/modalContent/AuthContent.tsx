@@ -17,7 +17,9 @@ const AuthContent = ({ toggleDialog }: AuthContentProps) => {
   return (
     <div className='flex flex-col gap-4'>
       <ModalHeader
-        modalTitle={isLogin ? "Login" : "Sign Up"}
+        modalTitle={
+          user && !user.isAnonymous ? "Profile" : isLogin ? "Login" : "Sign Up"
+        }
         toggleDialog={toggleDialog}
       />
       {user && !user.isAnonymous ? (

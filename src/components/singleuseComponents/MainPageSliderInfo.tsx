@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const MainPageSliderInfo = () => {
   return (
     <div className='max-w-[430px] flex flex-col gap-6'>
@@ -10,9 +12,11 @@ const MainPageSliderInfo = () => {
           inspire you
         </p>
       </div>
-      <button className='text-white  max-w-[11rem] bg px-8 py-3 bg-primary font-bold'>
+      <Link
+        to={"/shop"}
+        className='text-white  max-w-[11rem] bg px-8 py-3 bg-primary font-bold'>
         Explore More
-      </button>
+      </Link>
     </div>
   )
 }
