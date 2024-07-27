@@ -15,6 +15,7 @@ interface WishlistContextProps {
   wishlistItems: WishlistItem[]
   addToWishlist: (item: WishlistItem) => void
   removeFromWishlist: (id: string | undefined) => void
+  clearWishlist: () => void
 }
 
 export const WishlistContext = createContext<WishlistContextProps | null>(null)
@@ -53,9 +54,12 @@ export const WishlistProvider = ({ children }: ProviderProps) => {
   useEffect(() => {
     if (user) {
       const userWishlistRef = doc(collection(db, "wishlist"), user.uid)
-      setDoc(userWishlistRef, { items: wishlistItems }).catch((error) => {
-        console.error("Error updating wishlist:", error)
-      })
+
+      if (wishlistItems.length > 0) {
+        setDoc(userWishlistRef, { items: wishlistItems }).catch((error) => {
+          console.error("Error updating wishlist:", error)
+        })
+      }
     }
   }, [wishlistItems, user])
 
@@ -82,9 +86,26 @@ export const WishlistProvider = ({ children }: ProviderProps) => {
     )
   }
 
+  const clearWishlist = () => {
+    setWishlistItems([])
+    if (user) {
+      const userWishlistRef = doc(collection(db, "wishlist"), user.uid)
+
+      setDoc(userWishlistRef, { items: [] }).catch((error) => {
+        console.error("Error clearing wishlist:", error)
+      })
+    }
+    console.log("Wishlist cleared")
+  }
+
   return (
     <WishlistContext.Provider
-      value={{ wishlistItems, addToWishlist, removeFromWishlist }}>
+      value={{
+        clearWishlist,
+        wishlistItems,
+        addToWishlist,
+        removeFromWishlist,
+      }}>
       {children}
     </WishlistContext.Provider>
   )
