@@ -10,7 +10,7 @@ const WishlistBody = ({ sortedProducts }: WishlistBodyProps) => {
   const { removeFromWishlist } = useWishlist()
   console.log("Wishlist body mounted with: ", sortedProducts)
   return (
-    <div className='mt-5 flex flex-col w-[80%] mx-auto items-center '>
+    <div className='mt-5 flex flex-col w-[80%] gap-4 mx-auto items-center justify-center'>
       {sortedProducts && sortedProducts.length > 0 ? (
         sortedProducts.map((item) => (
           <div
@@ -18,7 +18,7 @@ const WishlistBody = ({ sortedProducts }: WishlistBodyProps) => {
             className='w-full flex justify-between pe-12 bg-card relative'>
             <div className='flex items-center gap-2'>
               <img
-                className='max-w-[10%] min-w-[80px] rounded-md self-start'
+                className='w-[10%] aspect-square min-w-[80px] rounded-md self-start'
                 src={item.img}
                 alt={item.name}
               />

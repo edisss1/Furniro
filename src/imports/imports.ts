@@ -80,7 +80,7 @@ export const guaranteesContent = [
   {
     img: Quality,
     header: "High Quality",
-    text: "crafted from top materials",
+    text: "Crafted from top materials",
   },
   {
     img: Warranty,

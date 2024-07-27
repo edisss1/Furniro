@@ -1,7 +1,4 @@
 import { lazy, Suspense } from "react"
-import share from "../../assets/Share.svg"
-import compare from "../../assets/Compare.svg"
-import like from "../../assets/Like.svg"
 
 import { Link } from "react-router-dom"
 import { useDisplay } from "../../context/ItemsDisplayContext"
@@ -68,9 +65,6 @@ const ProductCard = ({
             name={title}
             price={price}
             imgURL={imgURL}
-            share={share}
-            compare={compare}
-            like={like}
           />
         </Suspense>
 

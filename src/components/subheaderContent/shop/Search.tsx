@@ -9,7 +9,7 @@ const Search = ({ setSearch }: SearchProps) => {
     <div className='relative w-[50%] max-md:w-auto'>
       <input
         onChange={(e) => setSearch(e.target.value)}
-        className='px-4 py-2 w-full rounded-md outline-black border-faint border-2 focus:placeholder:hidden '
+        className='px-4 py-2 w-full rounded-md focus:border-primary border-faint outline-none border-2 focus:placeholder:hidden '
         type='text'
         placeholder='Search for product'
       />

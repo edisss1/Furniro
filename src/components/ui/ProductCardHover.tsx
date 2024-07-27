@@ -1,27 +1,16 @@
 import { Link } from "react-router-dom"
 import { useWishlist } from "../../context/WishlistContext"
-import { useAuth } from "../../context/AuthContext"
+import Like from "../../svgs/Like"
 
 interface ProductHoverProps {
   id: string
   name: string
   price: number
   imgURL: string
-  share: string
-  compare: string
-  like: string
 }
 
-const ProductCardHover = ({
-  id,
-  name,
-  price,
-  imgURL,
-  share,
-  compare,
-  like,
-}: ProductHoverProps) => {
-  const { addToWishlist } = useWishlist()
+const ProductCardHover = ({ id, name, price, imgURL }: ProductHoverProps) => {
+  const { addToWishlist, liked } = useWishlist()
 
   const wishlistProduct = {
     id: id, // Используйте идентификатор товара
@@ -39,18 +28,10 @@ const ProductCardHover = ({
           More
         </Link>
         <div className='text-white text-sm flex gap-4 mt-6 max-sm:flex-col flex-wrap justify-center '>
-          <button className='flex gap-1 justify-center items-center  '>
-            <img src={share} alt='share' />
-            <p>Share</p>
-          </button>
-          <button className='flex gap-1 justify-center items-center'>
-            <img src={compare} alt='compare' />
-            <p>Compare</p>
-          </button>
           <button
             onClick={() => addToWishlist(wishlistProduct)}
             className='flex gap-1 justify-center items-center'>
-            <img src={like} alt='like' />
+            <Like className={`${liked ? "fill-white" : ""}`} />
             <p>Like</p>
           </button>
         </div>

@@ -16,6 +16,7 @@ interface WishlistContextProps {
   addToWishlist: (item: WishlistItem) => void
   removeFromWishlist: (id: string | undefined) => void
   clearWishlist: () => void
+  liked: boolean
 }
 
 export const WishlistContext = createContext<WishlistContextProps | null>(null)
@@ -30,6 +31,7 @@ export const useWishlist = () => {
 
 export const WishlistProvider = ({ children }: ProviderProps) => {
   const [wishlistItems, setWishlistItems] = useState<WishlistItem[]>([])
+  const [liked, setLiked] = useState<boolean>(false)
   const { user } = useAuth()
 
   useEffect(() => {
@@ -72,6 +74,7 @@ export const WishlistProvider = ({ children }: ProviderProps) => {
       if (!isItemInWishlist) {
         return [...prevItems, item]
       }
+      setLiked(true)
       return prevItems
     })
 
@@ -84,6 +87,7 @@ export const WishlistProvider = ({ children }: ProviderProps) => {
     setWishlistItems((prevItems) =>
       prevItems.filter((wishlistItem) => wishlistItem.id !== id)
     )
+    setLiked(false)
   }
 
   const clearWishlist = () => {
@@ -101,6 +105,7 @@ export const WishlistProvider = ({ children }: ProviderProps) => {
   return (
     <WishlistContext.Provider
       value={{
+        liked,
         clearWishlist,
         wishlistItems,
         addToWishlist,
