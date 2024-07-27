@@ -1,6 +1,6 @@
 import { useAuth } from "../../context/AuthContext"
 import profileIdentified from "../../assets/profileIdentified.svg"
-import logout from "../../assets/logout.svg"
+import SignOut from "../../svgs/SignOut"
 
 const UserLoggedIn = () => {
   const { user, signOut } = useAuth()
@@ -20,9 +20,9 @@ const UserLoggedIn = () => {
           </p>
         </div>
         <button
-          className='flex  gap-3 border-2 px-3 py-2 rounded-full absolute bottom-2'
+          className='flex items-center  gap-3 border-2 px-3 py-2 rounded-full absolute bottom-2'
           onClick={signOut}>
-          <img className='w-4' src={logout} alt='' />
+          <SignOut />
           <p>Sign out</p>
         </button>
       </div>

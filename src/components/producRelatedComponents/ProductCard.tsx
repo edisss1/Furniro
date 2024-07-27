@@ -43,7 +43,7 @@ const ProductCard = ({
         loading='lazy'
       />
       <div className={`${display === "flex" ? "w-full" : ""} flex flex-col `}>
-        <div className='p-4 max-md:p-2 flex flex-col '>
+        <div className='p-4 max-md:p-2 flex flex-col max-w-[70%] '>
           {display === "grid" ? (
             <h4 className='text-[clamp(14px,3vw,16px)] font-semibold w-[calc(100%)] text-overflow-ellipsis'>
               {title}
@@ -61,10 +61,7 @@ const ProductCard = ({
           </p>
           <p className='text-lg font-semibold'>${price}</p>
         </div>
-        <div
-          className={`${display === "grid" ? "hidden" : ""} mr-8 bg-primary px-8 py-2 rounded-md`}>
-          <Link to={`/product/${id}`}>More</Link>
-        </div>
+
         <Suspense fallback={<div>Loading...</div>}>
           <ProductCardHover
             id={id}

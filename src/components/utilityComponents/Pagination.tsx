@@ -56,7 +56,7 @@ const Pagination = ({
       ))}
       {currentPage < totalPages && (
         <button
-          className='bg-secondary px-4 rounded-sm'
+          className='bg-secondary px-6 py-2 rounded-md'
           onClick={() => handleNextPage(currentPage + 1)}>
           Next
         </button>

@@ -1,9 +1,11 @@
-import { useContext, useEffect, useReducer } from "react"
+import { useContext, useEffect, useReducer, useState } from "react"
 
 import Loading from "../utilityComponents/Loading"
 import { CartContext } from "../../context/CartContext"
 import { reducerStates } from "../../hooks/reducerStates"
 import Copy from "../../svgs/Copy"
+import { useLocation } from "react-router-dom"
+import Copied from "../utilityComponents/Copied"
 
 interface ProductDisplayProps {
   id: string | undefined
@@ -24,7 +26,9 @@ const ProductDisplay = ({
   category,
   loading,
 }: ProductDisplayProps) => {
+  const location = useLocation()
   const [state, dispatch] = useReducer(reducerStates, { count: 0 })
+  const [copied, setCopied] = useState(false)
   const cartContext = useContext(CartContext)
   if (!cartContext) return null
 
@@ -36,6 +40,12 @@ const ProductDisplay = ({
     price: price,
     img: img,
     quantity: state.count,
+  }
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText("http://localhost:5173" + location.pathname)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 5000)
   }
 
   useEffect(() => {
@@ -65,8 +75,8 @@ const ProductDisplay = ({
           <p>{reviews?.length ? reviews.length : 0} Customer review</p>
         </div>
         <div>
-          <div className='flex gap-4 justify-between w-full text-[clamp(12px,4vw,20px)]'>
-            <div className='border-2  flex items-center w-[50%]  py-3 justify-around rounded-md select-none'>
+          <div className='flex gap-8  w-full text-[clamp(12px,4vw,20px)]'>
+            <div className='border-2  flex items-center w-[50%] max-w-[150px]  py-3 justify-around rounded-md select-none'>
               <button
                 onClick={() => dispatch({ type: "DECREASE", payload: 1 })}>
                 -
@@ -87,14 +97,15 @@ const ProductDisplay = ({
               Add to Cart
             </button>
           </div>
-          <div className="mt-28 flex flex-col justify-center gap-4 max-lg:mt-8 relative before:content['*'] before:w-full before:h-[2px] before:bg-[#D9D9D9] before:block before:absolute before:-top-[20%] ">
+          <div className="mt-28 relative flex flex-col justify-center gap-4 max-lg:mt-8  before:content['*'] before:w-full before:h-[2px] before:bg-[#D9D9D9] before:block before:absolute before:-top-[20%] ">
             <p>Category: {category}</p>
             <div className='flex items-center gap-4 '>
               <p>Share:</p>
-              <button>
+              <button className='' onClick={copyToClipboard}>
                 <Copy />
               </button>
             </div>
+            <Copied copied={copied} />
           </div>
         </div>
       </div>
