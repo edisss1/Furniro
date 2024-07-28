@@ -13,7 +13,7 @@ const WishlistBody = ({ sortedProducts }: WishlistBodyProps) => {
     <div className="mt-5 flex flex-col w-[80%] gap-4 mx-auto items-center justify-center">
       {sortedProducts && sortedProducts.length > 0 ? (
         sortedProducts.map((item) => (
-          <div className="relative w-full">
+          <div key={item.id} className="relative w-full">
             <Link
               to={`/product/${item.id}`}
               key={item.id}
@@ -27,7 +27,7 @@ const WishlistBody = ({ sortedProducts }: WishlistBodyProps) => {
                 <div className="flex flex-col gap-4 max-w-[40%] ">
                   <Link
                     to={`/product/${item.id}`}
-                    className="font-medium relative text-overflow-ellipsis after:content['*'] after:w-full after:h-[2px] after:absolute after:bottom-0 after:bg-black after:right-0 group-hover:after:scale-0 after:origin-left  group-hover:after:invisible after:transition-all ">
+                    className="font-medium relative inline-block  text-overflow-ellipsis after:content['*'] after:w-full after:h-[2px] after:absolute after:bottom-0 after:bg-black after:right-0 group-hover:after:scale-0 after:origin-left  group-hover:after:invisible after:transition-all ">
                     {item.name}
                   </Link>
                   <p className="text-primary font-semibold">${item.price}</p>

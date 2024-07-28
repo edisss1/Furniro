@@ -110,7 +110,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       setUser(result.user)
       setError(null)
     } catch (err) {
-      console.error("signInWithGoogle - error:", (err as any).message)
+      console.error("signInWithGoogle - error:", (err as FirebaseError).message)
       setError(err as FirebaseError)
     }
   }

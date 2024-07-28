@@ -25,11 +25,6 @@ import { ProductContext } from "../context/ProductsContext"
 import Loading from "../components/utilityComponents/Loading"
 
 const HomePage = () => {
-  const context = useContext(ProductContext)
-  if (!context) return <Loading />
-  const { products } = context
-
-  // const { loading } = useLoading()
   const { setDisplay } = useDisplay()
 
   useEffect(() => {
@@ -39,6 +34,13 @@ const HomePage = () => {
   useEffect(() => {
     document.title = "Furniro"
   }, [])
+
+  const context = useContext(ProductContext)
+  if (!context) return <Loading />
+  const { products } = context
+
+  // const { loading } = useLoading()
+
   return (
     <>
       <NavBar />

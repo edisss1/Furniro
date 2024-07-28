@@ -27,12 +27,15 @@ const CartContent = ({ toggleDialog }: CartContentProps) => {
                 alt=""
               />
               <div className="flex justify-between items-center w-full">
-                <div className="group">
+                <div className="group flex flex-col items-start gap-4">
                   <Link
-                    className="font-medium relative text-overflow-ellipsis after:content['*'] after:w-full after:h-[2px] after:absolute after:bottom-0 after:bg-black after:right-0 group-hover:after:scale-0 after:origin-left  group-hover:after:invisible after:transition-all"
+                    className="font-medium relative   after:content-[''] after:w-full after:h-[2px] after:absolute after:bottom-0 after:bg-black after:right-0 group-hover:after:scale-0 after:origin-left group-hover:after:invisible after:transition-all block w-full"
                     to={`/product/${cartItem.id}`}>
-                    {cartItem.name}
+                    <p className="text-overflow-ellipsis max-w-[250px]">
+                      {cartItem.name}
+                    </p>
                   </Link>
+
                   <p className="flex justify-around w-[50%]">
                     <span>{cartItem.quantity}</span> <span>X</span>
                     <span className="text-primary">${cartItem.price}</span>

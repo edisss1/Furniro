@@ -48,12 +48,10 @@ export const CartProvider = ({ children }: ProviderProps) => {
   useEffect(() => {
     if (user) {
       const userCartRef = doc(collection(db, "cart"), user.uid)
-      setDoc(userCartRef, { items: cartItems })
-    } else {
-      try {
-        localStorage.setItem("cartItems", JSON.stringify(cartItems))
-      } catch (error) {
-        console.error("Error saving cart items to localStorage:", error)
+      if (cartItems.length > 0) {
+        setDoc(userCartRef, { items: cartItems }).catch((error) => {
+          console.error("Error updating cart", error)
+        })
       }
     }
   }, [cartItems, user])

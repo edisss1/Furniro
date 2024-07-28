@@ -17,7 +17,7 @@ import { useDisplay } from "../context/ItemsDisplayContext"
 import { useLocation } from "react-router-dom"
 
 const ProductInformationPage = () => {
-  let location = useLocation()
+  const location = useLocation()
   const context = useContext(SpecificProductContext)
   const { specificProduct, isLoading } = context
   const { setDisplay } = useDisplay()
@@ -32,7 +32,7 @@ const ProductInformationPage = () => {
 
   if (isLoading) return <Loading />
   if (!specificProduct)
-    return <h1 className='absolute inset-0'>Item not found</h1>
+    return <h1 className="absolute inset-0">Item not found</h1>
 
   return (
     <>

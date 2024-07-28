@@ -1,0 +1,26 @@
+name: Load Environment Variables
+
+on: [push]
+
+jobs:
+  load-env:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+
+      - name: Load environment variables from .env file
+        run: |
+          echo "Loading environment variables from .env file..."
+          export $(grep -v '^#' .env | xargs) && echo $VITE_FIREBASE_KEY_PHRASE
+
+      - name: Run build with loaded env variables
+        run: npm run build
+        env:
+          VITE_FIREBASE_KEY_PHRASE: ${{ secrets.VITE_FIREBASE_KEY_PHRASE }}
