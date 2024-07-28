@@ -39,12 +39,12 @@ const MobileCartItemsList = ({
           </div>
         ))
       ) : (
-        <div className='flex flex-col gap-4'>
-          <h4 className='font-medium text-3xl justify-self-center lg:hidden'>
+        <div className='flex flex-col gap-4 lg:hidden'>
+          <h4 className='font-medium text-3xl justify-self-center'>
             Your Cart is Empty
           </h4>
           <Link
-            className='self-center border border-faint px-4 py-2 rounded-md'
+            className='self-center border border-faint px-4 py-2 rounded-md '
             to={"/shop"}>
             Go to shop
           </Link>

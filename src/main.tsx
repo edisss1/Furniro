@@ -26,6 +26,7 @@ import { AuthProvider } from "./context/AuthContext.tsx"
 import { QueryClientProvider } from "@tanstack/react-query"
 import client from "./react-query-client/client.ts"
 import { WishlistProvider } from "./context/WishlistContext.tsx"
+import MobileLoginPage from "./pages/MobileLoginPage.tsx"
 
 const router = createBrowserRouter([
   {
@@ -81,6 +82,10 @@ const router = createBrowserRouter([
         <Wishlist />
       </Protected>
     ),
+  },
+  {
+    path: "/login",
+    element: <MobileLoginPage />,
   },
 
   {

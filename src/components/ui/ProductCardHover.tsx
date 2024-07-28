@@ -20,19 +20,21 @@ const ProductCardHover = ({ id, name, price, imgURL }: ProductHoverProps) => {
   }
 
   return (
-    <div className='max-md:hidden md:pointer-events-none absolute inset-0 flex z-20 flex-col items-center pointer-events-auto justify-center opacity-0 transition-all group-hover:pointer-events-auto group-hover:opacity-100 ease-linear duration-200'>
-      <div className='z-20 flex flex-col justify-center items-center gro '>
+    <div className="max-md:hidden md:pointer-events-none absolute inset-0 flex z-20 flex-col items-center pointer-events-auto justify-center opacity-0 transition-all group-hover:pointer-events-auto group-hover:opacity-100 ease-linear duration-200">
+      <div className="z-20 flex flex-col justify-center items-center ">
         <Link
           to={`/product/${id}`}
-          className='bg-white px-14 py-3 text-primary max-md:text-sm max-md:px-6 '>
+          className="bg-white px-14 py-3 text-primary max-md:text-sm max-md:px-6 ">
           More
         </Link>
-        <div className='text-white text-sm flex gap-4 mt-6 max-sm:flex-col flex-wrap justify-center '>
+        <div className="text-white text-sm flex gap-4 mt-6 max-sm:flex-col flex-wrap justify-center ">
           <button
             onClick={() => addToWishlist(wishlistProduct)}
-            className='flex gap-1 justify-center items-center'>
-            <Like className={`${liked ? "fill-white" : ""}`} />
-            <p>Like</p>
+            className="flex gap-1 justify-center items-center">
+            <Like
+              className={`${liked ? "fill-white" : ""} w-8 aspect-square`}
+            />
+            <p className="text-lg font-medium">Like</p>
           </button>
         </div>
       </div>

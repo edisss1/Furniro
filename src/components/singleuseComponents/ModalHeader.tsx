@@ -2,7 +2,7 @@ import CloseModal from "../../assets/CloseModal.svg"
 
 interface ModalHeaderProps {
   modalTitle: string
-  toggleDialog: () => void
+  toggleDialog: (() => void) | undefined
 }
 
 export const ModalHeader = ({ modalTitle, toggleDialog }: ModalHeaderProps) => {

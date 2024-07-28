@@ -52,9 +52,9 @@ const MobileNav = () => {
             ))}
           </ul>
           <div className='flex gap-4 mt-8'>
-            <button>
+            <Link to={"/login"}>
               <img src={profileUndefined} alt='profile is not defined' />
-            </button>
+            </Link>
 
             <Link to={"/wishlist"}>
               <img src={favoriteItems} alt='favorite items' />

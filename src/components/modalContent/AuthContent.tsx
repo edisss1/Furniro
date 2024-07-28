@@ -6,7 +6,7 @@ import { useAuth } from "../../context/AuthContext"
 import UserLoggedIn from "../auth/UserLoggedIn"
 
 interface AuthContentProps {
-  toggleDialog: () => void
+  toggleDialog?: () => void | null
 }
 
 const AuthContent = ({ toggleDialog }: AuthContentProps) => {
@@ -20,7 +20,7 @@ const AuthContent = ({ toggleDialog }: AuthContentProps) => {
         modalTitle={
           user && !user.isAnonymous ? "Profile" : isLogin ? "Login" : "Sign Up"
         }
-        toggleDialog={toggleDialog}
+        toggleDialog={toggleDialog ? toggleDialog : undefined}
       />
       {user && !user.isAnonymous ? (
         <UserLoggedIn />

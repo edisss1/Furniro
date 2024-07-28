@@ -2,7 +2,7 @@ import { forwardRef } from "react"
 import { useAuth } from "../../context/AuthContext"
 
 interface CartModalProps {
-  toggleDialog: () => void
+  toggleDialog?: () => void
   children: React.ReactNode
 }
 
@@ -14,7 +14,7 @@ const Dialog = forwardRef<HTMLDialogElement, CartModalProps>(
         <dialog
           onClick={(e) => {
             if (e.currentTarget === e.target) {
-              toggleDialog()
+              toggleDialog ? toggleDialog() : null
               setError(null)
             }
           }}

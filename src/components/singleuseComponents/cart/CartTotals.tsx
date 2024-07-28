@@ -5,6 +5,7 @@ export interface CartTotalsProps {
 }
 
 const CartTotals = ({ total }: CartTotalsProps) => {
+  console.log(total)
   return (
     <div className='max-lg:hidden flex flex-col justify-between items-center px-[5%] pt-[1%] max-w-fit bg-secondary flex-wrap rounded-sm'>
       <h1 className='font-semibold text-3xl mb-[15%] mt-[10%] text-center'>
@@ -21,7 +22,7 @@ const CartTotals = ({ total }: CartTotalsProps) => {
         </div>
       </div>
       <Link
-        className='text-xl border-[1px] border-black px-[15%] py-4 rounded-3xl mt-[10%] mb-[20%]'
+        className={`text-xl border-[1px] border-black  px-[15%] py-4 rounded-md mt-[10%] mb-[20%]`}
         to={"/checkout"}>
         Checkout
       </Link>

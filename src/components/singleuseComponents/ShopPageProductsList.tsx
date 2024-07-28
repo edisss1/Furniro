@@ -100,8 +100,8 @@ const ShopPageProductsList = ({ products }: ShopPageProductsListProps) => {
       <div
         className={`px-4 gap-6 ${
           display === "flex"
-            ? `flex  flex-col w-full  `
-            : `grid grid-cols-4 max-w-[75%] max-md:max-w-[90%] justify-center place-items-center gap-14 mt-10 max-lg:grid-cols-3 max-md:grid-cols-2 `
+            ? `flex  flex-col w-full `
+            : `grid grid-cols-4 max-w-fit max-md:max-w-[90%]  justify-center place-items-center gap-14  mt-10 max-lg:grid-cols-3 max-md:grid-cols-2 `
         }`}>
         {loading
           ? Array.from({ length: itemsPerPage }).map((_, index) => (
