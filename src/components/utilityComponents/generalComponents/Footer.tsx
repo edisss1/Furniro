@@ -38,16 +38,25 @@ const Footer = () => {
           <div className="flex flex-col gap-10 max-lg:col-start-2 max-sm:col-start-1 ">
             <p className="text-product">Links</p>
             {paths?.map((path) => (
-              <Link key={path.path} to={path.path}>
+              <Link
+                aria-label={`Go to ${path.text} page `}
+                key={path.path}
+                to={path.path}>
                 {path.text}
               </Link>
             ))}
           </div>
           <div className="flex flex-col gap-10 max-lg:col-start-3 max-sm:col-start-3 ">
             <p className="text-product">Help</p>
-            <Link to={"/"}>Payment Options</Link>
-            <Link to={"/"}>Returns</Link>
-            <Link to={"/"}>Privacy Policies</Link>
+            <Link aria-label="Blank page" to={"/"}>
+              Payment Options
+            </Link>
+            <Link aria-label="Blank page" to={"/"}>
+              Returns
+            </Link>
+            <Link aria-label="Blank page" to={"/"}>
+              Privacy Policies
+            </Link>
           </div>
           <form
             onSubmit={handleEmailSubmission}

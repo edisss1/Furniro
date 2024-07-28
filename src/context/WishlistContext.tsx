@@ -77,8 +77,6 @@ export const WishlistProvider = ({ children }: ProviderProps) => {
       setLiked(true)
       return prevItems
     })
-
-    console.log("Adding item to wishlist: ", item)
   }
 
   const removeFromWishlist = (id: string | undefined) => {
@@ -99,7 +97,6 @@ export const WishlistProvider = ({ children }: ProviderProps) => {
         console.error("Error clearing wishlist:", error)
       })
     }
-    console.log("Wishlist cleared")
   }
 
   return (

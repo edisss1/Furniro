@@ -63,7 +63,6 @@ export const BillingProvider = ({
       ...prevData,
       orderedProducts: orderedProducts,
     }))
-    console.log(orderedProducts)
   }
 
   const placeOrder = async (

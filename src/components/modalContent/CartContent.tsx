@@ -29,6 +29,7 @@ const CartContent = ({ toggleDialog }: CartContentProps) => {
               <div className="flex justify-between items-center w-full">
                 <div className="group flex flex-col items-start gap-4">
                   <Link
+                    aria-label={`Go to ${cartItem.name} page`}
                     className="font-medium relative   after:content-[''] after:w-full after:h-[2px] after:absolute after:bottom-0 after:bg-black after:right-0 group-hover:after:scale-0 after:origin-left group-hover:after:invisible after:transition-all block w-full"
                     to={`/product/${cartItem.id}`}>
                     <p className="text-overflow-ellipsis max-w-[250px]">
@@ -66,10 +67,14 @@ const CartContent = ({ toggleDialog }: CartContentProps) => {
         <div className="mt-4 ">
           <ul className="flex justify-around gap-4  [&>*]:border [&>*]:border-faint [&>*]:rounded-full [&>*]:px-4  ">
             <li>
-              <Link to={"/cart"}>Cart</Link>
+              <Link aria-label="Go to cart" to={"/cart"}>
+                Cart
+              </Link>
             </li>
             <li>
-              <Link to={"/checkout"}>Checkout</Link>
+              <Link aria-label="Go to checkout" to={"/checkout"}>
+                Checkout
+              </Link>
             </li>
           </ul>
         </div>

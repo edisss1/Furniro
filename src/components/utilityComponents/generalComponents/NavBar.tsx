@@ -29,17 +29,19 @@ const NavBar = () => {
   }
 
   const { user } = useAuth()
-  console.log(user?.photoURL)
 
   return (
     <>
       <nav
         className={` max-lg:hidden px-[5%] py-[1%] flex justify-between items-center  flex-wrap sticky top-0 z-[1000] bg-white/55 backdrop-blur-md`}>
-        <Link to={"/"} className='flex items-center justify-center'>
-          <img src={logo} alt='logo' />
-          <h1 className='text-4xl font-bold font-secondary'>Furniro</h1>
+        <Link
+          aria-label="Link to home page"
+          to={"/"}
+          className="flex items-center justify-center">
+          <img src={logo} alt="logo" />
+          <h1 className="text-4xl font-bold font-secondary">Furniro</h1>
         </Link>
-        <div className='flex gap-[10%]'>
+        <div className="flex gap-[10%]">
           {paths?.map((path) => (
             <NavLink
               key={path.path}
@@ -51,31 +53,31 @@ const NavBar = () => {
             </NavLink>
           ))}
         </div>
-        <div className=' flex gap-8 items-center'>
+        <div className=" flex gap-8 items-center">
           <button
             onClick={() => {
               setDialogContent(<AuthContent toggleDialog={toggleDialog} />)
               toggleDialog()
             }}
-            className='w-8'>
+            className="w-8">
             {user && user.photoURL ? (
-              <img className='rounded-full' src={user.photoURL} alt='' />
+              <img className="rounded-full" src={user.photoURL} alt="" />
             ) : user && !user.photoURL && !user.isAnonymous ? (
-              <img src={profileIdentified} alt='/' />
+              <img src={profileIdentified} alt="/" />
             ) : (
-              <img src={profileUndefined} alt='/' />
+              <img src={profileUndefined} alt="/" />
             )}
           </button>
-          <Link to={"/wishlist"} className='w-8'>
-            <img src={favoriteItems} alt='favorite items' />
+          <Link aria-label="Link to wishlist" to={"/wishlist"} className="w-8">
+            <img src={favoriteItems} alt="favorite items" />
           </Link>
           <button
             onClick={() => {
               setDialogContent(<CartContent toggleDialog={toggleDialog} />)
               toggleDialog()
             }}
-            className='w-8'>
-            <img src={cartIcon} alt='shopping cart' />
+            className="w-8">
+            <img src={cartIcon} alt="shopping cart" />
           </button>
         </div>
         <Dialog

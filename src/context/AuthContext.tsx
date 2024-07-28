@@ -2,11 +2,13 @@
 import {
   createUserWithEmailAndPassword,
   EmailAuthProvider,
+  getRedirectResult,
   linkWithCredential,
   onAuthStateChanged,
   signInAnonymously,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signInWithRedirect,
   User,
 } from "firebase/auth"
 import React, { createContext, useContext, useEffect, useState } from "react"
@@ -21,6 +23,7 @@ interface AuthContextProps {
   signOut: () => Promise<void>
   signInWithGoogle: () => Promise<void>
   linkEmailAndPassword: (email: string, password: string) => Promise<void>
+  signInWithGoogleMobile: () => Promise<void>
   user: User | null
   error: FirebaseError | null
   email: string
@@ -114,6 +117,25 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       setError(err as FirebaseError)
     }
   }
+  const signInWithGoogleMobile = async () => {
+    try {
+      await signInWithRedirect(auth, provider)
+    } catch (err) {
+      console.error(err as FirebaseError)
+    }
+  }
+
+  useEffect(() => {
+    getRedirectResult(auth)
+      .then((result) => {
+        const user = result?.user!
+
+        setUser(user)
+      })
+      .catch((err) => {
+        console.log(err as FirebaseError)
+      })
+  }, [])
 
   const signOut = async () => {
     try {
@@ -144,11 +166,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       .then((userCredential) => {
         setUser(userCredential.user)
         setError(null)
-        console.log(userCredential.user)
       })
       .catch((error) => {
         setError(error as FirebaseError)
-        console.log(error)
+        console.error(error)
       })
   }
 
@@ -160,6 +181,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         user,
         signOut,
         signInWithGoogle,
+        signInWithGoogleMobile,
         onLogin,
         onSignUp,
         handleEmail,

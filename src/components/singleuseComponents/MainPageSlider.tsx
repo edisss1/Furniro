@@ -47,9 +47,9 @@ const MainPageSlider = () => {
   }
 
   return (
-    <div className='ps-[10%] max-md:hidden max-lg:flex-col max-lg:gap-5 max-lg:justify-center max-lg:items-center  bg-secondary flex justify-center items-center relative overflow-hidden py-8 '>
+    <div className="ps-[10%] max-md:hidden max-lg:flex-col max-lg:gap-5 max-lg:justify-center max-lg:items-center  bg-secondary flex justify-center items-center relative overflow-hidden py-8 ">
       <MainPageSliderInfo />
-      <div className='flex gap-6 overflow-hidden '>
+      <div className="flex gap-6 overflow-hidden ">
         {getVisibleImages().map((image, index) => (
           <div
             key={image.id}
@@ -58,20 +58,20 @@ const MainPageSlider = () => {
             } ${index === images.length - 1 ? "-mr-24" : ""}`}>
             <img
               src={image.url}
-              alt=''
+              alt=""
               className={`bg-white block ${
                 index !== 0 ? "h-[90%]" : "h-[100%]"
               } object-contain`}
             />
-            <div className='absolute bottom-[10%] left-[5%] grid grid-cols-3 items-end '>
+            <div className="absolute bottom-[10%] left-[5%] grid grid-cols-3 items-end ">
               <div
                 className={` bg-[#FFFFFF] bg-opacity-50 ps-6 max-lg:ps-2 py-6 max-lg:py-2 pe-4 max-lg:pe-1 col-span-2 ${
                   index !== 0
                     ? "hidden opacity-0"
                     : "block opacity-100 transition-opacity duration-500"
                 }`}>
-                <p className='max-xl:text-sm'>{image.imageSubHeader}</p>
-                <h3 className='font-bold text-[1.7rem] max-xl:text-base text-[#3A3A3A]'>
+                <p className="max-xl:text-sm">{image.imageSubHeader}</p>
+                <h3 className="font-bold text-[1.7rem] max-xl:text-base text-[#3A3A3A]">
                   {image.imageHeader}
                 </h3>
               </div>
@@ -81,20 +81,20 @@ const MainPageSlider = () => {
                     ? "hidden opacity-0"
                     : "block opacity-100 transition-opacity duration-500"
                 } `}>
-                <Link to='/'>
-                  <img src={SliderLink} alt='' />
+                <Link aria-label="Blank link" to="/">
+                  <img src={SliderLink} alt="" />
                 </Link>
               </div>
             </div>
           </div>
         ))}
         <button
-          className='w-fit h-fit top-[50%] right-[5%] transform -translate-y-1/2 rounded-full z-30 bg-white absolute py-4 px-4 flex justify-center items-center'
+          className="w-fit h-fit top-[50%] right-[5%] transform -translate-y-1/2 rounded-full z-30 bg-white absolute py-4 px-4 flex justify-center items-center"
           onClick={goToNextImage}>
-          <img src={SliderArrow} className='w-[14px] h-[14px]' alt='' />
+          <img src={SliderArrow} className="w-[14px] h-[14px]" alt="" />
         </button>
       </div>
-      <div className='absolute bottom-8 flex justify-center w-full z-20 left-44 gap-4'>
+      <div className="absolute bottom-8 flex justify-center w-full z-20 left-44 gap-4">
         {images.map((_, index) => (
           <div
             key={index}

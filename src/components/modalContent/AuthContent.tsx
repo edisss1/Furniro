@@ -1,8 +1,8 @@
 import { useState } from "react"
-import Login from "../auth/Login"
 import { ModalHeader } from "../singleuseComponents/ModalHeader"
 import Signup from "../auth/Signup"
 import { useAuth } from "../../context/AuthContext"
+import Login from "../auth/Login"
 import UserLoggedIn from "../auth/UserLoggedIn"
 
 interface AuthContentProps {
@@ -15,7 +15,7 @@ const AuthContent = ({ toggleDialog }: AuthContentProps) => {
   const { user } = useAuth()
 
   return (
-    <div className='flex flex-col gap-4'>
+    <div className="flex flex-col gap-4">
       <ModalHeader
         modalTitle={
           user && !user.isAnonymous ? "Profile" : isLogin ? "Login" : "Sign Up"

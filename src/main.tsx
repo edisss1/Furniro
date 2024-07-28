@@ -41,6 +41,16 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
+    path: "/Furniro/",
+    element: (
+      <Suspense>
+        <ProductProvider>
+          <HomePage />
+        </ProductProvider>
+      </Suspense>
+    ),
+  },
+  {
     path: "/shop",
     element: (
       <Suspense fallback={<Loading />}>
@@ -101,7 +111,6 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-
     element: (
       <Suspense fallback={<Loading />}>
         <MobileLoginPage />

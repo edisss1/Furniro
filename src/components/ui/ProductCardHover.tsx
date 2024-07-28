@@ -13,7 +13,7 @@ const ProductCardHover = ({ id, name, price, imgURL }: ProductHoverProps) => {
   const { addToWishlist, liked } = useWishlist()
 
   const wishlistProduct = {
-    id: id, // Используйте идентификатор товара
+    id: id,
     name: name,
     price: price,
     img: imgURL,
@@ -23,6 +23,7 @@ const ProductCardHover = ({ id, name, price, imgURL }: ProductHoverProps) => {
     <div className="max-md:hidden md:pointer-events-none absolute inset-0 flex z-20 flex-col items-center pointer-events-auto justify-center opacity-0 transition-all group-hover:pointer-events-auto group-hover:opacity-100 ease-linear duration-200">
       <div className="z-20 flex flex-col justify-center items-center ">
         <Link
+          aria-label={`Link to product information page `}
           to={`/product/${id}`}
           className="bg-white px-14 py-3 text-primary max-md:text-sm max-md:px-6 ">
           More

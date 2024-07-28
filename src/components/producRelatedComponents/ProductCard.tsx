@@ -37,26 +37,27 @@ const ProductCard = ({
         }`}
         src={imgURL}
         alt={title}
-        loading='lazy'
+        loading="lazy"
       />
       <div className={`${display === "flex" ? "w-full" : ""} flex flex-col `}>
-        <div className='p-4 max-md:p-2 flex flex-col max-w-[70%] '>
+        <div className="p-4 max-md:p-2 flex flex-col max-w-[70%] ">
           {display === "grid" ? (
-            <h4 className='text-[clamp(14px,3vw,16px)] font-semibold w-[calc(100%)] text-overflow-ellipsis'>
+            <h4 className="text-[clamp(14px,3vw,16px)] font-semibold w-[calc(100%)] text-overflow-ellipsis">
               {title}
             </h4>
           ) : (
             <Link
-              className='text-[clamp(14px,3vw,16px)] font-bold  w-[calc(100%)] underline text-overflow-ellipsis'
+              aria-label="Link to product page"
+              className="text-[clamp(14px,3vw,16px)] font-bold  w-[calc(100%)] underline text-overflow-ellipsis"
               to={`/product/${id}`}>
               {title}
             </Link>
           )}
 
-          <p className='text-[clamp(12px,3vw,14px)] text-faint  w-[calc(100%)] text-overflow-ellipsis '>
+          <p className="text-[clamp(12px,3vw,14px)] text-faint  w-[calc(100%)] text-overflow-ellipsis ">
             {smallDescription}
           </p>
-          <p className='text-lg font-semibold'>${price}</p>
+          <p className="text-lg font-semibold">${price}</p>
         </div>
 
         <Suspense fallback={<div>Loading...</div>}>
@@ -70,7 +71,9 @@ const ProductCard = ({
 
         <div
           className={`md:hidden ${display === "flex" ? "hidden" : ""}  self-center border-2 border-black mb-4 px-4 rounded-lg z-50'`}>
-          <Link to={`/product/${id}`}>More</Link>
+          <Link aria-label="Link to product page" to={`/product/${id}`}>
+            More
+          </Link>
         </div>
       </div>
     </div>
