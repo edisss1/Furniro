@@ -15,7 +15,6 @@ import "./index.css"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { LoadingProvider } from "./context/LoadingContext.tsx"
 import { ItemsDisplayProvider } from "./context/ItemsDisplayContext.tsx"
-import Loading from "./components/utilityComponents/Loading.tsx"
 import { SpecificProductProvider } from "./context/SpecificProductContext.tsx"
 import { CartProvider } from "./context/CartContext.tsx"
 import ErrorBoundary from "./components/utilityComponents/ErrorBoundary.tsx"
@@ -27,89 +26,113 @@ import { QueryClientProvider } from "@tanstack/react-query"
 import client from "./react-query-client/client.ts"
 import { WishlistProvider } from "./context/WishlistContext.tsx"
 import MobileLoginPage from "./pages/MobileLoginPage.tsx"
+import Loading from "./components/utilityComponents/Loading.tsx"
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <ProductProvider>
-        <HomePage />
-      </ProductProvider>
+      <Suspense fallback={<Loading />}>
+        <ProductProvider>
+          <HomePage />
+        </ProductProvider>
+      </Suspense>
     ),
     errorElement: <ErrorPage />,
   },
   {
     path: "/shop",
     element: (
-      <ProductProvider>
-        <ShopPage />
-      </ProductProvider>
+      <Suspense fallback={<Loading />}>
+        <ProductProvider>
+          <ShopPage />
+        </ProductProvider>
+      </Suspense>
     ),
   },
 
   {
     path: "/contact",
     element: (
-      <FeedbackProvider>
-        <ContactPage />
-      </FeedbackProvider>
+      <Suspense fallback={<Loading />}>
+        <FeedbackProvider>
+          <ContactPage />
+        </FeedbackProvider>
+      </Suspense>
     ),
   },
   {
     path: "/product/:productId",
     element: (
-      <SpecificProductProvider>
-        <ProductInformationPage />
-      </SpecificProductProvider>
+      <Suspense fallback={<Loading />}>
+        <SpecificProductProvider>
+          <ProductInformationPage />
+        </SpecificProductProvider>
+      </Suspense>
     ),
   },
   {
     path: "/cart",
-    element: <CartPage />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <CartPage />
+      </Suspense>
+    ),
   },
   {
     path: "/checkout",
     element: (
-      <BillingProvider>
-        <CheckoutPage />
-      </BillingProvider>
+      <Suspense fallback={<Loading />}>
+        <BillingProvider>
+          <CheckoutPage />
+        </BillingProvider>
+      </Suspense>
     ),
   },
   {
     path: "/wishlist",
     element: (
-      <Protected title='Wishlist'>
-        <Wishlist />
-      </Protected>
+      <Suspense fallback={<Loading />}>
+        <Protected title="Wishlist">
+          <Wishlist />
+        </Protected>
+      </Suspense>
     ),
   },
   {
     path: "/login",
-    element: <MobileLoginPage />,
+
+    element: (
+      <Suspense fallback={<Loading />}>
+        <MobileLoginPage />
+      </Suspense>
+    ),
   },
 
   {
     path: "*",
-    element: <ErrorPage />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <ErrorPage />
+      </Suspense>
+    ),
   },
 ])
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <Suspense fallback={<Loading />}>
-    <ErrorBoundary>
-      <AuthProvider>
-        <WishlistProvider>
-          <QueryClientProvider client={client}>
-            <CartProvider>
-              <ItemsDisplayProvider>
-                <LoadingProvider>
-                  <RouterProvider router={router} />
-                </LoadingProvider>
-              </ItemsDisplayProvider>
-            </CartProvider>
-          </QueryClientProvider>
-        </WishlistProvider>
-      </AuthProvider>
-    </ErrorBoundary>
-  </Suspense>
+  <ErrorBoundary>
+    <AuthProvider>
+      <WishlistProvider>
+        <QueryClientProvider client={client}>
+          <CartProvider>
+            <ItemsDisplayProvider>
+              <LoadingProvider>
+                <RouterProvider router={router} />
+              </LoadingProvider>
+            </ItemsDisplayProvider>
+          </CartProvider>
+        </QueryClientProvider>
+      </WishlistProvider>
+    </AuthProvider>
+  </ErrorBoundary>
 )
