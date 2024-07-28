@@ -13,14 +13,20 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "18"
+          node-version: "14"
 
       - name: Load environment variables from .env file
         run: |
           echo "Loading environment variables from .env file..."
-          export $(grep -v '^#' .env | xargs) && echo $VITE_FIREBASE_KEY_PHRASE
+          cat .env | grep -v '^#' | while read line; do
+            echo "$line" >> $GITHUB_ENV
+          done
 
-      - name: Run build with loaded env variables
+      - name: Print environment variables (for debugging)
+        run: env
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run build
         run: npm run build
-        env:
-          VITE_FIREBASE_KEY_PHRASE: ${{ secrets.VITE_FIREBASE_KEY_PHRASE }}
