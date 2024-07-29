@@ -51,7 +51,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/shop",
+    path: "/Furniro/shop",
     element: (
       <Suspense fallback={<Loading />}>
         <ProductProvider>
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/contact",
+    path: "/Furniro/contact",
     element: (
       <Suspense fallback={<Loading />}>
         <FeedbackProvider>
@@ -72,7 +72,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/product/:productId",
+    path: "/Furniro/product/:productId",
     element: (
       <Suspense fallback={<Loading />}>
         <SpecificProductProvider>
@@ -82,7 +82,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/cart",
+    path: "/Furniro/cart",
     element: (
       <Suspense fallback={<Loading />}>
         <CartPage />
@@ -90,7 +90,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/checkout",
+    path: "/Furniro/checkout",
     element: (
       <Suspense fallback={<Loading />}>
         <BillingProvider>
@@ -100,7 +100,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/wishlist",
+    path: "/Furniro/wishlist",
     element: (
       <Suspense fallback={<Loading />}>
         <Protected title="Wishlist">
@@ -110,7 +110,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/login",
+    path: "/Furniro/login",
     element: (
       <Suspense fallback={<Loading />}>
         <MobileLoginPage />
