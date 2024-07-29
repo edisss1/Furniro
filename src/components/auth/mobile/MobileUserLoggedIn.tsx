@@ -5,7 +5,7 @@ import SignOut from "../../../svgs/SignOut"
 const UserLoggedIn = () => {
   const { user, signOut } = useAuth()
   return (
-    <div className="flex flex-col items-center animate-sign-up-appear  ">
+    <div className="flex mt-8 flex-col items-center animate-sign-up-appear relative  ">
       <div className="flex flex-col items-center justify-center gap-6">
         <div className="border-2  rounded-full w-fit flex items-center justify-center">
           {user && user?.photoURL ? (
@@ -20,7 +20,7 @@ const UserLoggedIn = () => {
           </p>
         </div>
         <button
-          className="flex items-center  gap-3 border-2 px-3 py-2 rounded-full absolute bottom-2"
+          className="flex items-center  gap-3 border-2 px-3 py-2 rounded-full sticky top-[200%]"
           onClick={signOut}>
           <SignOut />
           <p>Sign out</p>

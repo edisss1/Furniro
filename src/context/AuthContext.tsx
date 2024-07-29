@@ -126,15 +126,20 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   }
 
   useEffect(() => {
-    getRedirectResult(auth)
-      .then((result) => {
-        const user = result?.user!
+    const handleRedirectResult = async () => {
+      try {
+        const result = await getRedirectResult(auth)
+        if (result) {
+          setUser(result.user)
+          setError(null)
+          console.log(user)
+        }
+      } catch (err) {
+        console.error(err as FirebaseError)
+      }
+    }
 
-        setUser(user)
-      })
-      .catch((err) => {
-        console.log(err as FirebaseError)
-      })
+    handleRedirectResult()
   }, [])
 
   const signOut = async () => {
