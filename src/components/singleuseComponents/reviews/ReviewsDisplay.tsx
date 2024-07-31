@@ -3,16 +3,6 @@ import ReviewCard from "./ReviewCard"
 import { useReviews } from "../../../context/ReviewsContext"
 import { useEffect } from "react"
 
-export interface Review {
-  id: string | undefined
-  imgURL: string | undefined
-  name: string | undefined
-  email?: string | undefined
-  reviewFor?: string | undefined
-  date: string | undefined
-  review: string | undefined
-}
-
 const ReviewsDisplay = () => {
   const { visibleReviews, loadMoreReviews, acquiredReviews, setReviewsToShow } =
     useReviews()
@@ -48,7 +38,6 @@ const ReviewsDisplay = () => {
             Show more
           </button>
         )}
-      {/* <button onClick={loadMoreReviews}>test</button> */}
     </div>
   )
 }

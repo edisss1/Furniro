@@ -93,10 +93,10 @@ export const ReviewsProvider = ({
       const subCollectionRef = collection(parentDocRef, "reviews")
 
       const data = {
-        imgURL: user?.photoURL,
-        name: user?.displayName,
-        userId: user?.uid,
-        email: user?.email,
+        imgURL: user?.photoURL ? user.photoURL : "",
+        name: user?.displayName ? user.displayName : "",
+        userId: user?.uid ? user.uid : crypto.randomUUID(),
+        email: user?.email ? user.email : "",
         reviewFor: specificProduct.name,
         date: dateMDY,
         review: review,

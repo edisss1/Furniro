@@ -1,25 +1,23 @@
-import { useAuth } from "../../../context/AuthContext"
 import ProfilePicturePlaceholder from "../../../svgs/ProfilePicturePlaceholder"
-import { Review } from "./ReviewsDisplay"
 
-const ReviewCard = ({ imgURL, name, date, review }: Review) => {
-  const { user } = useAuth()
+interface ReviewCardProps {
+  id: string | undefined
+  imgURL?: string | undefined
+  name: string | undefined
+  date: string | undefined
+  review: string | undefined
+}
 
-  console.log(user?.uid)
-
+const ReviewCard = ({ imgURL, name, date, review }: ReviewCardProps) => {
   return (
     <div className="grid grid-rows-3 place-content-start p-4  w-full rounded-md border-2">
       <div className="flex gap-4 items-center">
-        {user && !user.isAnonymous ? (
-          <img
-            className="w-8 rounded-full aspect-square border-none outline-none"
-            src={imgURL}
-            alt=""
-          />
+        {imgURL ? (
+          <img className="w-8 rounded-full" src={imgURL} />
         ) : (
-          <ProfilePicturePlaceholder className="w-8" />
+          <ProfilePicturePlaceholder className="w-8 rounded-full" />
         )}
-        <p>{user?.displayName ? name : "Unknown user"}</p>
+        <p>{name ? name : "Unknown user"}</p>
         <p className="text-faint">{date}</p>
       </div>
       <div>
