@@ -44,7 +44,7 @@ const Wishlist = () => {
     <>
       <NavBar />
       <MobileNav />
-      <Header pageTitle='Wishlist' logoTurned />
+      <Header pageTitle="Wishlist" logoTurned />
       <Subheader>
         <SubheaderWishlist
           options={options}

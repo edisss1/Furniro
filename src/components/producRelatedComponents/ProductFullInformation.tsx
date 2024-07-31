@@ -2,15 +2,8 @@ import { useState } from "react"
 import ProductDescription from "./ProductDescription"
 import ProductAdditionalInformation from "./ProductAdditionalInformation"
 import ProductsReviews from "./ProductsReviews"
-import { ProductWithId } from "./Products"
 
-interface ProductFullInformationProps {
-  specificProduct: ProductWithId
-}
-
-const ProductFullInformation = ({
-  specificProduct,
-}: ProductFullInformationProps) => {
+const ProductFullInformation = () => {
   const [section, setSection] = useState<
     "description" | "additionalInfo" | "reviews"
   >("description")
@@ -41,9 +34,7 @@ const ProductFullInformation = ({
       <div className="mt-4 overflow-hidden mx-auto">
         {section === "description" && <ProductDescription />}
         {section === "additionalInfo" && <ProductAdditionalInformation />}
-        {section === "reviews" && (
-          <ProductsReviews specificProduct={specificProduct} />
-        )}
+        {section === "reviews" && <ProductsReviews />}
       </div>
     </div>
   )
