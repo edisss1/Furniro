@@ -2,8 +2,15 @@ import { useState } from "react"
 import ProductDescription from "./ProductDescription"
 import ProductAdditionalInformation from "./ProductAdditionalInformation"
 import ProductsReviews from "./ProductsReviews"
+import { ProductWithId } from "./Products"
 
-const ProductFullInformation = () => {
+interface ProductFullInformationProps {
+  specificProduct: ProductWithId
+}
+
+const ProductFullInformation = ({
+  specificProduct,
+}: ProductFullInformationProps) => {
   const [section, setSection] = useState<
     "description" | "additionalInfo" | "reviews"
   >("description")
@@ -13,8 +20,8 @@ const ProductFullInformation = () => {
   }
 
   return (
-    <div className='flex flex-col justify-center w-full mt-[5%]'>
-      <div className='flex justify-center gap-[5%] font-medium text-2xl flex-wrap max-md:gap-6'>
+    <div className="flex flex-col justify-center w-full mt-[5%]">
+      <div className="flex justify-center gap-[5%] font-medium text-2xl flex-wrap max-md:gap-6">
         <button
           className={buttonClass("description")}
           onClick={() => setSection("description")}>
@@ -31,10 +38,12 @@ const ProductFullInformation = () => {
           Reviews
         </button>
       </div>
-      <div className='mt-4 overflow-hidden mx-auto'>
+      <div className="mt-4 overflow-hidden mx-auto">
         {section === "description" && <ProductDescription />}
         {section === "additionalInfo" && <ProductAdditionalInformation />}
-        {section === "reviews" && <ProductsReviews />}
+        {section === "reviews" && (
+          <ProductsReviews specificProduct={specificProduct} />
+        )}
       </div>
     </div>
   )

@@ -87,7 +87,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="max-lg:mx-auto">
-        {date.getUTCFullYear()} furniro. All rights reserved
+        {date.getUTCFullYear()} Furniro. All rights reserved
       </p>
     </footer>
   )

@@ -32,10 +32,14 @@ export default {
           "0%": { opacity: 0 },
           "100%": { opacity: 100 },
         },
+        button: {
+          "0%": { background: "#FFFFFF", border: "1px solid black" },
+        },
       },
       animation: {
         "sign-up-appear": "appear 0.5s linear",
         appear: "animateDisplay 0.2s linear",
+        button: "button 0.2s linear",
       },
     },
   },

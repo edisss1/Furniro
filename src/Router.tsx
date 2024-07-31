@@ -17,6 +17,7 @@ import { ProductProvider } from "./context/ProductsContext"
 import { FeedbackProvider } from "./context/FeedbackContext"
 import { SpecificProductProvider } from "./context/SpecificProductContext"
 import { BillingProvider } from "./context/BillingContext"
+import { ReviewsProvider } from "./context/ReviewsContext"
 
 const Router = () => {
   return (
@@ -49,7 +50,9 @@ const Router = () => {
         path="/product/:productId"
         element={
           <SpecificProductProvider>
-            <ProductInformationPage />
+            <ReviewsProvider>
+              <ProductInformationPage />
+            </ReviewsProvider>
           </SpecificProductProvider>
         }
       />

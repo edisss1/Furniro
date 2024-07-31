@@ -5,10 +5,10 @@ import { db } from "../firebase/firebaseConfig"
 import { ProviderProps } from "../types/ProviderProps"
 
 export interface WishlistItem {
-  id: string
-  name: string
-  price: number
-  img: string
+  id: string | undefined
+  name: string | undefined
+  price: number | undefined
+  img: string | undefined
 }
 
 interface WishlistContextProps {

@@ -1,3 +1,4 @@
+import MobileNav from "../utilityComponents/generalComponents/MobileNav"
 import NavBar from "../utilityComponents/generalComponents/NavBar"
 
 interface PleaseSignInProps {
@@ -8,8 +9,9 @@ const PleaseSignIn = ({ title }: PleaseSignInProps) => {
   return (
     <>
       <NavBar />
-      <div className='absolute top-[50%] left-[50%] -translate-x-[50%]'>
-        <p className=''>Please sign in to use {title}</p>
+      <MobileNav />
+      <div className="absolute top-[50%] left-[50%] -translate-x-[50%] text-center">
+        <p className="">Please sign in to use {title}</p>
       </div>
     </>
   )

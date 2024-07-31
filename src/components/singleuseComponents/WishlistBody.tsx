@@ -25,12 +25,11 @@ const WishlistBody = ({ sortedProducts }: WishlistBodyProps) => {
                   alt={item.name}
                 />
                 <div className="flex flex-col gap-4 max-w-[40%] ">
-                  <Link
+                  <p
                     aria-label={`Go to ${item.name} page `}
-                    to={`/product/${item.id}`}
                     className="font-medium relative inline-block  text-overflow-ellipsis after:content['*'] after:w-full after:h-[2px] after:absolute after:bottom-0 after:bg-black after:right-0 group-hover:after:scale-0 after:origin-left  group-hover:after:invisible after:transition-all ">
                     {item.name}
-                  </Link>
+                  </p>
                   <p className="text-primary font-semibold">${item.price}</p>
                 </div>
               </div>

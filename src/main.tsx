@@ -13,6 +13,7 @@ import { WishlistProvider } from "./context/WishlistContext.tsx"
 import Router from "./Router.tsx"
 import { Suspense } from "react"
 import Loading from "./components/utilityComponents/Loading.tsx"
+import { ReviewsProvider } from "./context/ReviewsContext.tsx"
 
 // const router = createBrowserRouter([
 //   {
