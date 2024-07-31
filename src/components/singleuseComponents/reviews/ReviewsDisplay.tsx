@@ -23,6 +23,7 @@ const ReviewsDisplay = () => {
               name={review.name}
               date={review.date}
               review={review.review}
+              rating={review.rating}
             />
           </>
         ))

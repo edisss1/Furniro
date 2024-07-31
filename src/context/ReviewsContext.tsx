@@ -35,6 +35,7 @@ interface Review {
   reviewFor?: string | undefined
   date: string | undefined
   review: string | undefined
+  rating: number
 }
 
 const ReviewsContext = createContext<ReviewsContextProps | null>(null)

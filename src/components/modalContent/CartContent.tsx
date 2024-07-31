@@ -16,7 +16,7 @@ const CartContent = ({ toggleDialog }: CartContentProps) => {
 
   return (
     <>
-      <div className="flex flex-col gap-4 relative  ">
+      <div className="flex flex-col gap-4 relative   ">
         <ModalHeader modalTitle="Shopping Cart" toggleDialog={toggleDialog} />
         {cartItems && cartItems.length > 0 ? (
           cartItems.map((cartItem) => (
@@ -32,7 +32,7 @@ const CartContent = ({ toggleDialog }: CartContentProps) => {
                     aria-label={`Go to ${cartItem.name} page`}
                     className="font-medium relative   after:content-[''] after:w-full after:h-[2px] after:absolute after:bottom-0 after:bg-black after:right-0 group-hover:after:scale-0 after:origin-left group-hover:after:invisible after:transition-all block w-full"
                     to={`/product/${cartItem.id}`}>
-                    <p className="text-overflow-ellipsis max-w-[250px]">
+                    <p className="text-overflow-ellipsis max-w-[230px]">
                       {cartItem.name}
                     </p>
                   </Link>

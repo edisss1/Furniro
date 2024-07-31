@@ -8,6 +8,7 @@ import { useLocation } from "react-router-dom"
 import Copied from "../utilityComponents/Copied"
 import Like from "../../svgs/Like"
 import { useWishlist } from "../../context/WishlistContext"
+import { useReviews } from "../../context/ReviewsContext"
 
 interface ProductDisplayProps {
   id: string
@@ -33,9 +34,20 @@ const ProductDisplay = ({
   const [copied, setCopied] = useState(false)
   const cartContext = useContext(CartContext)
   if (!cartContext) return null
+  const { acquiredReviews } = useReviews()
 
   const { addToCart } = cartContext
   const { addToWishlist } = useWishlist()
+
+  const ratings = acquiredReviews.map((review) => {
+    return review.rating
+  })
+
+  const avgRating = (ratings: number[]): number => {
+    if (ratings.length === 0) return 0
+    const sum = ratings.reduce((a, b) => a + b, 0)
+    return sum / ratings.length
+  }
 
   const product = {
     id: id,
@@ -69,9 +81,24 @@ const ProductDisplay = ({
           </h3>
           <p className="text-product">${price}</p>
         </div>
-        <div className="flex">
-          <div></div>
-          <p>{reviews?.length ? reviews.length : 0} Customer review</p>
+        <div className="flex gap-4">
+          <div className="flex gap-1">
+            <p className="text-primary">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span
+                  className={`${avgRating(ratings) >= star ? "text-primary" : "text-faint"}`}>
+                  ★
+                </span>
+              ))}
+            </p>
+            <p>{avgRating(ratings).toFixed(1)}</p>
+          </div>
+          <p>
+            {acquiredReviews?.length ? acquiredReviews.length : 0} Customer
+            {acquiredReviews.length === 1 || acquiredReviews.length === 0
+              ? " review"
+              : " reviews"}
+          </p>
         </div>
         <div>
           <div className="flex gap-8  w-full text-[clamp(12px,4vw,20px)]">
