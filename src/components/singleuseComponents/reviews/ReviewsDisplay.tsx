@@ -24,6 +24,7 @@ const ReviewsDisplay = () => {
               date={review.date}
               review={review.review}
               rating={review.rating}
+              userId={review.userId}
             />
           </>
         ))
