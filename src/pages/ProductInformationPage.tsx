@@ -48,7 +48,7 @@ const ProductInformationPage = () => {
         category={specificProduct?.category}
         id={specificProduct?.id}
       />
-      <ProductFullInformation specificProduct={specificProduct} />
+      <ProductFullInformation />
       <RelatedProducts currentProduct={specificProduct} />
       <Footer />
     </>

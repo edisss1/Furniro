@@ -10,12 +10,12 @@ import Like from "../../svgs/Like"
 import { useWishlist } from "../../context/WishlistContext"
 
 interface ProductDisplayProps {
-  id: string | undefined
-  img: string | undefined
-  price: number | undefined
-  name: string | undefined
-  reviews: string[] | undefined
-  category: string | undefined
+  id: string
+  img: string
+  price: number
+  name: string
+  reviews: string[]
+  category: string
   loading: boolean
 }
 
