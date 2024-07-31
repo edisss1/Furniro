@@ -13,7 +13,7 @@ const RatingReview: React.FC<RatingReviewProps> = ({ rating, setRating }) => {
       {[1, 2, 3, 4, 5].map((star) => (
         <span
           key={star}
-          className={`cursor-pointer text-xl ${hoverRating !== null ? (hoverRating >= star ? "text-primary" : "text-faint") : rating >= star ? "text-primary" : "text-faint"}`}
+          className={`cursor-pointer transition-colors duration-100 text-xl ${hoverRating !== null ? (hoverRating >= star ? "text-primary" : "text-faint") : rating >= star ? "text-primary" : "text-faint"}`}
           onClick={() => setRating(star)}
           onMouseEnter={() => setHoverRating(star)}
           onMouseLeave={() => setHoverRating(null)}>

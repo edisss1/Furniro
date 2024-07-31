@@ -25,7 +25,6 @@ const ProductDisplay = ({
   img,
   price,
   name,
-  reviews,
   category,
   loading,
 }: ProductDisplayProps) => {
