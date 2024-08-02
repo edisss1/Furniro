@@ -27,6 +27,7 @@ interface ReviewsContextProps {
   acquiredReviews: Review[]
   setReviewsToShow: React.Dispatch<React.SetStateAction<number>>
   deleteReview: (reviewId: string | undefined) => Promise<void>
+  warning: boolean
 }
 
 interface Review {
@@ -62,6 +63,7 @@ export const ReviewsProvider = ({
   const [review, setReview] = useState("")
   const [visibleReviews, setVisibleReviews] = useState<Review[]>([])
   const [reviewsToShow, setReviewsToShow] = useState<number>(8)
+  const [warning, setWarning] = useState(false)
 
   const [acquiredReviews, setAcquiredReviews] = useState<Review[]>([])
 
@@ -107,15 +109,19 @@ export const ReviewsProvider = ({
         rating: rating,
       }
 
-      const docRef = await addDoc(subCollectionRef, data)
+      if (data.rating === 0) {
+        setWarning(true)
+        return
+      } else {
+        const docRef = await addDoc(subCollectionRef, data)
+        setAcquiredReviews((prevReviews) => [
+          ...prevReviews,
+          { id: docRef.id, ...data } as Review,
+        ])
+        return docRef
 
-      setAcquiredReviews((prevReviews) => [
-        ...prevReviews,
-        { id: docRef.id, ...data } as Review,
-      ])
-
-      setReview("")
-      return docRef
+        setReview("")
+      }
     } catch (err) {
       console.error("Error adding review data:", err as FirebaseError)
     }
@@ -179,6 +185,7 @@ export const ReviewsProvider = ({
   return (
     <ReviewsContext.Provider
       value={{
+        warning,
         deleteReview,
         setReviewsToShow,
         acquiredReviews,
