@@ -1,4 +1,6 @@
+import AdditionalInfoList from "./AdditionalInfoList"
+
 const ProductAdditionalInformation = () => {
-  return <div>ProductAdditionalInformation</div>
+  return <AdditionalInfoList />
 }
 export default ProductAdditionalInformation
