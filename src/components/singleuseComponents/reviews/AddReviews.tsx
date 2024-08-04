@@ -2,7 +2,7 @@ import RatingReview from "./RatingReview"
 import { useReviews } from "../../../context/ReviewsContext"
 
 const AddReviews = () => {
-  const { addReviewData, handleReview, review, rating, setRating } =
+  const { addReviewData, handleReview, review, rating, setRating, warning } =
     useReviews()
 
   return (
@@ -24,6 +24,7 @@ const AddReviews = () => {
         Send review
       </button>
       <RatingReview rating={rating} setRating={setRating} />
+      {warning ? <p>Rating can not be 0</p> : null}
     </form>
   )
 }

@@ -4,6 +4,7 @@ import { SpecificProductContext } from "./SpecificProductContext"
 import {
   addDoc,
   collection,
+  deleteDoc,
   doc,
   DocumentData,
   DocumentReference,
@@ -25,14 +26,17 @@ interface ReviewsContextProps {
   loadMoreReviews: () => void
   acquiredReviews: Review[]
   setReviewsToShow: React.Dispatch<React.SetStateAction<number>>
+  deleteReview: (reviewId: string | undefined) => Promise<void>
+  warning: boolean
 }
 
 interface Review {
-  id: string | undefined
+  id: string
   imgURL: string | undefined
   name: string | undefined
   email?: string | undefined
   reviewFor?: string | undefined
+  userId?: string | undefined
   date: string | undefined
   review: string | undefined
   rating: number
@@ -59,13 +63,14 @@ export const ReviewsProvider = ({
   const [review, setReview] = useState("")
   const [visibleReviews, setVisibleReviews] = useState<Review[]>([])
   const [reviewsToShow, setReviewsToShow] = useState<number>(8)
+  const [warning, setWarning] = useState(false)
 
   const [acquiredReviews, setAcquiredReviews] = useState<Review[]>([])
 
   const { specificProduct } = useContext(SpecificProductContext) ?? {}
 
   const date = new Date()
-  const dateMDY = `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`
+  const dateMDY = `${date.getDate()}.${"0" + (date.getMonth() + 1).toString()}.${date.getFullYear()}`
 
   const handleReview = (e: React.ChangeEvent<HTMLInputElement>) => {
     setReview(e.target.value)
@@ -104,17 +109,43 @@ export const ReviewsProvider = ({
         rating: rating,
       }
 
-      const docRef = await addDoc(subCollectionRef, data)
+      if (data.rating === 0) {
+        setWarning(true)
+        return
+      } else {
+        const docRef = await addDoc(subCollectionRef, data)
+        setAcquiredReviews((prevReviews) => [
+          ...prevReviews,
+          { id: docRef.id, ...data } as Review,
+        ])
+        return docRef
 
-      setAcquiredReviews((prevReviews) => [
-        ...prevReviews,
-        { id: docRef.id, ...data } as Review,
-      ])
-
-      setReview("")
-      return docRef
+        setReview("")
+      }
     } catch (err) {
       console.error("Error adding review data:", err as FirebaseError)
+    }
+  }
+
+  const deleteReview = async (reviewID: string | undefined) => {
+    try {
+      if (!specificProduct?.id) {
+        console.error("Product ID is undefined")
+        return
+      }
+
+      const parentDocRef = doc(db, "products", specificProduct.id)
+      const subCollectionRef = collection(parentDocRef, "reviews")
+
+      const reviewDocRef = doc(subCollectionRef, reviewID)
+
+      await deleteDoc(reviewDocRef)
+
+      setAcquiredReviews((prevReviews) =>
+        prevReviews.filter((review) => review.id !== reviewID)
+      )
+    } catch (err) {
+      console.error(err as FirebaseError)
     }
   }
 
@@ -151,11 +182,11 @@ export const ReviewsProvider = ({
     }
   }, [specificProduct])
 
-  console.log(visibleReviews)
-
   return (
     <ReviewsContext.Provider
       value={{
+        warning,
+        deleteReview,
         setReviewsToShow,
         acquiredReviews,
         review,

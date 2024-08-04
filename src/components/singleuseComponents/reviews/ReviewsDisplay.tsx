@@ -15,17 +15,16 @@ const ReviewsDisplay = () => {
     <div className="flex items-center flex-col mt-8 gap-4">
       {visibleReviews.length !== 0 ? (
         visibleReviews.map((review) => (
-          <>
-            <ReviewCard
-              key={review.id}
-              imgURL={review.imgURL}
-              id={review.id}
-              name={review.name}
-              date={review.date}
-              review={review.review}
-              rating={review.rating}
-            />
-          </>
+          <ReviewCard
+            key={review.id}
+            imgURL={review.imgURL}
+            id={review.id}
+            name={review.name}
+            date={review.date}
+            review={review.review}
+            rating={review.rating}
+            userId={review.userId}
+          />
         ))
       ) : (
         <p>Product has no reviews</p>

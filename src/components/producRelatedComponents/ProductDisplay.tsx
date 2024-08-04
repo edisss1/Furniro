@@ -80,7 +80,7 @@ const ProductDisplay = ({
           </h3>
           <p className="text-product">${price}</p>
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 items-center">
           <div className="flex gap-1">
             <p className="text-primary">
               {[1, 2, 3, 4, 5].map((star) => (
@@ -92,7 +92,7 @@ const ProductDisplay = ({
             </p>
             <p>{avgRating(ratings).toFixed(1)}</p>
           </div>
-          <p>
+          <p className="text-[clamp(12px,4vw,20px)]">
             {acquiredReviews?.length ? acquiredReviews.length : 0} Customer
             {acquiredReviews.length === 1 || acquiredReviews.length === 0
               ? " review"
