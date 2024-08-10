@@ -10,7 +10,7 @@ interface ProductHoverProps {
 }
 
 const ProductCardHover = ({ id, name, price, imgURL }: ProductHoverProps) => {
-  const { addToWishlist, liked } = useWishlist()
+  const { addToWishlist } = useWishlist()
 
   const wishlistProduct = {
     id: id,
@@ -31,11 +31,12 @@ const ProductCardHover = ({ id, name, price, imgURL }: ProductHoverProps) => {
         <div className="text-white text-sm flex gap-4 mt-6 max-sm:flex-col flex-wrap justify-center ">
           <button
             onClick={() => addToWishlist(wishlistProduct)}
-            className="flex gap-1 justify-center items-center">
+            className="flex gap-1 justify-center items-center group/button ">
             <Like
-              className={`${liked ? "fill-white" : ""} w-8 aspect-square`}
+              className={` w-8 aspect-square  group-hover/button:animate-fill-white`}
+              stroke="white"
             />
-            <p className="text-lg font-medium">Like</p>
+            <p className="text-lg group font-medium ">Like</p>
           </button>
         </div>
       </div>

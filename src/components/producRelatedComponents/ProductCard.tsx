@@ -26,7 +26,7 @@ const ProductCard = ({
     <div
       className={`rounded-md  ${
         display === "grid"
-          ? ` flex flex-col w-[300px]  max-xl:w-[200px] max-md:w-[160px] bg-skeleton hover:shadow-2xl max-md:hover:shadow-none  relative z-[10] max-md:after:hidden after:rounded-md after:content['*'] after:bg-[#3A3A3A] after:bg-opacity-0 after:absolute after:inset-0 after:block after:z-[15] group hover:after:bg-opacity-80 after:transition-all after:ease-linear after:duration-200 `
+          ? ` flex flex-col w-[300px]  max-xl:w-[200px] max-md:w-[160px] max-sm:w-[150px] bg-skeleton hover:shadow-2xl max-md:hover:shadow-none  relative z-[10] max-md:after:hidden after:rounded-md after:content['*'] after:bg-[#3A3A3A] after:bg-opacity-0 after:absolute after:inset-0 after:block after:z-[15] group hover:after:bg-opacity-80 after:transition-all after:ease-linear after:duration-200 `
           : ` w-[70%] max-md:w-full mx-auto mt-4  flex items-center justify-between bg-card`
       }   `}>
       <img

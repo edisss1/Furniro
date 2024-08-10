@@ -99,7 +99,9 @@ const Order = () => {
             <button
               onClick={() => {
                 handleOrderedProducts(cartItems)
-                alert("This feature is not quite there yet")
+                alert(
+                  "This is a test version of marketplace.\n Billing is not available"
+                )
               }}
               className="mt-9 w-fit self-center py-[3%] rounded-xl px-[15%] border-2 border-black "
               type="submit">

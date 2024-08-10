@@ -9,7 +9,6 @@ interface FilterContextProps {
   }) => void
   handleCategoryChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
   openFilters: () => void
-  resetFilters: () => void
   opened: boolean
   maxPrice: number
   priceRange: [number, number]
@@ -88,16 +87,6 @@ export const FilterProvider = ({ children }: { children: React.ReactNode }) => {
     setFilteredProducts(filtered)
   }
 
-  const resetFilters = () => {
-    setCategory("All")
-    setPriceRange([0, maxPrice])
-    setFilters({
-      category: "All",
-      priceRange: [0, maxPrice],
-    })
-    setFilteredProducts(products)
-  }
-
   useEffect(() => {
     applyFilters()
   }, [filters])
@@ -116,7 +105,6 @@ export const FilterProvider = ({ children }: { children: React.ReactNode }) => {
         handleFilterChange,
         handleCategoryChange,
         openFilters,
-        resetFilters,
         maxPrice,
         opened,
         priceRange,

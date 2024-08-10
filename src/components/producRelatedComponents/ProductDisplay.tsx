@@ -85,6 +85,7 @@ const ProductDisplay = ({
             <p className="text-primary">
               {[1, 2, 3, 4, 5].map((star) => (
                 <span
+                  key={star}
                   className={`${avgRating(ratings) >= star ? "text-primary" : "text-faint"}`}>
                   ★
                 </span>
@@ -134,7 +135,10 @@ const ProductDisplay = ({
               <div className="flex">
                 <p>Add to wishlist: </p>
                 <button onClick={() => addToWishlist(product)}>
-                  <Like className="w-12 aspect-square " />
+                  <Like
+                    className="w-12 aspect-square hover:animate-fill"
+                    stroke="black"
+                  />
                 </button>
               </div>
             </div>

@@ -31,7 +31,7 @@ const ProductFullInformation = () => {
           Reviews
         </button>
       </div>
-      <div className="mt-4 overflow-hidden mx-auto">
+      <div className="mt-4 overflow-hidden mx-auto w-full">
         {section === "description" && <ProductDescription />}
         {section === "additionalInfo" && <ProductAdditionalInformation />}
         {section === "reviews" && <ProductsReviews />}

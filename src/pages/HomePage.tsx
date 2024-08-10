@@ -4,15 +4,12 @@ const Products = lazy(
 )
 
 import Info from "../components/singleuseComponents/Info"
-// import Loading from "../components/utilityComponents/Loading"
 const MainPageSlider = lazy(
   () => import("../components/singleuseComponents/MainPageSlider")
 )
 const NavBar = lazy(
   () => import("../components/utilityComponents/generalComponents/NavBar")
 )
-import Range from "../components/singleuseComponents/Range"
-// import { useLoading } from "../context/LoadingContext"
 import Footer from "../components/utilityComponents/generalComponents/Footer"
 const MobileNav = lazy(
   () => import("../components/utilityComponents/generalComponents/MobileNav")
@@ -39,14 +36,11 @@ const HomePage = () => {
   if (!context) return <Loading />
   const { products } = context
 
-  // const { loading } = useLoading()
-
   return (
     <>
       <NavBar />
       <MobileNav />
       <Info />
-      <Range />
       <Products products={products} />
       <MainPageSlider />
       <FurniroFurniture />

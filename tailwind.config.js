@@ -35,11 +35,20 @@ export default {
         button: {
           "0%": { background: "#FFFFFF", border: "1px solid black" },
         },
+        fill: {
+          "0%": { fill: "#FFFFFF" },
+          "100%": { fill: "#000000" },
+        },
+        "fill-white": {
+          "100%": { fill: "#FFFFFF" },
+        },
       },
       animation: {
         "sign-up-appear": "appear 0.5s linear",
         appear: "animateDisplay 0.2s linear",
         button: "button 0.2s linear",
+        fill: "fill 0.1s linear forwards",
+        "fill-white": "fill-white 0.2s linear forwards",
       },
     },
   },

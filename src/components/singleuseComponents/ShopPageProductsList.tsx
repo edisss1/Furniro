@@ -36,7 +36,7 @@ const ShopPageProductsList = ({ products }: ShopPageProductsListProps) => {
   }
 
   const handleNextPage = (currentPage: number) => {
-    setCurrentPage(currentPage + 1)
+    setCurrentPage(currentPage)
   }
 
   useEffect(() => {

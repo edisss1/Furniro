@@ -9,12 +9,11 @@ const ProductFilter = () => {
     setPriceRange,
     categories,
     handleCategoryChange,
-    resetFilters,
   } = useFilter()
 
   return (
     <div
-      className={`${opened ? "block" : "hidden"} absolute top-[25rem] w-[calc(25%+20px)] max-md:static max-md:w-full z-[100] flex flex-col items-center bg-secondary shadow-lg border-primary border px-6 py-6 rounded-md gap-4 `}>
+      className={`${opened ? "block" : "hidden"} absolute top-[25rem] max-lg:top-[40%] max-: max-lg:left-[10%] max-md:w-full w-[calc(25%+20px)]  max-lg:w-[calc(45%+20px)] max-md:static  z-[100] flex flex-col items-center bg-secondary shadow-lg border-primary border px-6 py-6 rounded-md gap-4 `}>
       <div>
         <h3>Choose a category</h3>
         <select
@@ -40,11 +39,6 @@ const ProductFilter = () => {
           onChange={setPriceRange}
         />
       </div>
-      <button
-        onClick={resetFilters}
-        className="px-2 py-1 border rounded-md hover:border-black transition-all">
-        Reset
-      </button>
     </div>
   )
 }
