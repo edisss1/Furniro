@@ -1,4 +1,4 @@
-import { lazy, useContext, useEffect } from "react"
+import { lazy, useEffect } from "react"
 const ShopPageProductsList = lazy(
   () => import("../components/singleuseComponents/ShopPageProductsList")
 )
