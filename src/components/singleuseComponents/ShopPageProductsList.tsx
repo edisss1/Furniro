@@ -103,7 +103,7 @@ const ShopPageProductsList = ({ products }: ShopPageProductsListProps) => {
             ? `flex  flex-col w-full `
             : `grid grid-cols-4 max-w-fit max-md:max-w-[90%]  justify-center place-items-center gap-14  mt-10 max-lg:grid-cols-3 max-md:grid-cols-2 `
         }`}>
-        {loading
+        {loading && products.length !== 0
           ? Array.from({ length: itemsPerPage }).map((_, index) => (
               <ProductCardSkeleton key={index} />
             ))
@@ -117,6 +117,11 @@ const ShopPageProductsList = ({ products }: ShopPageProductsListProps) => {
                 title={product.name}
               />
             ))}
+        {!products.length ? (
+          <p className="text-center self-center absolute">
+            No products with these filters were found
+          </p>
+        ) : null}
       </div>
       <div>
         <Pagination
