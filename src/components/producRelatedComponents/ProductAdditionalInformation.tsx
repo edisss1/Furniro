@@ -34,7 +34,10 @@ const ProductAdditionalInformation = () => {
         <p>Features</p>
         <div className="flex gap-4 text-faint flex-wrap">
           {specificProduct?.details.features.map((feature, index) => (
-            <p>{`${feature}${index != specificProduct.details.features.length - 1 ? "," : ""}`}</p>
+            <p
+              key={
+                index
+              }>{`${feature}${index != specificProduct.details.features.length - 1 ? "," : ""}`}</p>
           ))}
         </div>
       </div>
