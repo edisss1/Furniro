@@ -1,3 +1,5 @@
+import { useFilter } from "../../../context/FilterContext"
+
 interface FilterProps {
   filter: string
   showGrid: string
@@ -13,19 +15,20 @@ const Filter = ({
   handleDisplayChangeToFlex,
   handleDisplayChangeToGrid,
 }: FilterProps) => {
+  const { openFilters } = useFilter()
   return (
-    <div className='flex gap-6 max-md:justify-between '>
-      <button>
-        <div className='flex gap-2'>
-          <img src={filter} alt='' />
+    <div className="flex gap-6 max-md:justify-between ">
+      <button onClick={openFilters} className="relative">
+        <div className="flex gap-2">
+          <img src={filter} alt="" />
           <p>Filter</p>
         </div>
       </button>
       <button onClick={handleDisplayChangeToGrid}>
-        <img src={showGrid} alt='' />
+        <img src={showGrid} alt="" />
       </button>
       <button onClick={handleDisplayChangeToFlex}>
-        <img src={showList} alt='' />
+        <img src={showList} alt="" />
       </button>
     </div>
   )

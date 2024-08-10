@@ -18,6 +18,7 @@ import { FeedbackProvider } from "./context/FeedbackContext"
 import { SpecificProductProvider } from "./context/SpecificProductContext"
 import { BillingProvider } from "./context/BillingContext"
 import { ReviewsProvider } from "./context/ReviewsContext"
+import { FilterProvider } from "./context/FilterContext"
 
 const Router = () => {
   return (
@@ -34,7 +35,9 @@ const Router = () => {
         path="/shop"
         element={
           <ProductProvider>
-            <ShopPage />
+            <FilterProvider>
+              <ShopPage />
+            </FilterProvider>
           </ProductProvider>
         }
       />

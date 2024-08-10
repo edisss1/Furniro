@@ -1,3 +1,4 @@
+import ProductFilter from "../../singleuseComponents/ProductFilter"
 import Filter from "./Filter"
 import Options from "./Options"
 import Search from "./Search"
@@ -52,6 +53,7 @@ const SubheaderShop = ({
         itemsToShowValues={itemsToShowValues}
         options={options}
       />
+      <ProductFilter />
     </>
   )
 }

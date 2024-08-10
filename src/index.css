@@ -34,3 +34,7 @@ img {
 .text-overflow-ellipsis {
   @apply overflow-hidden whitespace-nowrap text-ellipsis;
 }
+
+.thumb {
+  @apply bg-primary w-6 aspect-square rounded-full;
+}

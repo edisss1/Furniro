@@ -90,7 +90,7 @@ const ShopPageProductsList = ({ products }: ShopPageProductsListProps) => {
   }, [sortedProducts, currentPage, itemsPerPage])
 
   return (
-    <div className='flex flex-col items-center w-full'>
+    <div className="flex flex-col items-center w-full">
       <ShopHeader
         setSearch={setSearch}
         onSortChange={setSortValue}
