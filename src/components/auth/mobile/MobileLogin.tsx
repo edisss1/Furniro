@@ -10,7 +10,8 @@ const Login = ({ isLogin, setIsLogin }: AuthProps) => {
     onLogin,
     handleEmail,
     handlePassword,
-    signInWithGoogleMobile,
+    // signInWithGoogleMobile,
+    signInWithGoogle,
     setError,
   } = useAuth()
 
@@ -59,7 +60,7 @@ const Login = ({ isLogin, setIsLogin }: AuthProps) => {
             <button
               type="button"
               onClick={() => {
-                signInWithGoogleMobile()
+                signInWithGoogle()
 
                 setError(null)
               }}

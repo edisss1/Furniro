@@ -10,7 +10,8 @@ const Signup = ({ isLogin, setIsLogin }: AuthProps) => {
     onSignUp,
     handleEmail,
     handlePassword,
-    signInWithGoogleMobile,
+    // signInWithGoogleMobile,
+    signInWithGoogle,
   } = useAuth()
   return (
     <form
@@ -52,7 +53,7 @@ const Signup = ({ isLogin, setIsLogin }: AuthProps) => {
           </p>
           <div className="w-full border-2  rounded-full">
             <button
-              onClick={signInWithGoogleMobile}
+              onClick={signInWithGoogle}
               className="flex gap-2 items-center px-4 py-2">
               <img src={google} alt="/" />
               <p>Sign Up with Google</p>

@@ -119,8 +119,6 @@ export const ReviewsProvider = ({
           { id: docRef.id, ...data } as Review,
         ])
         return docRef
-
-        setReview("")
       }
     } catch (err) {
       console.error("Error adding review data:", err as FirebaseError)

@@ -1,4 +1,3 @@
-// src/AuthProvider.tsx
 import {
   createUserWithEmailAndPassword,
   EmailAuthProvider,
@@ -117,11 +116,21 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       setError(err as FirebaseError)
     }
   }
+
   const signInWithGoogleMobile = async () => {
     try {
+      // Сохраняем email и пароль в sessionStorage, если они есть
+      if (email) sessionStorage.setItem("email", email)
+      if (password) sessionStorage.setItem("password", password)
+
+      // Запускаем процесс авторизации через редирект
       await signInWithRedirect(auth, provider)
     } catch (err) {
-      console.error(err as FirebaseError)
+      console.error(
+        "signInWithGoogleMobile - error:",
+        (err as FirebaseError).message
+      )
+      setError(err as FirebaseError)
     }
   }
 
@@ -132,10 +141,19 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         if (result) {
           setUser(result.user)
           setError(null)
-          console.log(user)
+
+          sessionStorage.removeItem("email")
+          sessionStorage.removeItem("password")
+        } else {
+          const savedEmail = sessionStorage.getItem("email")
+          const savedPassword = sessionStorage.getItem("password")
+
+          if (savedEmail) setEmail(savedEmail)
+          if (savedPassword) setPassword(savedPassword)
         }
       } catch (err) {
-        console.error(err as FirebaseError)
+        console.error("Error handling redirect result:", err as FirebaseError)
+        setError(err as FirebaseError)
       }
     }
 
