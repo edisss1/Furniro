@@ -5,7 +5,6 @@ import { getStorage } from "firebase/storage"
 import { getAuth, GoogleAuthProvider } from "firebase/auth"
 
 const firebaseConfig = {
-  // ...firebaseOptions,
   apiKey: import.meta.env.VITE_FIRESTORE_API_KEY,
   authDomain: import.meta.env.VITE_FIRESTORE_AUTH_DOMAIN,
   projectId: import.meta.env.VITE_FIRESTORE_PROJECT_ID,
