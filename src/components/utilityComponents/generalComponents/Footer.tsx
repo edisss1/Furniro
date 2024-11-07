@@ -63,7 +63,7 @@ const Footer = () => {
             className="flex flex-col  gap-10 w-fit max-lg:row-start-2  max-lg:col-start-2 max-sm:col-start-1">
             <p className="text-product">Newsletter</p>
             <div className="flex gap-5 flex-wrap">
-              <div className="relative group ">
+              <div className="relative group w-max">
                 <input
                   onChange={handleEmailChange}
                   value={email}
@@ -73,7 +73,7 @@ const Footer = () => {
                 />
                 <label
                   htmlFor="email"
-                  className="w-fit absolute pointer-events-none  top-0 left-0 group-focus-within:-top-4 group-focus-within:text-sm  transition-all duration-150 ease-linear">
+                  className="w-full max-w-[200px] text-nowrap absolute pointer-events-none top-0 left-0 group-focus-within:-top-4 group-focus-within:text-sm text-black/80  transition-all duration-150 ease-linear">
                   Enter Your Email Address...
                 </label>
               </div>

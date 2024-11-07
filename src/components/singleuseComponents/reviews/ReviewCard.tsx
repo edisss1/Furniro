@@ -26,7 +26,7 @@ const ReviewCard = ({
   const { deleteReview } = useReviews()
 
   return (
-    <div className="grid relative grid-rows-3 place-content-start p-4  w-full rounded-md border-2">
+    <div className="grid relative grid-rows-3 place-content-start p-4  w-full max-w-[800px] rounded-md border-2">
       <div className="flex gap-4 items-center">
         {imgURL ? (
           <img className="w-8 rounded-full" src={imgURL} />

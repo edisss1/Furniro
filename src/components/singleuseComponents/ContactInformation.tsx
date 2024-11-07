@@ -13,10 +13,9 @@ const ContactInformation = () => {
 
   const { sent, sendFeedback, handleChange, feedback } = context
 
-  const inputStyles =
-    "border-2 h-[75px] w-[calc(100%-20px)] mx-auto rounded-md ps-4"
+  const inputStyles = "border-2 h-[75px] w-full mx-auto rounded-md ps-4"
   return (
-    <div className="mt-[10%] flex max-md:flex-col max-md:items-center justify-evenly items-start ">
+    <div className="mt-[10%] flex max-md:flex-col  max-md:items-center justify-evenly items-start ">
       <div className="flex-col flex gap-8 ">
         <div>
           <div className="flex gap-4 max-w-[212px] items-start">
@@ -56,8 +55,8 @@ const ContactInformation = () => {
         onSubmit={(e: React.ChangeEvent<HTMLFormElement>) =>
           sendFeedback(feedback, e)
         }
-        className="flex flex-col gap-6 ">
-        <div className="flex flex-col">
+        className="flex flex-col gap-6 w-full max-w-[550px]">
+        <div className="flex flex-col ">
           <label className="ps-3" htmlFor="name">
             Your name
           </label>
@@ -101,12 +100,12 @@ const ContactInformation = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="flex flex-col w-[calc(105%-20px)]  ">
+        <div className="flex flex-col   ">
           <label className="ps-3" htmlFor="message">
             Message
           </label>
           <textarea
-            className="h-[calc(30vh-100px)] mx-auto border-2 w-[calc(100%-20px)]  rounded-md resize-none p-4"
+            className="h-[calc(30vh-100px)]  border-2   rounded-md resize-none p-4"
             name="message"
             id="message"
             placeholder="Hi! I'd like to ask about"
@@ -115,7 +114,7 @@ const ContactInformation = () => {
             required
           />
         </div>
-        <div className="flex ms-2 w-[calc(100%-20px)]">
+        <div className="flex justify-center">
           <button className="self-start  bg-primary text-white px-20 py-3 rounded-md">
             Submit
           </button>
