@@ -5,91 +5,99 @@ import { addDoc, collection } from "firebase/firestore"
 import { db } from "../../../firebase/firebaseConfig"
 
 const Footer = () => {
-  const [email, setEmail] = useState<string>("")
-  const date = new Date()
+    const [email, setEmail] = useState<string>("")
+    const date = new Date()
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value)
-  }
+    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setEmail(e.target.value)
+    }
 
-  const handleEmailSubmission = async (
-    e: React.ChangeEvent<HTMLFormElement>
-  ) => {
-    e.preventDefault()
-    const emailDocRef = collection(db, "newsletter-emails")
-    await addDoc(emailDocRef, {
-      email: email,
-    })
-    setEmail("")
-  }
+    const handleEmailSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        const emailDocRef = collection(db, "newsletter-emails")
+        await addDoc(emailDocRef, {
+            email: email
+        })
+        setEmail("")
+    }
 
-  return (
-    <footer className="ps-24 max-lg:ps-2 max-sm:ps-0  flex flex-col mt-[5%] gap-10 max-lg:grid pb-[10%]">
-      <div className="flex gap-20 lg:gap-16 md:gap-8: sm:gap-4 max-lg:flex-col max-lg:items-center">
-        <div className="col-span-2 flex flex-col gap-10 max-lg:col-span-3 max-lg:row-start-1">
-          <h3 className="font-bold text-2xl max-sm:text-center ">Furniro.</h3>
-          <div className="flex flex-col flex-wrap max-sm:text-center">
-            <span>400 University Drive Suite 200 Coral </span>
-            <span>Gables,</span>
-            <span>FL 33134 USA</span>
-          </div>
-        </div>
-        <div className="col-start-3 grid grid-cols-3 col-span-4 max-lg:gap-6 max-sm:px-4 max-sm:justify-center  ">
-          <div className="flex flex-col gap-10 max-lg:col-start-2 max-sm:col-start-1 ">
-            <p className="text-product">Links</p>
-            {paths?.map((path) => (
-              <Link
-                aria-label={`Go to ${path.text} page `}
-                key={path.path}
-                to={path.path}>
-                {path.text}
-              </Link>
-            ))}
-          </div>
-          <div className="flex flex-col gap-10 max-lg:col-start-3 max-sm:col-start-3 ">
-            <p className="text-product">Help</p>
-            <Link aria-label="Blank page" to={"/"}>
-              Payment Options
-            </Link>
-            <Link aria-label="Blank page" to={"/"}>
-              Returns
-            </Link>
-            <Link aria-label="Blank page" to={"/"}>
-              Privacy Policies
-            </Link>
-          </div>
-          <form
-            onSubmit={handleEmailSubmission}
-            className="flex flex-col  gap-10 w-fit max-lg:row-start-2  max-lg:col-start-2 max-sm:col-start-1">
-            <p className="text-product">Newsletter</p>
-            <div className="flex gap-5 flex-wrap">
-              <div className="relative group w-max">
-                <input
-                  onChange={handleEmailChange}
-                  value={email}
-                  id="email"
-                  className="underline decoration-black underline-offset-4  outline-none border-b-2 border-black"
-                  type="email"
-                />
-                <label
-                  htmlFor="email"
-                  className="w-full max-w-[200px] text-nowrap absolute pointer-events-none top-0 left-0 group-focus-within:-top-4 group-focus-within:text-sm text-black/80  transition-all duration-150 ease-linear">
-                  Enter Your Email Address...
-                </label>
-              </div>
-              <button
-                type="submit"
-                className="font-semibold border-b-2 border-black">
-                Subscribe
-              </button>
+    return (
+        <footer className="py-12 px-[clamp(.2rem,5vw,6.25rem)] max-lg:grid-cols-1 grid grid-cols-3 gap-16 ">
+            <div className="col-start-1 row-start-1 w-fit">
+                <div className="flex flex-col  gap-[clamp(1rem,10vh,2.5rem)]">
+                    <h3 className="text-2xl font-bold block ">Furniro</h3>
+                    <span className="max-w-[250px] text-black/50">
+                        400 University Drive Suite 200 Coral Gables, FL 33134
+                        USA
+                    </span>
+                </div>
             </div>
-          </form>
-        </div>
-      </div>
-      <p className="max-lg:mx-auto">
-        {date.getUTCFullYear()} Furniro. All rights reserved
-      </p>
-    </footer>
-  )
+            <div className="flex w-fit items-center col-start-2 col-end-3 col-span-2 justify-between  row-start-1 max-lg:row-start-2   max-lg:items-start max-lg:col-start-1 max-lg:col-span-1 max-lg:justify-center gap-4 m-0">
+                <div className="flex flex-col gap-4">
+                    <h4 className="text-black/50">Links</h4>
+                    <div className="grid gap-2">
+                        {paths.map((path) => (
+                            <Link
+                                className="font-medium"
+                                key={path.text}
+                                to={path.path}
+                            >
+                                {path.text}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+                <div className="grid gap-4  row-start-1">
+                    <h4 className="text-black/50">Links</h4>
+                    <div className="grid gap-2">
+                        {paths.map((path) => (
+                            <Link
+                                className="font-medium"
+                                key={path.text}
+                                to={path.path}
+                            >
+                                {path.text}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </div>
+            <div className="col-start-4 w-full max-w-[250px] row-start-1 flex flex-col items-start gap-8 max-lg:col-start-1 max-lg:row-start-3">
+                <h4 className="text-black/50">Newsletter</h4>
+                <form
+                    onSubmit={handleEmailSubmit}
+                    className=" w-full flex flex-col  items-start gap-4 "
+                >
+                    <div className="relative ">
+                        <input
+                            onChange={handleEmailChange}
+                            required
+                            className="peer outline-none border-b-2 border-black w-full px-0 py-2 "
+                            id="email"
+                            type="text"
+                            autoComplete="off"
+                        />
+                        <label
+                            className="absolute w-max peer-focus:-translate-y-[150%] peer-focus:text-[0.9rem] left-0 top-[50%] -translate-y-[50%] pointer-events-none peer-focus:bg-white transition-all opacity-50"
+                            htmlFor="email"
+                        >
+                            Enter your email address
+                        </label>
+                    </div>
+                    <button
+                        type="submit"
+                        className="underline decoration-black underline-offset-8"
+                    >
+                        SUBSCRIBE
+                    </button>
+                </form>
+            </div>
+            <div className="row-start-3 max-lg:row-start-4 col-start-1 w-fit">
+                <span className="block">
+                    {date.getFullYear()} Furniro. All rights reserved
+                </span>
+            </div>
+        </footer>
+    )
 }
 export default Footer
